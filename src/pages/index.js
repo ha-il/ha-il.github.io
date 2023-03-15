@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { StaticImage } from "gatsby-plugin-image"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -24,8 +25,32 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <div className="slider">
+        <div className="slider-content">
+          <div className="slider-content-text">
+            <div className="slider-content-text-title">
+              하일의 작업실에 오신 걸 환영합니다!
+            </div>
+            <p>
+              안녕하세요, <strong>하일</strong>이라는 닉네임으로 활동하고 있는{" "}
+              <br /> <em>개발자</em>
+              <strong> 김형우</strong>입니다. <br />
+            </p>
+          </div>
+          <div className="slider-content-img">
+            <StaticImage
+              layout="fixed"
+              formats={["auto", "webp", "avif"]}
+              src="../images/js-128x128.png"
+              width={256}
+              height={256}
+              quality={95}
+              alt="Profile picture"
+            />
+          </div>
+        </div>
+      </div>
+      <ol className="post-list" style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
