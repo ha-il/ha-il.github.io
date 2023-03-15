@@ -9,7 +9,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `하일의 블로그`,
+    title: `하일의 작업실`,
     author: {
       name: `김형우`,
       nickname: `하일`,
