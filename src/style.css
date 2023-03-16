@@ -388,9 +388,15 @@ a:focus {
   padding: var(--spacing-10) var(--spacing-5);
 }
 
-.post-list-item {
-  margin-bottom: var(--spacing-8);
+.post-list li {
+  display: flex;
+  align-items: center;
   margin-top: var(--spacing-8);
+  margin-bottom: var(--spacing-16);
+}
+
+.post-list-item {
+  margin-left: var(--spacing-8);
 }
 
 .post-list-item p {
@@ -478,4 +484,21 @@ a:focus {
     padding-top: var(--spacing-6);
     width: 80%;
   }
+  .post-list li {
+    /* display: flex;
+    align-items: center;
+    margin-top: var(--spacing-8);
+    margin-bottom: var(--spacing-16); */
+    flex-direction: column;
+  }
+  .post-list-item {
+    width: 99%;
+    margin-left: var(--spacing-0);
+    margin-top: var(--spacing-8);
+  }
+  .post-list li .gatsby-image-wrapper {
+    width: var(--maxWidth-lg);
+  }
 }
+
+/* gatsby-image-wrapper-constrained */

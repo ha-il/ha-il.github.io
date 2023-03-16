@@ -2,9 +2,10 @@
 title: 마크다운 포스팅 디자인 시스템
 date: "2023-03-15T08:22:00.000Z"
 description: "블로그 포스팅에 사용되는 마크다운의 디자인을 정리합니다."
+featuredImage: "../../../src/images/md-512x256.png"
 ---
 
-![markdown](../../../src/images/md-256x-128.png)
+![](../../../src/images/md-512x256.png)
 
 이 포스트는 블로그 마크다운 작성과 CSS 작업에 참고하기 위해 작성되었습니다.
 
