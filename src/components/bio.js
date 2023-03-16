@@ -16,6 +16,7 @@ const Bio = () => {
         siteMetadata {
           author {
             name
+            nickname
             summary
           }
           social {
@@ -28,7 +29,7 @@ const Bio = () => {
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author
-  const social = data.site.siteMetadata?.social
+  //const social = data.site.siteMetadata?.social
 
   return (
     <div className="bio">
@@ -44,11 +45,14 @@ const Bio = () => {
       />
       {author?.name && (
         <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
+          안녕하세요 개발자 <strong>{author.name}</strong>입니다. <br />
+          <strong>{author.nickname}</strong>이라는 닉네임을 사용하고 있습니다.
+          <br />
+          {author?.summary || null}
           {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
+          {/* <a href={`https://twitter.com/${social?.twitter || ``}`}>
             You should follow them on Twitter
-          </a>
+          </a> */}
         </p>
       )}
     </div>
