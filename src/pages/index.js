@@ -125,12 +125,12 @@ export const pageQuery = graphql`
           description
           featuredImage {
             childImageSharp {
-              gatsbyImageData(width: 256, height: 256)
+              gatsbyImageData(width: 256, height: 256, layout: CONSTRAINED)
             }
           }
           mobileImage {
             childImageSharp {
-              gatsbyImageData(width: 512, height: 256)
+              gatsbyImageData(width: 512, height: 256, layout: CONSTRAINED)
             }
           }
         }
