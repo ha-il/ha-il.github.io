@@ -1,28 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 16 Mar 2023 12:07:31 GMT</lastBuildDate><item><title><![CDATA[마크다운 포스팅 디자인 시스템]]></title><description><![CDATA[이 포스트는 블로그 마크다운 작성과 CSS 작업에 참고하기 위해 작성되었습니다. 1. 헤더 Header 1 제목 Header 2 제목 Header 3 제목 Header 4 제목 Header 5 제목 Header 6 제목 2. 인용문 Lorem…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/md-style/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/md-style/</guid><pubDate>Wed, 15 Mar 2023 08:22:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 17 Mar 2023 02:12:15 GMT</lastBuildDate><item><title><![CDATA[마크다운 포스팅 디자인 시스템]]></title><description><![CDATA[이 포스트는 블로그 마크다운 작성과 CSS 작업에 참고하기 위해 작성되었습니다. 1. 헤더 Header 1 제목 Header 2 제목 Header 3 제목 Header 4 제목 Header 5 제목 Header 6 제목 2. 인용문 Lorem…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/md-style/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/md-style/</guid><pubDate>Wed, 15 Mar 2023 08:22:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 856px; &quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 512px; &quot;
     &gt;
       &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/6cc7b8483782a8e8fc49fd044116d870/2bef9/md-512x256.png&quot;
+    href=&quot;/static/28a9b2c03f626d3f92e7c2a307cc2bd2/01e7c/md-512x256.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
   &gt;
     &lt;span
     class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB8ElEQVR42j1Ty27TUBT0ByEhHhWEuEmcuI3kOA87TZs0jhM/UpAQj9JVecaEUiVUogukIjb9AgQCVWLDV8AvlAooYsd20JxrZ2Hd6+M5c2fmHmt520ehOUKlHWO5McKN2gDFZiC1nOWh3I7lIc5wI8EVmgFy1kAwxF63PNkbTgSNwLIbS3OpFUqDXh/CcELo9REuFNewVO3jstmVdam6KcRlNxIBJFdihvKukZkEVMYC9xmwF29j/+AQjyZ7eJzs49XhG6yHd5GrDQTH3oyYLkgsCimVRa4E5e0hrlU34O/MMfvyB/eOv+P+8TfZ+w9m0Gt9OZC9JNbrvjximcp4SkksDtPMxig1PJRHCZy3Z5ienGP3wy80js5QCRLoVg+GG8NcG4v9YiuULFPLgRAxQxb4IU/btR7McArn6BSTjz/w8P0p2u9+wgwSFOzNhUKuhthWsWnC3goWt8w912Xbg7c9w/zrPzw/+YvJ53M8+/Qb3TsvkLdImDpyIzUZrQBmZwsam2mXJ4hdV+XIUXD829ibv0by8gBPpjPs7D5Fs38LJUdFxKmgSnWhqUJazeaOwRKYjRJJr672cGWli4tGB5cqG9JEZSSTi3SjdMzUIdpKZ2tBkgXLpkp7LDYkIyfC6vpNEJv9CKyrC41V7rYS8x+POplVyimeTgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB9UlEQVR42j1S3WoTURjcF1IKJZqmm20225gm2fxtk6bJ7mZ/klSEKlYQsVpqDGmblkDvRBTEB6iCohe+iHivUWkvfIOR+Xa3F4fz7ez3zZmZc5RMxcVaI0DeGkKrB+B3tuZLvVJxoVsDGJtDrJou9OYARmsU/Su7smt1H+mSLRy5ZghFrfaFLF12BOAwCVlnawFu5Nq4VXKwXOghtWEjVexBj/s09jVCmc/WPJlTWKyafVHG01hzV6seuqM9HM3meHowljWbn2MrfCDK+Z+Lqkm03hpJrRCMTvAFWKsHUGs+bhe34T2e4+jrJe6/+46H739g9u0f3L0TqBVbopC46oHMshbLLPLWQPIgORvWWzvQTBt6MEH37W9Mvlxh/PkSzVcLGP4LZDY6yDWjbEnMObpijgpzyFa96IRGKCCzU8tdGOEU229+Yf/DAvsXC1iv/8IIxtDMnhAyHqqisyQuhYoSkNK51KoP1XTgPDoVm4efrvD84x88u/iJzu4EmXLv2hHdrVxf6AgKmSMyLw42Ik+XHFjeLqan5xgfz3E4PcOTg5doOPdEHYnoSI3dcReFZE9sE9BjK8yGpKmijeVCFzf1NpaMjrw/9lJR0icXakW2FQab3xxCNfuiMsmCGNXyML6CO1t3UWjviBJ5+PHNso+5E6fi/3S+mU169u1QAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
   &gt;&lt;/span&gt;
   &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         alt=&quot;md 512x256&quot;
         title=&quot;&quot;
-        src=&quot;/static/6cc7b8483782a8e8fc49fd044116d870/ad12c/md-512x256.png&quot;
-        srcset=&quot;/static/6cc7b8483782a8e8fc49fd044116d870/a48b3/md-512x256.png 214w,
-/static/6cc7b8483782a8e8fc49fd044116d870/47730/md-512x256.png 428w,
-/static/6cc7b8483782a8e8fc49fd044116d870/ad12c/md-512x256.png 856w,
-/static/6cc7b8483782a8e8fc49fd044116d870/2bef9/md-512x256.png 1024w&quot;
-        sizes=&quot;(max-width: 856px) 100vw, 856px&quot;
+        src=&quot;/static/28a9b2c03f626d3f92e7c2a307cc2bd2/01e7c/md-512x256.png&quot;
+        srcset=&quot;/static/28a9b2c03f626d3f92e7c2a307cc2bd2/a48b3/md-512x256.png 214w,
+/static/28a9b2c03f626d3f92e7c2a307cc2bd2/47730/md-512x256.png 428w,
+/static/28a9b2c03f626d3f92e7c2a307cc2bd2/01e7c/md-512x256.png 512w&quot;
+        sizes=&quot;(max-width: 512px) 100vw, 512px&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
         loading=&quot;lazy&quot;
         decoding=&quot;async&quot;
