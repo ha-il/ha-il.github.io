@@ -2,7 +2,8 @@
 title: 마크다운 포스팅 디자인 시스템
 date: "2023-03-15T08:22:00.000Z"
 description: "블로그 포스팅에 사용되는 마크다운의 디자인을 정리합니다."
-featuredImage: "../../../src/images/md-512x256.png"
+featuredImage: "../../../src/images/md-256x256.png"
+mobileImage: "../../../src/images/md-512x256.png"
 ---
 
 ![](../../../src/images/md-512x256.png)
