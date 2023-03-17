@@ -4,7 +4,12 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import {
+  GatsbyImage,
+  getImage,
+  StaticImage,
+  withArtDirection,
+} from "gatsby-plugin-image"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -38,20 +43,30 @@ const BlogIndex = ({ data, location }) => {
             </p>
           </div>
           <div className="slider-content-img">
-            <StaticImage src="../images/js-128x128.png" alt="Slider picture" />
+            <StaticImage src="../images/js-256x256.png" alt="Slider picture" />
           </div>
         </div>
       </div>
       <ol className="post-list" style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
-          let featuredImg = getImage(
-            post.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData
+          const images = withArtDirection(
+            getImage(
+              post.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData
+            ),
+            [
+              {
+                media: "(max-width: 558px)",
+                image: getImage(
+                  post.frontmatter.mobileImage?.childImageSharp?.gatsbyImageData
+                ),
+              },
+            ]
           )
 
           return (
             <li key={post.fields.slug}>
-              <GatsbyImage image={featuredImg} />
+              <GatsbyImage className="art-directed" image={images} />
               <article
                 className="post-list-item"
                 itemScope
@@ -110,11 +125,12 @@ export const pageQuery = graphql`
           description
           featuredImage {
             childImageSharp {
-              gatsbyImageData(
-                width: 256
-                height: 256
-                transformOptions: { cropFocus: CENTER }
-              )
+              gatsbyImageData(width: 256, height: 256)
+            }
+          }
+          mobileImage {
+            childImageSharp {
+              gatsbyImageData(width: 512, height: 256)
             }
           }
         }
