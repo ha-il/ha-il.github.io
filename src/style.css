@@ -112,6 +112,24 @@
   --color-logo-flakes-1: var(--color-pink);
   --color-logo-flakes-2: var(--color-orange);
   --color-logo-flakes-3: var(--color-yellow);
+
+  /* Personal CSS Custom Properties  */
+  --greyOpacity50: rgba(0, 23, 51, 0.02);
+  --greyOpacity100: rgba(2, 32, 71, 0.05);
+  --greyOpacity200: rgba(0, 27, 55, 0.1);
+  --greyOpacity300: rgba(0, 29, 58, 0.18);
+  --greyOpacity400: rgba(0, 29, 54, 0.31);
+  --greyOpacity500: rgba(3, 24, 50, 0.46);
+  --greyOpacity600: rgba(0, 19, 43, 0.58);
+  --greyOpacity700: rgba(3, 18, 40, 0.7);
+  --greyOpacity800: rgba(0, 12, 30, 0.8);
+  --greyOpacity900: rgba(2, 9, 19, 0.91);
+  --shadow-s: 0 0 4px 0 var(--greyOpacity100),
+    0 4px 16px 0 var(--greyOpacity100);
+  --shadow-m: 0 8px 16px 0 var(--greyOpacity200),
+    0 4px 8px 0 var(--greyOpacity100);
+  --shadow-l: 0 24px 40px 0 var(--greyOpacity50),
+    0 16px 24px 0 var(--greyOpacity200), 0 0 8px 0 var(--greyOpacity100);
 }
 
 /* HTML elements */
@@ -206,7 +224,8 @@ h2 > a,
 h3 > a,
 h4 > a,
 h5 > a,
-h6 > a {
+h6 > a,
+.post-list a {
   text-decoration: none;
   color: inherit;
 }
@@ -388,11 +407,20 @@ a:focus {
   padding: var(--spacing-10) var(--spacing-5);
 }
 
-.post-list li {
+.post-list li a {
   display: flex;
   align-items: center;
   margin-top: var(--spacing-8);
   margin-bottom: var(--spacing-16);
+}
+.post-list li a .art-directed {
+  transform: translate3D(0, 0, 0);
+  box-shadow: none;
+}
+.post-list li a:hover .art-directed {
+  transform: translate3D(0, -3%, 0);
+  box-shadow: var(--shadow-l);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .post-list-item {
@@ -405,9 +433,14 @@ a:focus {
 
 .post-list-item h2 {
   font-size: var(--fontSize-4);
-  color: var(--color-primary);
+  color: var(--color-heading);
   margin-bottom: var(--spacing-2);
   margin-top: var(--spacing-0);
+}
+
+.post-list li a:hover .post-list-item h2 {
+  color: var(--color-primary);
+  transition: color 0.2s ease-in-out;
 }
 
 .post-list-item header {
@@ -436,6 +469,11 @@ a:focus {
   min-width: 50px;
   border-radius: 100%;
 }
+.blog-post {
+  margin: var(--spacing-0) auto;
+  max-width: var(--maxWidth-wrapper);
+  padding: var(--spacing-10) var(--spacing-5);
+}
 
 .blog-post header h1 {
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
@@ -446,10 +484,8 @@ a:focus {
   font-family: var(--font-heading);
 }
 
-.blog-post {
-  margin: var(--spacing-0) auto;
-  max-width: var(--maxWidth-wrapper);
-  padding: var(--spacing-10) var(--spacing-5);
+.blog-post .post-main-image {
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
 }
 
 .blog-post-nav ul {
@@ -484,11 +520,7 @@ a:focus {
     padding-top: var(--spacing-6);
     width: 80%;
   }
-  .post-list li {
-    /* display: flex;
-    align-items: center;
-    margin-top: var(--spacing-8);
-    margin-bottom: var(--spacing-16); */
+  .post-list li a {
     flex-direction: column;
   }
   .post-list-item {
@@ -500,6 +532,9 @@ a:focus {
     width: 512px;
     height: 256px;
   }
+  .post-list li a:hover .art-directed {
+    transform: translate3D(0, -0, 0);
+    box-shadow: none;
+    transition: none;
+  }
 }
-
-/* gatsby-image-wrapper-constrained */
