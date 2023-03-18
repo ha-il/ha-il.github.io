@@ -66,29 +66,29 @@ const BlogIndex = ({ data, location }) => {
 
           return (
             <li key={post.fields.slug}>
-              <GatsbyImage className="art-directed" image={images} />
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
+              <Link to={post.fields.slug} itemProp="url">
+                <GatsbyImage className="art-directed" image={images} />
+                <article
+                  className="post-list-item"
+                  itemScope
+                  itemType="http://schema.org/Article"
+                >
+                  <header>
+                    <h2>
                       <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
+                    </h2>
+                    <small>{post.frontmatter.date}</small>
+                  </header>
+                  <section>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: post.frontmatter.description || post.excerpt,
+                      }}
+                      itemProp="description"
+                    />
+                  </section>
+                </article>
+              </Link>
             </li>
           )
         })}
@@ -125,12 +125,12 @@ export const pageQuery = graphql`
           description
           featuredImage {
             childImageSharp {
-              gatsbyImageData(width: 256, height: 256)
+              gatsbyImageData(width: 128, height: 128, layout: CONSTRAINED)
             }
           }
           mobileImage {
             childImageSharp {
-              gatsbyImageData(width: 512, height: 256)
+              gatsbyImageData(width: 512, height: 256, layout: CONSTRAINED)
             }
           }
         }
