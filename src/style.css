@@ -301,11 +301,15 @@ table thead tr th {
 }
 
 /* code */
+
+.blog-post section code {
+  font-family: "NeoDunggeunmo Pro";
+  color: var(--color-red);
+}
+
 .gatsby-highlight pre code {
   font-family: "NeoDunggeunmo Pro";
-}
-.blog-post section p code {
-  font-family: "NeoDunggeunmo Pro";
+  color: var(--color--heading);
 }
 
 /* font-family: "NeoDunggeunmo Pro" */
@@ -486,6 +490,10 @@ a:focus {
 
 .blog-post .post-main-image {
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
+}
+
+.blog-post section > ul {
+  padding-left: var(--spacing-4);
 }
 
 .blog-post-nav ul {
