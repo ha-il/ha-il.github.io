@@ -15,6 +15,6 @@ Welcome to the Ha-il's blog.
 - docs - only change documentation
 - style - only change style
 
-- post - new posting
+- post - add new post or edit post
 
 - chore - anything else
