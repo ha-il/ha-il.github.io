@@ -951,3 +951,89 @@ function showAlert(message) {
 - 클래스에서 메서드를 화살표 함수로 만드는 경우
   - 생성자 함수 내부에서 초기화되어 버린다.
   - 자식 클래스에서 오버라이딩 되지 않는다.
+
+## 37. 콜백 함수
+- 콜백함수는, 해당 함수에 대한 제어권을 넘길 수 있다.
+
+```javascript
+function confirmModal(message, cbFunc) {
+	const isConfirm = confirm(message);
+
+	if (isConfirm && cbFunc) {
+		cbFunc();
+	}
+}
+
+function register() {
+	confirmModal(
+		'회원가입에 성공했습니다.',
+		redirectUserInfoPage,
+	);
+}
+
+function login() {
+	confirmModal(
+		'로그인에 성공했습니다.',
+		redirectIndexPage,
+	);
+}
+```
+```javascript
+function confirmModal(message, cbFunc) {
+  const isConfirm = confirm(message)
+
+  if (isConfirm && cbFunc) {
+    cbFunc()
+  }
+}
+
+function register() {
+  confirmModal("회원가입에 성공했습니다.", redirectUserInfoPage)
+}
+
+function login() {
+  confirmModal("로그인에 성공했습니다.", redirectIndexPage)
+}
+```
+
+## 38. 순수함수
+- 함수 안에 고유한 일관성이나 값을 가지는 함수
+- 외부에 의해 반환값이 바뀌지 않는 함수
+
+```javascript
+let num1 = 10
+let num2 = 20
+
+function impureSum1() {
+  return num1 + num2
+}
+
+function impureSum2(newNum) {
+  return num1 + newNum
+}
+
+function pureSum(num1, num2) {
+  return num1 + num2
+}
+```
+- 객체, 배열 => 새롭게 만들어서 반환
+```javascript
+const obj = { one: 1 }
+
+function changeObj(targetObj) {
+  targetObj.one = 100
+
+  return targetObj
+}
+console.log(changeObj(obj)) // { one: 100 }
+console.log(obj) // { one: 100 }
+```
+```javascript
+const obj = { one: 1 }
+
+function changeObj(targetObj) {
+  return { ...targetObj, one: 100 }
+}
+console.log(changeObj(obj)) // { one: 100 }
+console.log(obj) // { one: 1 }
+```
