@@ -6,6 +6,7 @@ featuredImage: "../../../src/images/js-256x256.png"
 mobileImage: "../../../src/images/js-512x256x2.png"
 ---
 
+## 실행 컨텍스트
 (모던 자바스크립트 딥 다이브으 "실행 컨텍스트" 부분을 읽고 메모한 내용.)
 (추후 정돈된 글로 다시 업로드 할 예정)
 
@@ -77,3 +78,90 @@ mobileImage: "../../../src/images/js-512x256x2.png"
 
 함수 환경 레코드
 : 매개변수, arguments 객체, 함수 내부에서 선언한 지역 변수와 중첩 함수를 등록하고 관리
+
+
+## 즉시 실행 함수
+
+정의: 함수 정의와 동시에 즉시 호출되는 함수. 
+단 한 번만 호출되며 다시 호출할 수 없다.
+
+그룹 연산자`()`의 피연산자는 값으로 평가된다.
+기명 또는 무명 함수를 그룹 연산자로 감싸면 함수 리터럴로 평가되어 함수 객체가 된다.
+
+## 스코프
+모든 식별자는 자신이 선언된 위치에 의해 다른 코드가 식별자 자신을 참조할 수 있는 유효 범위가 결정된다.
+이를 스코프라 한다.
+즉, 스코프는 식별자가 유효한 범위를 말한다.
+
+## 함수 정의
+
+변수는 선언, 함수는 정의!
+
+함수 선언문이 평가되면 식별자가 암묵적으로 생성되고 함수 객체가 할당된다.
+
+그러면 그 함수 객체에는 어떤 내용이 담겨져있는가?
+
+## 함수와 일급 객체
+### 일급객체
+
+일급 객체란 무엇인가요?
+
+일급 객체란 다음 4가지 조건을 만족하는 객체를 말합니다.
+
+1. 무명의 리터럴로 생성할 수 있다. 즉, 런타임에 생성이 가능하다.
+
+2. 변수나 자료구조(객체, 배열 등)에 저장할 수 있다.
+
+3. 함수의 매개변수에 전달할 수 있다.
+
+4. 함수의 반환값으로 사용할 수 있다.
+
+자바스크립트의 함수는 일급 객체다.
+
+함수가 일급 객체다 === 함수를 객체와 동일하게 사용할 수 있다.
+
+객체는 값이다 === 함수는 값과 동일하게 취급할 수 있다.
+
+함수는 값을 사용할 수 있는 곳이라면 어디서든지 리터럴로 정의할 수 있으며 런타임에 함수 객체로 평가된다.
+
+### 함수 객체의 프로퍼티
+
+함수도 객체니까 프로퍼티를 가질 수 있다.
+
+단, 일반 객체에는 없는 함수 고유의 프로퍼티를 소유한다.
+
+```javascript
+function sum(a, b) {return a + b};
+
+console.dir(sum)
+/* 
+arguments: null
+caller: null
+length: 2
+name: "sum"
+prototype: {constructor: ƒ} 
+*/
+
+console.log(Object.getOwnPropertyDescriptors(sum))
+/* 
+arguments: {value: null, writable: false, enumerable: false, configurable: false}
+caller: {value: null, writable: false, enumerable: false, configurable: false}
+length: {value: 2, writable: false, enumerable: false, configurable: true}
+name: {value: 'sum', writable: false, enumerable: false, configurable: true}
+prototype: {value: {…}, writable: true, enumerable: false, configurable: false} */
+``` 
+
+## 클로저
+
+
+클로저는 상태를 안전하게 변경하고 유지하기 위해 사용한다.
+
+상태가 의도치 않게 변경되지 않도록 상태를 안전하게 은닉하고 특정 함수에게만 상태 변경을 허용하기 위해 사용한다.
+
+클로저에 의해 참조되는 상위 스코프의 변수를 자유 변수라고 부른다.
+
+클로저란 "함수가 자유 변수에 대해 닫혀있다"라는 의미다.
+
+클로저는 "자유 변수에 묶여있는 함수"라고 말할 수 있다.
+
+클로저는 상태가 의도치 않게 변경되지 않도록 안전하게 은닉하고 특정 함수에게만 상태 변경을 허용하여 상태를 안전하게 변경하고 유지하기 위해 사용한다.
