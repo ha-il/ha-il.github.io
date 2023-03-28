@@ -24,7 +24,11 @@ const BlogPostTemplate = ({
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
-        <GatsbyImage className="post-main-image" image={image} />
+        <GatsbyImage
+          className="post-main-image"
+          image={image}
+          alt="Post main image"
+        />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
