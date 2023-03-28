@@ -67,7 +67,11 @@ const BlogIndex = ({ data, location }) => {
           return (
             <li key={post.fields.slug}>
               <Link to={post.fields.slug} itemProp="url">
-                <GatsbyImage className="art-directed" image={images} />
+                <GatsbyImage
+                  className="art-directed"
+                  image={images}
+                  alt="Art directed image"
+                />
                 <article
                   className="post-list-item"
                   itemScope
