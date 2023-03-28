@@ -486,7 +486,8 @@ a:focus {
 
 .blog-post,
 .blog-post header h1,
-.blog-post h2 {
+.blog-post h2,
+.blog-post h3 {
   font-family: "Nanum Gothic";
 }
 
