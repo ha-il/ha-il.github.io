@@ -15,8 +15,8 @@ module.exports = {
       nickname: `하일`,
       summary: ``,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `하일의 작업실`,
+    siteUrl: `https://ha-il.github.io/`,
     social: {
       twitter: `kylemathews`,
     },
@@ -39,6 +39,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
