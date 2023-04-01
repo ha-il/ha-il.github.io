@@ -362,12 +362,9 @@ table thead tr th {
   text-shadow: none;
 }
 
-.gatsby-highlight .language-jsx {
-  color: var(--code-color-white);
-  background-color: var(--code-color-background);
-  text-shadow: none;
-}
-
+.gatsby-highlight .language-javascript,
+.gatsby-highlight .language-js,
+.gatsby-highlight .language-jsx,
 .gatsby-highlight .language-text {
   text-shadow: none;
   color: var(--code-color-white);
