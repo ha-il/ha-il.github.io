@@ -2,6 +2,8 @@
 
 Welcome to the Ha-il's blog.
 
+[Check out my blog!](https://ha-il.github.io/)
+
 ## Branches
 
 - main - for blog deployment
