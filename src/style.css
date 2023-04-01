@@ -136,6 +136,52 @@ font-family: 'Nanum Gothic', sans-serif;
     0 4px 8px 0 var(--greyOpacity100);
   --shadow-l: 0 24px 40px 0 var(--greyOpacity50),
     0 16px 24px 0 var(--greyOpacity200), 0 0 8px 0 var(--greyOpacity100);
+
+  /* CodeBlock CSS Custom Properties */
+  --code-color-white: #ffffff;
+  --code-color-black: #000000;
+  --code-color-red: #f07178;
+  --code-color-orange: #f78c6c;
+  --code-color-yellow: #ffcb6b;
+  --code-color-green: #c3e88d;
+  --code-color-cyan: #89ddff;
+  --code-color-blue: #82aaff;
+  --code-color-paleblue: #b2ccd6;
+  --code-color-purple: #c792ea;
+  --code-color-brown: #916b53;
+  --code-color-pink: #ff9cac;
+  --code-color-violet: #bb80b3;
+  --code-color-defaultAccent: #80cbc4;
+  --code-color-background: #292d3e;
+  --code-color-backgroundAlt: #292d3e;
+  --code-color-contrastBorder: #292d3e;
+  --code-color-comments: #676e95;
+  --code-color-caret: #ffcc00;
+  --code-color-findHighlight: #ffcc00;
+  --code-color-foreground: #a6accd;
+  --code-color-focusBorder: #ffffff;
+  --code-color-guides: #4e5579;
+  --code-color-lineNumbers: #3a3f58;
+  --code-color-invisibles: #4e5579;
+  --code-color-lineHighlight: #000000;
+  --code-color-selection: #717cb450;
+  --code-color-shadow: #00000030;
+  --code-color-inputBackground: #333747;
+  --code-color-inputForeground: #eeffff;
+  --code-color-inputBorder: #ffffff10;
+  --code-color-scrollbars: #a6accd20;
+  --code-color-scrollbarsHover: #a6accd10;
+  --code-color-statusbarForeground: #676e95;
+  --code-color-sidebarBackground: #292d3e;
+  --code-color-sidebarForeground: #676e95;
+  --code-color-listHoverForeground: #ffffff;
+  --code-color-listHoverBackground: #292d3e;
+  --code-color-tabActiveForeground: #ffffff;
+  --code-color-inactiveSelectionBackground: #00000030;
+  --code-color-findMatchBackground: #000000;
+  --code-color-findMatchHighlightBackground: #00000050;
+  --code-color-findMatchHighlightBorder: #ffffff30;
+  --code-color-highlight: #fffae2;
 }
 
 /* HTML elements */
@@ -308,14 +354,118 @@ table thead tr th {
 
 /* code */
 
-.blog-post section code {
+.blog-post section p code {
   font-family: "Fira Code";
-  color: var(--color-red);
+  color: var(--code-color-black);
+  background-color: var(--code-color-highlight);
+  padding: 0px var(--spacing-1);
+  text-shadow: none;
+}
+
+.gatsby-highlight .language-jsx {
+  color: var(--code-color-white);
+  background-color: var(--code-color-background);
+  text-shadow: none;
+}
+
+.gatsby-highlight .language-text {
+  text-shadow: none;
+  color: var(--code-color-white);
+  background-color: var(--code-color-background);
 }
 
 .gatsby-highlight pre code {
   font-family: "Fira Code";
   color: var(--color--heading);
+}
+
+.gatsby-highlight pre code .operator {
+  color: var(--code-color-white);
+  background-color: var(--code-color-background);
+}
+
+.gatsby-highlight pre code .keyword {
+  color: var(--code-color-cyan);
+}
+
+.gatsby-highlight pre code .boolean {
+  color: var(--code-color-pink);
+}
+
+.gatsby-highlight pre code .class {
+  color: var(--code-color-yellow);
+}
+
+.gatsby-highlight pre code .classmember {
+  color: var(--code-color-red);
+}
+
+.gatsby-highlight pre code .comment {
+  color: var(--code-color-comments);
+}
+
+.gatsby-highlight pre code .cssclass {
+  color: var(--code-color-yellow);
+}
+
+.gatsby-highlight pre code .cssid {
+  color: var(--code-color-orange);
+}
+
+.gatsby-highlight pre code .cssproperties {
+  color: var(--code-color-paleblue);
+}
+
+.gatsby-highlight pre code .csstag {
+  color: var(--code-color-yellow);
+}
+
+.gatsby-highlight pre code .function {
+  color: var(--code-color-blue);
+}
+
+.gatsby-highlight pre code .functioncall {
+  color: var(--code-color-blue);
+}
+
+.gatsby-highlight pre code .identifier {
+  color: var(--code-color-red);
+}
+
+.gatsby-highlight pre code .keyword {
+  color: var(--code-color-cyan);
+}
+
+.gatsby-highlight pre code .storage {
+  color: var(--code-color-purple);
+}
+
+.gatsby-highlight pre code .string {
+  color: var(--code-color-green);
+}
+
+.gatsby-highlight pre code .stringescape {
+  color: var(--code-color-foreground);
+}
+
+.gatsby-highlight pre code .type {
+  color: var(--code-color-yellow);
+}
+
+.gatsby-highlight pre code .punctuation {
+  color: var(--code-color-cyan);
+}
+
+.gatsby-highlight pre code .otherkeyword {
+  color: var(--code-color-orange);
+}
+
+.gatsby-highlight pre code .variable {
+  color: var(--code-color-foreground);
+}
+
+.gatsby-highlight pre code .number {
+  color: var(--code-color-orange);
 }
 
 /* Link */
