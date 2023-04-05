@@ -354,7 +354,8 @@ table thead tr th {
 
 /* code */
 
-.blog-post section p code {
+.blog-post section p code,
+.blog-post section li code {
   font-family: "Fira Code";
   color: var(--code-color-black);
   background-color: var(--code-color-highlight);
