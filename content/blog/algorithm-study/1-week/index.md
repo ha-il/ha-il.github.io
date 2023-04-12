@@ -2,8 +2,8 @@
 title: 알고리즘 & 자료구조 스터디 1주차
 date: "2023-04-04T22:15:00.000Z"
 description: "스터디 1주차 내용 정리와 회고입니다."
-featuredImage: "../../../src/images/algorithm-256x256.png"
-mobileImage: "../../../src/images/algorithm-512x256x2.png"
+featuredImage: "../../../../src/images/algorithm-256x256.png"
+mobileImage: "../../../../src/images/algorithm-512x256x2.png"
 ---
 
 ## Big O notation(빅 오 표기법)
