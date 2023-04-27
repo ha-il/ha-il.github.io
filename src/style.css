@@ -454,6 +454,10 @@ table thead tr th {
   color: var(--code-color-cyan);
 }
 
+.gatsby-highlight pre code .parameter {
+  color: var(--code-color-red);
+}
+
 .gatsby-highlight pre code .otherkeyword {
   color: var(--code-color-orange);
 }
