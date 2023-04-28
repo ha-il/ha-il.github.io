@@ -83,7 +83,7 @@ function countUniqueValues(arr){
     let next = 1
     // 2. 반복문을 작성합니다.
     //    반복문의 종료 조건은 보통 두번째 요소가 배열의 끝에 도달하는 경우가 됩니다.
-    while (j < str2.length) {
+    while (반복문 종료 조건) {
       // 3. 조건문을 작성합니다. 보통 3가지 조건이 포함됩니다.
       //    - 조건 1: 값 또는 true를 반환
       //    - 조건 2: next값 증가
