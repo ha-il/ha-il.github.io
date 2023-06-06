@@ -1,19 +1,34 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
 import {
   GatsbyImage,
   getImage,
   StaticImage,
   withArtDirection,
 } from "gatsby-plugin-image"
+import { useState } from "react"
+
+import Bio from "../components/bio"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
+  const [currentCategory, setCurrentCategory] = useState("전체")
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const categories = data.allMarkdownRemark.distinct
+  const renderPosts = e => {
+    console.log()
+    const list = e.target.closest("li")
+    const category = list.dataset.category
+
+    return setCurrentCategory(category)
+  }
+  const posts =
+    currentCategory === "전체"
+      ? data.allMarkdownRemark.nodes
+      : data.allMarkdownRemark.nodes.filter(
+          post => post.frontmatter.category === currentCategory
+        )
 
   if (posts.length === 0) {
     return (
@@ -47,6 +62,51 @@ const BlogIndex = ({ data, location }) => {
           </div>
         </div>
       </div>
+      <h2 className="categories-title">카테고리</h2>
+      <ol className="categories-container" style={{ listStyle: `none` }}>
+        <li
+          className="category-container"
+          key="all-posts"
+          onClick={renderPosts}
+          data-category="전체"
+        >
+          <StaticImage
+            src="../images/category/all-post.png"
+            alt="category-image"
+          />
+          <span>all</span>
+        </li>
+        {categories.map(category => {
+          return (
+            <li
+              className="category-container"
+              key={category}
+              onClick={renderPosts}
+              data-category={category}
+            >
+              {category === "Algorithm" ? (
+                <StaticImage
+                  src="../images/category/Algorithm.png"
+                  alt="category-image"
+                ></StaticImage>
+              ) : null}
+              {category === "JavaScript" ? (
+                <StaticImage
+                  src="../images/category/JavaScript.png"
+                  alt="category-image"
+                />
+              ) : null}
+              {category === "MarkDown" ? (
+                <StaticImage
+                  src="../images/category/MarkDown.png"
+                  alt="category-image"
+                />
+              ) : null}
+              <span>{category}</span>
+            </li>
+          )
+        })}
+      </ol>
       <ol className="post-list" style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
@@ -127,6 +187,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          category
           featuredImage {
             childImageSharp {
               gatsbyImageData(width: 128, height: 128, layout: CONSTRAINED)
@@ -139,6 +200,7 @@ export const pageQuery = graphql`
           }
         }
       }
+      distinct(field: { frontmatter: { category: SELECT } })
     }
   }
 `
