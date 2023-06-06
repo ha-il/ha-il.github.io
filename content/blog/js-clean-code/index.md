@@ -2,6 +2,7 @@
 title: 자바스크립트 코드 작성 시 참고 사항
 date: "2023-03-20T20:36:00.000Z"
 description: "실전에서 사용할 수 있는 자바스크립트 코딩 팁을 정리했습니다."
+category: "JavaScript"
 featuredImage: "../../../src/images/js-256x256.png"
 mobileImage: "../../../src/images/js-512x256x2.png"
 ---

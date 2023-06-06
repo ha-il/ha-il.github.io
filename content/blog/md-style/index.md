@@ -2,6 +2,7 @@
 title: 마크다운 포스팅 디자인 시스템
 date: "2023-03-15T08:22:00.000Z"
 description: "블로그 포스팅에 사용되는 마크다운의 디자인을 정리합니다."
+category: "MarkDown"
 featuredImage: "../../../src/images/md-128x128.png"
 mobileImage: "../../../src/images/md-512x256x2.png"
 ---

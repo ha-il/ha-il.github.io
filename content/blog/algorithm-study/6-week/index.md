@@ -2,6 +2,7 @@
 title: 알고리즘 & 자료구조 스터디 6주차
 date: "2023-05-08T20:00:00.000Z"
 description: "스터디 6주차 내용 정리와 회고입니다."
+category: "Algorithm"
 featuredImage: "../../../../src/images/algorithm-256x256.png"
 mobileImage: "../../../../src/images/algorithm-512x256x2.png"
 ---
