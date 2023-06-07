@@ -582,6 +582,24 @@ a:focus {
   text-align: center;
 }
 
+.category-container {
+  transform: translate3D(0, 0, 0);
+  box-shadow: none;
+}
+.category-container:hover {
+  transform: translate3D(0, -3%, 0);
+  box-shadow: var(--shadow-l);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.category-container span {
+  color: var(--color-heading);
+}
+.category-container:hover span {
+  color: var(--color-primary);
+  transition: color 0.2s ease-in-out;
+}
+
 .post-list {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
