@@ -6,7 +6,6 @@ category: "Algorithm"
 featuredImage: "../../../../src/images/algorithm-256x256.png"
 mobileImage: "../../../../src/images/algorithm-512x256x2.png"
 ---
-- 작업 시간
 
 ## 새로운 정렬 3 가지
 
@@ -597,7 +596,7 @@ function solution(numbers) {
 
 똑같이 기수 정렬을 배웠는데, 저는 왜 이런 아이디어를 떠올리지 못 했을까요?
 
-제 생각에는 저 자신이 강의에서 배운 내용에서 벗어나지 못 했기 때문이라고 생각합니다.
+제 생각에는 제 자신이 강의에서 배운 내용에서 벗어나지 못 했기 때문이라고 생각합니다.
 
 강의에서 알려준 절차를 그대로 적용했지만 문제가 풀리지 않을 때, 거기에서 조금이라도 다른 방식으로 생각해보는 것이 현재로서는 어려운 것 같습니다.
 
@@ -619,9 +618,9 @@ function solution(numbers) {
 
 ### 참고자료
 
-- 프로그래머스 코딩 테스트 연습 - K번째수
+- 프로그래머스 코딩 테스트 연습 - 가장 큰 수
 
-문제 링크: [https://school.programmers.co.kr/learn/courses/30/lessons/42748](https://school.programmers.co.kr/learn/courses/30/lessons/42748)
+문제 링크: [https://school.programmers.co.kr/learn/courses/30/lessons/42746](https://school.programmers.co.kr/learn/courses/30/lessons/42746)
 
 - Best JavaScript Data Structures & Algorithms Course by Udemy, last updated January 2022, accessed April 5, 2023
 강의 링크: [https://www.udemy.com/course/best-javascript-data-structures/](https://www.udemy.com/course/best-javascript-data-structures/)
