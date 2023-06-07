@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[하일의 작업실]]></description><link>https://ha-il.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 07 Jun 2023 02:56:46 GMT</lastBuildDate><item><title><![CDATA[알고리즘 & 자료구조 스터디 9주차]]></title><description><![CDATA[작업 시간 새로운 정렬…]]></description><link>https://ha-il.github.io/algorithm-study/9-week/</link><guid isPermaLink="false">https://ha-il.github.io/algorithm-study/9-week/</guid><pubDate>Wed, 31 May 2023 20:11:00 GMT</pubDate><content:encoded>&lt;ul&gt;
-&lt;li&gt;작업 시간&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;새로운 정렬 3 가지&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[하일의 작업실]]></description><link>https://ha-il.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 07 Jun 2023 03:14:35 GMT</lastBuildDate><item><title><![CDATA[알고리즘 & 자료구조 스터디 9주차]]></title><description><![CDATA[새로운 정렬…]]></description><link>https://ha-il.github.io/algorithm-study/9-week/</link><guid isPermaLink="false">https://ha-il.github.io/algorithm-study/9-week/</guid><pubDate>Wed, 31 May 2023 20:11:00 GMT</pubDate><content:encoded>&lt;h2&gt;새로운 정렬 3 가지&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://ha-il.github.io/algorithm-study/8-week/&quot;&gt;지난 포스트&lt;/a&gt;에서는 정렬 알고리즘 중에서도 버블 정렬, 선택 정렬, 삽입 정렬에 대해서 공부했습니다.&lt;/p&gt;
 &lt;p&gt;이번에는 방금 언급한 세 가지 정렬보다 시간 복잡도 측면에서 성능이 좋은 정렬 알고리즘을 공부했습니다.&lt;/p&gt;
 &lt;p&gt;이번에 공부한 정렬 알고리즘은, &lt;code class=&quot;language-text&quot;&gt;합병 정렬&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;퀵 정렬&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;기수 정렬&lt;/code&gt;입니다.&lt;/p&gt;
@@ -734,7 +731,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;회고&lt;/h3&gt;
 &lt;p&gt;똑같이 기수 정렬을 배웠는데, 저는 왜 이런 아이디어를 떠올리지 못 했을까요?&lt;/p&gt;
-&lt;p&gt;제 생각에는 저 자신이 강의에서 배운 내용에서 벗어나지 못 했기 때문이라고 생각합니다.&lt;/p&gt;
+&lt;p&gt;제 생각에는 제 자신이 강의에서 배운 내용에서 벗어나지 못 했기 때문이라고 생각합니다.&lt;/p&gt;
 &lt;p&gt;강의에서 알려준 절차를 그대로 적용했지만 문제가 풀리지 않을 때, 거기에서 조금이라도 다른 방식으로 생각해보는 것이 현재로서는 어려운 것 같습니다.&lt;/p&gt;
 &lt;p&gt;&apos;이런 쪽에 재능이 없는 건가?&apos;라는 살짝 우울한 생각이 들 때 쯤, 이런 생각을 예전에도 했던 것 같다는 생각이 들었는데,&lt;/p&gt;
 &lt;p&gt;그 때가 바로 클론 코딩 강의 수강 후에 나만의 프로젝트를 만들 때였던 것 같습니다.&lt;/p&gt;
@@ -746,9 +743,9 @@
 &lt;p&gt;감사합니다.&lt;/p&gt;
 &lt;h3&gt;참고자료&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;프로그래머스 코딩 테스트 연습 - K번째수&lt;/li&gt;
+&lt;li&gt;프로그래머스 코딩 테스트 연습 - 가장 큰 수&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;문제 링크: &lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/42748&quot;&gt;https://school.programmers.co.kr/learn/courses/30/lessons/42748&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;문제 링크: &lt;a href=&quot;https://school.programmers.co.kr/learn/courses/30/lessons/42746&quot;&gt;https://school.programmers.co.kr/learn/courses/30/lessons/42746&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Best JavaScript Data Structures &amp;#x26; Algorithms Course by Udemy, last updated January 2022, accessed April 5, 2023&lt;/li&gt;
 &lt;/ul&gt;
