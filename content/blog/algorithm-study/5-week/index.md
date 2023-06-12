@@ -1,7 +1,7 @@
 ---
-title: 알고리즘 & 자료구조 스터디 5주차
+title: "슬라이딩 윈도우(Sliding Window)패턴과 분할과 정복"
 date: "2023-04-28T16:00:00.000Z"
-description: "스터디 5주차 내용 정리와 회고입니다."
+description: "슬라이딩 윈도우 패턴을 학습하고 문제를 풀어봤습니다."
 category: "Algorithm"
 featuredImage: "../../../../src/images/algorithm-256x256.png"
 mobileImage: "../../../../src/images/algorithm-512x256x2.png"

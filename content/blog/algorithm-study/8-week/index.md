@@ -1,7 +1,7 @@
 ---
-title: 알고리즘 & 자료구조 스터디 8주차
+title: "정렬 알고리즘 - 버블, 선택, 삽입 정렬"
 date: "2023-05-24T09:50:00.000Z"
-description: "스터디 8주차 내용 정리와 회고입니다."
+description: "버블, 선택, 삽입 정렬을 공부하고 문제를 풀어봤습니다."
 category: "Algorithm"
 featuredImage: "../../../../src/images/algorithm-256x256.png"
 mobileImage: "../../../../src/images/algorithm-512x256x2.png"

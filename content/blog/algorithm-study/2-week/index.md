@@ -1,7 +1,7 @@
 ---
-title: 알고리즘 & 자료구조 스터디 2주차
+title: "문제 해결 접근법"
 date: "2023-04-12T17:20:00.000Z"
-description: "스터디 2주차 내용 정리와 회고입니다."
+description: "문제 해결 접근법 5단계를 문제 풀이에 적용해봤습니다."
 category: "Algorithm"
 featuredImage: "../../../../src/images/algorithm-256x256.png"
 mobileImage: "../../../../src/images/algorithm-512x256x2.png"

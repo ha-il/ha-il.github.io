@@ -1,7 +1,7 @@
 ---
-title: 알고리즘 & 자료구조 스터디 3주차
+title: "빈도수 세기(Frequency counters) 패턴"
 date: "2023-04-20T12:53:00.000Z"
-description: "스터디 3주차 내용 정리와 회고입니다."
+description: "빈도수 세기 패턴을 학습하고 문제를 풀어봤습니다."
 category: "Algorithm"
 featuredImage: "../../../../src/images/algorithm-256x256.png"
 mobileImage: "../../../../src/images/algorithm-512x256x2.png"

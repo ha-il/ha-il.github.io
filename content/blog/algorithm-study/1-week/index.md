@@ -1,7 +1,7 @@
 ---
-title: 알고리즘 & 자료구조 스터디 1주차
+title: "Big O notation(빅 오 표기법)"
 date: "2023-04-04T22:15:00.000Z"
-description: "스터디 1주차 내용 정리와 회고입니다."
+description: "빅 오 표기법을 학습하고 자바스크립트 메서드의 성능을 알아봤습니다."
 category: "Algorithm"
 featuredImage: "../../../../src/images/algorithm-256x256.png"
 mobileImage: "../../../../src/images/algorithm-512x256x2.png"
