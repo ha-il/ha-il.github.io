@@ -1,4 +1,500 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[하일의 작업실]]></description><link>https://ha-il.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 12 Jun 2023 22:52:07 GMT</lastBuildDate><item><title><![CDATA[정규 표현식 배워서 프로젝트에 적용하기]]></title><description><![CDATA[정규 표현식 왜 배웁니까? 노마드코더라는 사이트에서 진행하는 콘테스트에 제출할 목적으로 당신의 작업실이라는 웹 뮤직 플레이어를 개인 프로젝트로 제작한 적이 있습니다. 유저가 유튜브 URL을 입력하면 해당 URL의 영상 정보를 유튜브 API…]]></description><link>https://ha-il.github.io/regexp/</link><guid isPermaLink="false">https://ha-il.github.io/regexp/</guid><pubDate>Wed, 07 Jun 2023 14:13:00 GMT</pubDate><content:encoded>&lt;h2&gt;정규 표현식 왜 배웁니까?&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[하일의 작업실]]></description><link>https://ha-il.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 14 Jun 2023 13:45:24 GMT</lastBuildDate><item><title><![CDATA[[당신의 작업실] 3. 개발 환경 구축하기]]></title><description><![CDATA[당신의 작업실 프로젝트 링크: https://pixel-workroom.herokuapp.com/ 프로젝트 깃허브 저장소 링크 : https://github.com/ha-il/project-pixel…]]></description><link>https://ha-il.github.io/side-project/project-pixel/3-boiler-plate/</link><guid isPermaLink="false">https://ha-il.github.io/side-project/project-pixel/3-boiler-plate/</guid><pubDate>Tue, 13 Jun 2023 12:20:03 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;당신의 작업실 프로젝트 링크&lt;/strong&gt;: &lt;a href=&quot;https://pixel-workroom.herokuapp.com/&quot;&gt;https://pixel-workroom.herokuapp.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;프로젝트 깃허브 저장소 링크&lt;/strong&gt; : &lt;a href=&quot;https://github.com/ha-il/project-pixel&quot;&gt;https://github.com/ha-il/project-pixel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;1. 바벨 환경 구축하기&lt;/h2&gt;
+&lt;p&gt;이번 프로젝트에서 바벨은 &lt;strong&gt;NodeJS가 최신 자바스크립트 코드를 이해할 수 있도록 컴파일하기 위해서&lt;/strong&gt; 필요했습니다. 바벨 사이트의 &lt;a href=&quot;https://babeljs.io/setup#installation&quot;&gt;Setup&lt;/a&gt; 을 보면서 바벨 환경을 구축했습니다. 순서는 아래와 같습니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;babel.core를 설치합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm install --save-dev @babel/core&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;루트 디렉터리에 &lt;code class=&quot;language-text&quot;&gt;babel.config.json&lt;/code&gt;파일을 생성합니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;bael/preset-env를 설치합니다.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm install @babel/preset-env --save-dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;babel.config.json&lt;/code&gt;에 아래와 같이 작성합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{
+  &quot;presets&quot;: [&quot;@babel/preset-env&quot;]
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;파일의 &lt;code class=&quot;language-text&quot;&gt;scripts&lt;/code&gt;에 아래와 같이 작성합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;scripts&quot;: {
+    &quot;dev:server&quot;: &quot;babel-node src/server.js&quot;
+},&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 스크립트를 작성하면 &lt;code class=&quot;language-text&quot;&gt;npm run dev:server&lt;/code&gt;를 실행할 때마다 babel-node가 경로로 설정해준 파일을 실행합니다.&lt;/p&gt;
+&lt;p&gt;하지만, 경로의 파일에서 코드를 수정했을 때, 해당 수정 사항이 반영된 파일을 실행시키려면 &lt;strong&gt;스크립트를 다시 실행해야 하는 불편함&lt;/strong&gt;이 있었습니다.&lt;/p&gt;
+&lt;p&gt;이런 불편함을 해소하기 위해 노드몬을 사용하기로 했습니다.&lt;/p&gt;
+&lt;h2&gt;2. 노드몬 환경 구축하기&lt;/h2&gt;
+&lt;p&gt;노드몬은 &lt;strong&gt;설정한 디렉터리의 파일 변경이 감지되면 Node 애플리케이션을 자동으로 다시 시작해주는 도구&lt;/strong&gt;입니다. 노드몬을 사용하여 바벨을 실행시키는 방법 역시 바벨 사이트의 &lt;a href=&quot;https://babeljs.io/setup#installation&quot;&gt;Setup&lt;/a&gt;에 나와 있습니다. 노드몬 환경 구축 과정은 아래와 같습니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/remy/nodemon&quot;&gt;nodenon&lt;/a&gt;을 설치합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm i nodemon --save-dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;파일의 &lt;code class=&quot;language-text&quot;&gt;scripts&lt;/code&gt;를 아래와 같이 수정합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;scripts&quot;: {
+    &quot;dev:server&quot;: &quot;nodemon --exec babel-node src/server.js&quot;
+},&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위와 같이 설정해주면, babel-node를 실행시킬 경로에 있는 파일을 수정했을 경우 해당 파일을 자동으로 다시 시작해줍니다.&lt;/p&gt;
+&lt;h2&gt;3. 웹팩 환경 구축하기&lt;/h2&gt;
+&lt;p&gt;이번 프로젝트는 main.js에 모든 파일을 작성하는 것이 아니라, 자바스크립트 코드를 모듈화하여 여러 개의 자바스크립트 파일을 작성하여 진행할 계획이었습니다. 그렇기 때문에 &lt;strong&gt;여러 개의 파일을 하나의 번들로 묶어주는 모듈 번들러&lt;/strong&gt;인 웹팩이 필요했습니다.&lt;/p&gt;
+&lt;p&gt;웹팩은 여러개의 파일을 하나의 번들로 묶어주기 때문에, &lt;strong&gt;파일 수를 줄여서 네트워크 비용을 절감&lt;/strong&gt;할 수 있고 &lt;strong&gt;초기 로딩 속도를 향상&lt;/strong&gt;시킬 수 있다는 장점이 있습니다. 웹팩을 사용하는 이유에 대해서 궁금한 점은 웹팩 사이트의 &lt;a href=&quot;https://webpack.kr/concepts/why-webpack/&quot;&gt;Why webpack&lt;/a&gt;을 읽어보면 더 자세히 알 수 있습니다.&lt;/p&gt;
+&lt;p&gt;웹팩 환경 설정은 웹팩 홈페이지의 &lt;a href=&quot;https://webpack.js.org/guides/getting-started/#npm-scripts&quot;&gt;Getting Started&lt;/a&gt;를 보면서 진행했습니다. 순서는 아래와 같습니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;webpack과 webpack-cli를 설치합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;(웹팩 v4 이상을 사용 중이고 커맨드 라인에서 웹팩을 호출하려는 경우 CLI도 설치해야 합니다.)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm install --save-dev webpack webpack-cli&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;루트 디렉터리에 &lt;code class=&quot;language-text&quot;&gt;webpack.config.js&lt;/code&gt; 파일을 생성하고 아래와 같이 작성합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; path &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;path&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// entry는 웹팩을 적용할 파일을 의미함.&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./src/client/js/main.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// output은 웹팩 적용 후에 생성되는 파일을 의미함.&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;js/[name].js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; path&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;__dirname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;assets&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;clean&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;파일의 &lt;code class=&quot;language-text&quot;&gt;scripts&lt;/code&gt;에 아래와 같이 작성합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;scripts&quot;: {
+    &quot;dev:server&quot;: &quot;babel-node src/server.js&quot;,
+    &quot;dev:assets&quot;: &quot;webpack&quot;
+},&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여기까지 진행하면 웹팩 환경 설정을 통해 프론트엔드의 자바스크립트 파일의 모듈을 번들링했지만, 해당 파일들의 코드 중에는 &lt;strong&gt;브라우저가 이해할 수 없는 최신 코드&lt;/strong&gt;가 있을 수 있습니다.&lt;/p&gt;
+&lt;p&gt;따라서, &lt;code class=&quot;language-text&quot;&gt;webpack.config.js&lt;/code&gt; 파일에 &lt;strong&gt;바벨&lt;/strong&gt;을 사용할 수 있도록 설정하여 &lt;strong&gt;코드의 호환성&lt;/strong&gt;을 높여야 합니다. 웹팩의 바벨 설정은 &lt;a href=&quot;https://github.com/babel/babel-loader&quot;&gt;babel-loader&lt;/a&gt; 를 보고 작성했습니다. 순서는 아래와 같습니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;babel-loader&lt;/code&gt;를 설치합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm install -D babel-loader&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;webpack.config.js&lt;/code&gt;에 아래와 같이 &lt;code class=&quot;language-text&quot;&gt;mode&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;module&lt;/code&gt;을 작성합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; path &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;path&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./src/client/js/main.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// 모드를 development로 설정하면 개발 중에는 babel을 적용하지 않음&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// 배포할 때는 production 모드로 설정하면 됨&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;development&apos;&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;js/[name].js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; path&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;__dirname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;assets&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;clean&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;rules&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;// 모든 js파일에 대해서 babel/preset-env를 적용&lt;/span&gt;
+        &lt;span class=&quot;token literal-property property&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token regex&quot;&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-source language-regex&quot;&gt;\.js$&lt;/span&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token literal-property property&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;token literal-property property&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;babel-loader&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;token literal-property property&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;token literal-property property&quot;&gt;presets&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;@babel/preset-env&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;4. SCSS 환경 구축하기&lt;/h2&gt;
+&lt;p&gt;SCSS를 사용하면 CSS 코드를 중첩해서 사용할 수 있기 때문에 &lt;strong&gt;CSS코드를 구조화&lt;/strong&gt;해서 볼 수 있어서 조금 더 직관적이라는 장점이 있습니다. 그리고 &lt;strong&gt;변수&lt;/strong&gt;를 사용할 수 있어서 코드를 작성하고 수정할 때 더 편리합니다. SCSS를 사용하기 위해서는 웹팩을 통해 설정을 해줘야 하는데 그때 필요한 로더가 3가지 있습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/webpack-contrib/sass-loader&quot;&gt;sass-loader&lt;/a&gt;: SCSS파일을 CSS로 컴파일하는 로더&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://webpack.js.org/loaders/css-loader/&quot;&gt;css-loader&lt;/a&gt;: @import 및 url()을 import/require()와 같이 해석해주는 로더&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://webpack.js.org/loaders/style-loader/&quot;&gt;style-loader&lt;/a&gt;: DOM에 CSS를 삽입하는 로더&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 로더들을 설치하는 과정을 포함해서 SCSS를 설정하는 순서는 아래와 같습니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;sass&lt;/code&gt;와 3가지 로더를 설치합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm install sass sass-loader css-loader style-loader --save-dev&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;webpack.config.js&lt;/code&gt; 파일에 아래와 같이 작성합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; path &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;path&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./src/client/js/main.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;development&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;js/[name].js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; path&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;__dirname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;assets&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;clean&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;rules&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;// 생략...&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token literal-property property&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token regex&quot;&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-source language-regex&quot;&gt;\.scss$&lt;/span&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;// 웹팩은 뒤에 위치한 로더부터 적용시키기 때문에 먼저 적용되어야 하는 로더가 뒤로 가야한다.&lt;/span&gt;
+        &lt;span class=&quot;token literal-property property&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;style-loader&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;css-loader&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;sass-loader&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;client 폴더(프론트엔드 코드를 작성하는 폴더)에 styles.scss 파일을 생성하고 main.js 파일에 임포트합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// main.js&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;../scss/styles.scss&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://webpack.js.org/plugins/mini-css-extract-plugin/&quot;&gt;MiniCssExtractPlugin&lt;/a&gt;을 설치합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;(이 플러그인을 사용하지 않으면 웹팩 실행 후 js파일과 css파일이 분리되지않고 하나의 js파일로 생성됩니다. 이 플러그인은 CSS를 별도의 파일로 추출하여 CSS가 포함된 JS 파일당 CSS 파일을 생성합니다.)&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm install --save-dev mini-css-extract-plugin&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;webpack.config.js&lt;/code&gt; 파일에 &lt;code class=&quot;language-text&quot;&gt;MiniCssExtractPlugin&lt;/code&gt;을 적용합니다.&lt;/li&gt;
+&lt;li&gt;추가적으로 &lt;code class=&quot;language-text&quot;&gt;watch&lt;/code&gt; 속성도 정의합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; MiniCssExtractPlugin &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;mini-css-extract-plugin&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; path &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;path&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;entry&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./src/client/js/main.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;development&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;watch&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// MiniCssExtractPlugin 적용&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;MiniCssExtractPlugin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token comment&quot;&gt;// 이걸 설정해주지 않으면, js 파일명과 똑같은 파일명의 CSS 파일이 생성됨&lt;/span&gt;
+      &lt;span class=&quot;token literal-property property&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;css/styles.css&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;js/[name].js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; path&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;resolve&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;__dirname&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;assets&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;clean&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token literal-property property&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token literal-property property&quot;&gt;rules&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;// 생략...&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;token literal-property property&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token regex&quot;&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token regex-source language-regex&quot;&gt;\.scss$&lt;/span&gt;&lt;span class=&quot;token regex-delimiter&quot;&gt;/&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;token comment&quot;&gt;// MiniCssExtractPlugin 적용&lt;/span&gt;
+        &lt;span class=&quot;token literal-property property&quot;&gt;use&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;MiniCssExtractPlugin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;loader&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;css-loader&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;sass-loader&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이제 &lt;code class=&quot;language-text&quot;&gt;npm run dev:assets&lt;/code&gt;를 실행하면 웹팩이 실행되면서 SCSS를 적용할 수 있게 됩니다.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;watch&lt;/code&gt;를 true로 설정하면 프론트엔드 파일을 수정하고 저장할 때마다 &lt;code class=&quot;language-text&quot;&gt;npm run dev:assets&lt;/code&gt;을 실행시키지 않아도 됩니다.&lt;/p&gt;
+&lt;h2&gt;5. 노드몬 설정 수정하기&lt;/h2&gt;
+&lt;p&gt;위와 같은 과정을 거쳤을 때 예기치 않은 동작이 발생했습니다. &lt;code class=&quot;language-text&quot;&gt;webpack.config.js&lt;/code&gt;파일과 &lt;code class=&quot;language-text&quot;&gt;client&lt;/code&gt; 폴더 안의 &lt;code class=&quot;language-text&quot;&gt;js&lt;/code&gt; 파일과 &lt;code class=&quot;language-text&quot;&gt;scss&lt;/code&gt;파일을 수정할 때도 노드몬이 작동했습니다. 노드몬은 &lt;strong&gt;백엔드 코드를 저장할 때만&lt;/strong&gt; 재시작이 되도록 설정하고 싶었기 때문에, &lt;strong&gt;클라이언트 관련 파일들은 무시&lt;/strong&gt;하도록 설정해줘야 했습니다. 이를 위해서 &lt;code class=&quot;language-text&quot;&gt;nodemon.json&lt;/code&gt; 파일을 생성해야 했는데, 관련 정보를 &lt;a href=&quot;https://github.com/remy/nodemon&quot;&gt;노드몬 깃허브 저장소&lt;/a&gt;에서 발견할 수 있었고, 아래 순서에 따라 파일을 생성하고 작성했습니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;루트 디렉터리에 &lt;code class=&quot;language-text&quot;&gt;nodemon.json&lt;/code&gt;파일을 만들고 아래와 같이 작성합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;{
+  &quot;ignore&quot;: [&quot;webpack.config.js&quot;, &quot;src/client/*&quot;, &quot;assets/*&quot;],
+  &quot;exec&quot;: &quot;babel-node src/init.js&quot;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt;파일의 &lt;code class=&quot;language-text&quot;&gt;scripts&lt;/code&gt;의 &lt;code class=&quot;language-text&quot;&gt;dev:server&lt;/code&gt; 속성을 아래와 같이 수정합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;&quot;scripts&quot;: {
+    &quot;dev:server&quot;: &quot;nodemon&quot;,
+    &quot;dev:assets&quot;: &quot;webpack&quot;
+},&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;6. 환경 구축 후 폴더 경로의 변화&lt;/h2&gt;
+&lt;p&gt;이렇게 개발 환경을 구축했더니 아래와 같은 폴더 구조가 나왔습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;├─ src
+│  ├─ client
+│  │  ├─ js
+│  │  │   ├── components # Component Class를 확장시킨 컴포넌트 파일
+│  │  │   ├── core 
+│  │  │   │    └─ Component.js # Component Class 파일
+│  │  │   ├── utils # 유틸 함수
+│  │  │   └── main.js
+│  │  └─ scss
+│  │     ├─ _variables.scss
+│  │     └─ styles.scss
+│  ├─ server.js
+│  └─ views
+│     └─ layout.pug
+├─ node_modules
+├─ babel.config.json # 바벨 설정 파일
+├─ nodemon.json # 노드몬 설정 파일
+├─ package-lock.json
+├─ package.json
+├─ webpack.config.js # 웹팩 설정 파일
+├─ README.md
+└─ .gitignore&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 개발 환경 설정까지 예광탄을 던져봤습니다. 그 다음으로 걱정되는 부분은 &lt;strong&gt;DB 연결&lt;/strong&gt;이었기에 그 부분으로 또다시 예광탄을 던졌습니다. DB 연결에 대한 내용은 &lt;a href=&quot;https://ha-il.github.io/side-project/project-pixel/3-boiler-plate&quot;&gt;다음 포스팅&lt;/a&gt;에서 이어가겠습니다.&lt;/p&gt;
+&lt;h2&gt;참고자료&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Babel Setup: &lt;a href=&quot;https://babeljs.io/setup#installation&quot;&gt;https://babeljs.io/setup#installation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Nodenon github repository: &lt;a href=&quot;https://github.com/remy/nodemon&quot;&gt;https://github.com/remy/nodemon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Why webpack: &lt;a href=&quot;https://webpack.kr/concepts/why-webpack/&quot;&gt;https://webpack.kr/concepts/why-webpack/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Webpack Getting Started: &lt;a href=&quot;https://webpack.js.org/guides/getting-started/#npm-scripts&quot;&gt;https://webpack.js.org/guides/getting-started/#npm-scripts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;sass-loader: &lt;a href=&quot;https://github.com/webpack-contrib/sass-loader&quot;&gt;https://github.com/webpack-contrib/sass-loader&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;css-loader: &lt;a href=&quot;https://webpack.js.org/loaders/css-loader/&quot;&gt;https://webpack.js.org/loaders/css-loader/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;style-loader: &lt;a href=&quot;https://webpack.js.org/loaders/style-loader/&quot;&gt;https://webpack.js.org/loaders/style-loader/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MiniCssExtractPlugin: &lt;a href=&quot;https://webpack.js.org/plugins/mini-css-extract-plugin/&quot;&gt;https://webpack.js.org/plugins/mini-css-extract-plugin/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[[당신의 작업실] 2. SPA 프로토타입 제작과 프로젝트로의 적용]]></title><description><![CDATA[당신의 작업실 프로젝트 링크: https://pixel-workroom.herokuapp.com/ 프로젝트 깃허브 저장소 링크 : https://github.com/ha-il/project-pixel…]]></description><link>https://ha-il.github.io/side-project/project-pixel/2-prototype/</link><guid isPermaLink="false">https://ha-il.github.io/side-project/project-pixel/2-prototype/</guid><pubDate>Tue, 13 Jun 2023 12:20:02 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;당신의 작업실 프로젝트 링크&lt;/strong&gt;: &lt;a href=&quot;https://pixel-workroom.herokuapp.com/&quot;&gt;https://pixel-workroom.herokuapp.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;프로젝트 깃허브 저장소 링크&lt;/strong&gt; : &lt;a href=&quot;https://github.com/ha-il/project-pixel&quot;&gt;https://github.com/ha-il/project-pixel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;프로젝트 본격 시작! 그런데 뭐부터..?&lt;/h2&gt;
+&lt;p&gt;일단 기획을 해야겠다는 생각이 들었지만, 제 개발 능력에 대한 걱정이 많이 들었습니다. Express와 Pug를 이용해서 서버 측에서 렌더링되는 웹 사이트를 만들어본 적은 있었지만, 바닐라 자바스크립트만으로 클라이언트 측에서 모두 렌더링되도록, 게다가 SPA 로 구현해본적은 없었기 때문입니다. 이런 &lt;strong&gt;프로젝트 개발 전반에 대한 노하우&lt;/strong&gt;는 대체 어디서 얻을 수 있을까 고민하다가 발견한 책이 &apos;&lt;strong&gt;실용주의 프로그래머&lt;/strong&gt;&apos;였습니다. 책 내용 중에 &quot;&lt;strong&gt;목표물을 찾기 위해 예광탄을 써라.&lt;/strong&gt;&quot;라는 팁이 있습니다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;이런 상황에서의 &lt;strong&gt;전형적인 반응&lt;/strong&gt;은 &lt;strong&gt;시스템을 극도로 세세히 명세화&lt;/strong&gt;하는 것이다. 모든 불확실한 점을 잡아매고, 환경 조건을 제약하고, 모든 요구사항을 일일이 항목으로 만들어서 몇 상자나 되는 명세서를 만든다. 그리고 목표물의 위치를 추측해서 총을 쏜다. 상당한 양의 계산을 우선 하고 나서, 그다음엔 발사하고, 맞기를 바라는 것이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;하지만 실용주의 프로그래머는 소프트웨어판 예광탄을 선호한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;예광탄이 효과적인 까닭은 일반 탄환과 동일한 환경 및 제약 조건에서 발사되기 때문이다. 탄환이 순식간에 목표물에 도달하기 때문에 기관총 사수는 &lt;strong&gt;즉각적인 피드백&lt;/strong&gt;을 얻을 수 있다. 실용적인 관점에서 봐도 &lt;strong&gt;예광탄은 상대적으로 비용이 적게 드는 방법&lt;/strong&gt;이다.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;코딩에서 동일한 효과를 얻으려면 우리를 요구 사항으로부터 최종 시스템의 일부 측면까지 빨리, 눈에 보이게, 반복적으로 도달하게 해 줄 무언가를 찾아야 한다.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;시스템을 정의하는 &lt;strong&gt;중요한 요구 사항&lt;/strong&gt;을 찾아라. 의문이 드는 부분이나 &lt;strong&gt;가장 위험이 커 보이는 곳&lt;/strong&gt;을 찾아라. &lt;strong&gt;이런 부분의 코드를 가장 먼저 작성하도록 개발 우선순위를 정하라.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;#x3C;실용주의 프로그래머 72p-73p&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;책에서 언급하는 &apos;&lt;strong&gt;전형적인 반응&lt;/strong&gt;&apos;을 저도 보일 뻔 했습니다. 일단 기획을 하고, 요구사항을 최대한 자세히 명세한 다음, 명세에 맞게 순서대로 작업을 하면 될 것이라는 낙관적인 생각을 했었습니다. 하지만 실용주의 프로그래머를 읽고 저도 저만의 &lt;strong&gt;예광탄&lt;/strong&gt;을 던져보기로 했습니다.&lt;/p&gt;
+&lt;p&gt;이 프로젝트에 가장 중요한 요구사항은 당연히 &lt;strong&gt;뮤직 플레이어&lt;/strong&gt;고, 사용자가 웹 사이트 내에서 &lt;strong&gt;페이지를 전환하더라도 음악이 끊기지 않는 것&lt;/strong&gt;이 가장 중요했습니다. 그것을 위해서는 페이지 전환 간의 새로고침이 발생하지 않는 &lt;strong&gt;SPA 구현&lt;/strong&gt;이 너무나 중요했습니다. 바닐라 자바스크립트로 SPA를 구현하는 것은 개인 능력 향상의 주요 목표이기도 했지만, 프로젝트의 중요 요구사항이기도 했습니다.&lt;/p&gt;
+&lt;p&gt;다른 기능은 다 제쳐두고 일단 작은 프로토타입을 만들어서 페이지 이동 간에 새로고침이 발생하지 않도록 구현할 수 있는지 확인해보고, 프로토타입을 성공적으로 만들었다면 프로토타입의 코드를 저만의 예광탄으로 만들어서 제 프로젝트에 던져보기로 했습니다.&lt;/p&gt;
+&lt;h2&gt;1. 바닐라 자바스크립트로 SPA를 구현하기 위한 프로토타입 제작&lt;/h2&gt;
+&lt;p&gt;프로토타입을 제작할 당시 제가 정했던 세 가지 목표가 있습니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;핵심이 되는 &lt;strong&gt;컴포넌트 클래스&lt;/strong&gt;를 만들고, 그것을 기반으로 다른 컴포넌트를 확장시킬 것.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;화면 전환시에 &lt;strong&gt;새로고침이 발생하지 않도록&lt;/strong&gt; 구현할 것.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;새로고침 없이 전환되더라도 &lt;strong&gt;경로는 바뀌도록&lt;/strong&gt; 구현할 것.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;1.1 프로토타입에서 컴포넌트 클래스 만들기&lt;/h3&gt;
+&lt;p&gt;첫번째 목표인 &lt;strong&gt;컴포넌트 클래스 생성&lt;/strong&gt;은 개발자 황준일님이 블로그에 작성하신 &lt;a href=&quot;https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Component/&quot;&gt;Vanilla Javascript로 웹 컴포넌트 만들기&lt;/a&gt;에 나온 코드를 참고했습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  state&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  router&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;$target&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;$target &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; $target&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setEvent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;addComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;setEvent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;$target&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;innerHTML &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;newState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;newState &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; Component&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;1.2 화면 전환 시 새로고침 없이 경로 변경하기&lt;/h2&gt;
+&lt;p&gt;두번째 세번째 목표인 &apos;&lt;strong&gt;화면 전환 시 새로고침 없이 경로 변경하기&lt;/strong&gt;&apos;를 구현한 코드는 아래와 같습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; About &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./components/About.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Contact &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./components/Contact.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Home &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./components/Home.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Navigation &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./components/Navigation.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Component &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./core/Component.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; $ &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./utils/dom.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;// Component 클래스를 기반으로 확장&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// 각 라우터에 컴포넌트를 할당&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;router &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token string-property property&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Home&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token string-property property&quot;&gt;&quot;/about&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; About&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;token string-property property&quot;&gt;&quot;/contact&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; Contact&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;
+      &amp;lt;header&gt;헤더&amp;lt;/header&gt;
+      &amp;lt;main&gt;메인&amp;lt;/main&gt;
+      &amp;lt;footer&gt;2023 하일&amp;lt;/footer&gt;
+    &lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;addComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// App 컴포넌트 하위에 Navigation과 Home 컴포넌트 렌더링&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Navigation&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;header&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Home&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;setEvent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// 새로고침이 발생할 경우 새로고침이 발생한 경로에 맞는 컴포넌트를 렌더링&lt;/span&gt;
+    window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;popstate&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; path &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;location&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pathname&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; pageComponent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;router&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;path&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;pageComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;// a태그를 클릭하면 새로고침 없이 경로를 변경하고 경로에 맞는 컴포넌트를 렌더링&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; links &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; document&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;querySelectorAll&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;a[href]&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    links&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;link&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      link&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;click&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        event&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; path &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; link&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;pathname&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        window&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;history&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;pushState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; path&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; pageComponent &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;router&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;path&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;pageComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;main&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;#app&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위 코드를 실행시키면 아래 이미지처럼 동작합니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/ha-il/project-pixel/assets/108077643/389f1b91-bb9f-4fc6-bdf3-90ce5ecbc1c8&quot; alt=&quot;proto-spa&quot;&gt;&lt;/p&gt;
+&lt;p&gt;a 태그를 클릭하는데 &lt;strong&gt;새로고침이 발생하지 않고&lt;/strong&gt;, 각 링크에 맞게 &lt;strong&gt;경로도 확실히 변경&lt;/strong&gt;되는 것을 확인할 수 있습니다.&lt;/p&gt;
+&lt;h3&gt;1.3 프로토타입을 프로젝트에 적용하기&lt;/h3&gt;
+&lt;p&gt;이렇게 프로토타입을 만들어보니 자바스크립트로 SPA를 구현할 수 있겠다는 확신이 들었습니다. 프로토타입에서 만들어 본 &lt;strong&gt;클래스 컴포넌트를 수정하여 프로젝트에 도입&lt;/strong&gt;하고, 프로토타입의 폴더 구조를 &lt;strong&gt;프로젝트의 폴더 구조에 반영&lt;/strong&gt;했습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;프로젝트&lt;/strong&gt;에 사용한 클래스 컴포넌트&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  state&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  router&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  props&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;$target&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; props&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;$target &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; $target&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;props &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; props&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;initState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;initRouter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;fetchData&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setEvent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;initRouter&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;initState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;addComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;fetchData&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;setEvent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;$target&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;innerHTML &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;addComponent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;newState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;newState &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setEvent&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; Component&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;프로토타입&lt;/strong&gt;의 디렉터리 구조&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;├─ index.html
+├─ index.md
+├─ src
+│  ├─ components
+│  │  ├─ About.js
+│  │  ├─ Contact.js
+│  │  ├─ Home.js
+│  │  └─ Navigation.js
+│  ├─ core
+│  │  └─ Component.js
+│  ├─ index.js
+│  └─ utils
+│     └─ dom.js
+└─ style.css&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;프로젝트&lt;/strong&gt;의 디렉터리 구조(프로토타입의 디렉터리 구조를 반영)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;├─ src
+│  ├─ client
+│  │  ├─ js
+│  │  │   ├── components # Component Class를 확장시킨 컴포넌트 파일
+│  │  │   ├── core 
+│  │  │   │    └─ Component.js # Component Class 파일
+│  │  │   ├── utils # 유틸 함수
+│  │  │   └── main.js
+│  │  └─ scss
+│  │     ├─ _variables.scss
+│  │     └─ styles.scss
+│  ├─ server.js
+│  └─ views
+│     └─ layout.pug
+├─ node_modules
+├─ package-lock.json
+├─ package.json
+├─ README.md
+└─ .gitignore
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;프로토타입을 통해 프로젝트의 초기 보일러 플레이트 세팅을 시작할 수 있었고, 이것은 이 프로젝트에 &lt;strong&gt;예광탄&lt;/strong&gt;을 일단 던졌다는 의미였습니다. SPA구현 다음으로 걱정했던 부분은 Babel이나 Webpack과 같은 &lt;strong&gt;개발 환경&lt;/strong&gt; 설정이었습니다. 그래서 다음으로는 개발 환경 설정 과정으로 예광탄을 던져봤습니다. 이에 대해서는 &lt;a href=&quot;https://ha-il.github.io/side-project/project-pixel/3-boiler-plate&quot;&gt;다음 포스팅&lt;/a&gt;에서 이어가겠습니다.&lt;/p&gt;
+&lt;h2&gt;참고 자료&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Vanilla Javascript로 웹 컴포넌트 만들기 by 황준일 Last Updated: 2023. 2. 14.
+&lt;ul&gt;
+&lt;li&gt;문서 링크: &lt;a href=&quot;https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Component/&quot;&gt;https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Component/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[[당신의 작업실] 1. 프로젝트를 시작하게 된 이유]]></title><description><![CDATA[당신의 작업실 프로젝트 링크: https://pixel-workroom.herokuapp.com/ 프로젝트 깃허브 저장소 링크 : https://github.com/ha-il/project-pixel…]]></description><link>https://ha-il.github.io/side-project/project-pixel/1-motive/</link><guid isPermaLink="false">https://ha-il.github.io/side-project/project-pixel/1-motive/</guid><pubDate>Tue, 13 Jun 2023 12:20:01 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;당신의 작업실 프로젝트 링크&lt;/strong&gt;: &lt;a href=&quot;https://pixel-workroom.herokuapp.com/&quot;&gt;https://pixel-workroom.herokuapp.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;프로젝트 깃허브 저장소 링크&lt;/strong&gt; : &lt;a href=&quot;https://github.com/ha-il/project-pixel&quot;&gt;https://github.com/ha-il/project-pixel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;들어가기 전에&lt;/h2&gt;
+&lt;p&gt;&quot;당신의 작업실&quot; 프로젝트를 제작하게 된 이유를 설명하려면, 먼저 &lt;strong&gt;바닐라 자바스크립트에 집중하게된 계기&lt;/strong&gt;를 먼저 설명드려야할 것 같습니다.&lt;/p&gt;
+&lt;h2&gt;프로그래머스 프론트엔드 데브 매칭&lt;/h2&gt;
+&lt;p&gt;프로그래머스라는 사이트에서 실시하는 &apos;&lt;strong&gt;프론트엔드 데브매칭&lt;/strong&gt;&apos;이라는 채용 프로그램이 있습니다. 해당 프로그램에는 주어진 과제를 &lt;strong&gt;바닐라 자바스크립트&lt;/strong&gt;만으로 구현해서 제출하는 테스트가 포함되어 있습니다. 저는 이 채용 프로그램에 두 번 참여했었는데요. 첫번째 참여가 2022년 하반기 데브매칭이었습니다. 당시 저는 바닐라 자바스크립트로 투두리스트나 &lt;a href=&quot;https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=ko&quot;&gt;모멘텀&lt;/a&gt; 같은 간단한 앱을 만들 수 있는 수준이었고, 리액트도 조금 맛 본 상태였습니다. 그때 저는 첫번째 데브매칭을 준비하기 위해 프로그래머스에서 연습용 과제테스트를 풀어봤는데, 시간은 좀 오래 걸렸지만 문제는 해결할 수 있었습니다.&lt;/p&gt;
+&lt;p&gt;하지만 과제테스트의 &lt;a href=&quot;https://prgms.tistory.com/139&quot;&gt;해설&lt;/a&gt;을 보고 적잖은 충격을 받았습니다. index.js에 모든 코드를 욱여넣었던 저와 달리, 해설의 코드는 생성자 함수를 활용해서 &lt;strong&gt;컴포넌트 단위&lt;/strong&gt;로 파일을 나눠서 코드를 작성하고 있었고 &lt;strong&gt;상태를 기반으로 렌더링&lt;/strong&gt;하고 있었습니다.&lt;/p&gt;
+&lt;p&gt;&quot;&lt;strong&gt;이거 완전 리액트같은데? 바닐라 자바스크립트로도 이렇게 작성할 수 있는 거였어?&lt;/strong&gt;&quot;&lt;/p&gt;
+&lt;p&gt;이런 생각이 들었고, 제가 경험했던 자바스크립트와는 완전히 다른 세계의 자바스크립트 같았습니다. 코드를 따라해보기는 커녕 이해하는 것부터 애를 먹는 상황이었습니다. 그래서, &apos;&lt;strong&gt;모던 자바스크립트 딥 다이브&lt;/strong&gt;&apos;라는 책으로 생성자 함수, 클래스, this 부분을 읽으면서 부족한 개념을 공부하고, 바닐라 자바스크립트로 앱을 작성하는 다양한 자료들을 보면서 스스로 공부해나가기 시작했습니다.&lt;/p&gt;
+&lt;h2&gt;줌인터넷의 기술 블로그&lt;/h2&gt;
+&lt;p&gt;그때 발견한 자료 중에서 개발자 황준일님이 블로그에 작성하신 &lt;a href=&quot;https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Component/&quot;&gt;Vanilla Javascript로 웹 컴포넌트 만들기&lt;/a&gt;라는 글이 정말 많이 도움이 되었고, 황준일님이 작성하신 다른 글들을 읽다보니 줌인터넷 기술블로그에 있는 &lt;a href=&quot;https://zuminternet.github.io/zum-front-recurit-review/&quot;&gt;주니어 프론트엔드 개발자의 채용 프로세스 참여 후기&lt;/a&gt;라는 글을 발견하게 됐습니다.&lt;/p&gt;
+&lt;p&gt;해당 글의 채용과제와 심사표를 보고 처음 들었던 생각은 &quot;실력있는 개발자는 바닐라 자바스크립트로 이렇게까지 구현할 수 있구나&quot; 였습니다. 그런 생각을 하고나니 &quot;&lt;strong&gt;심사표를 참고해서 나도 바닐라 자바스크립트만으로 프로젝트를 한 번 만들어보고 싶다&lt;/strong&gt;&quot;라는 생각이 들면서 도전 의식이 솟아나기 시작했습니다.&lt;/p&gt;
+&lt;h2&gt;노마드코더의 멜론 클론코딩 컨텐스트&lt;/h2&gt;
+&lt;p&gt;그때 마침 노마드코더라는 사이트에서 &lt;strong&gt;바닐라 자바스크립트로만&lt;/strong&gt; 앱을 구현해야 하는 &lt;strong&gt;&lt;a href=&quot;https://nomadcoders.co/melon-contest&quot;&gt;멜론 클론코딩 컨테스트 2기&lt;/a&gt;&lt;/strong&gt; 모집이 시작됐습니다. 어차피 바닐라 자바스크립트로 프로젝트를 만들어보려던 참이라, 이 컨테스트에 참가해보자라는 생각이 들었습니다.&lt;/p&gt;
+&lt;p&gt;멜론 클론코딩 컨테스트는 멜론 뮤직플레이어를 참고해서 클론 코딩해도 되지만, 필수 구현 기능만 포함된다면 굳이 &lt;strong&gt;멜론 뮤직플레이어를 클론코딩하지 않아도 되는&lt;/strong&gt; 컨테스트였습니다. &lt;strong&gt;웹 뮤직 플레이어를 스스로 만들어서 제출&lt;/strong&gt;하되, 필수 구현 기능으로 &quot;&lt;strong&gt;뮤직 플레이어&lt;/strong&gt;&quot;, &quot;&lt;strong&gt;인기곡 차트&lt;/strong&gt;&quot;, &quot;&lt;strong&gt;플레이리스트&lt;/strong&gt;&quot;가 반드시 포함되어야 했습니다. 기술 스택은 프론트엔드의 경우 &lt;strong&gt;HTML&lt;/strong&gt;, &lt;strong&gt;CSS&lt;/strong&gt;(설정이 가능하다면 &lt;strong&gt;SCSS&lt;/strong&gt; 허용), &lt;strong&gt;바닐라 자바스크립트&lt;/strong&gt;로 제한하고, 백엔드의 경우 &lt;strong&gt;Express.js&lt;/strong&gt;로 제한하는 조건이 있었습니다.&lt;/p&gt;
+&lt;h2&gt;그래서 &quot;당신의 작업실&quot;이라는 프로젝트를 시작하게된 이유는...&lt;/h2&gt;
+&lt;p&gt;이렇게 &lt;strong&gt;바닐라 자바스크립트로 컴포넌트 기반 설계&lt;/strong&gt;를 하는 것과 &lt;strong&gt;SPA를 구현하는 것&lt;/strong&gt;에 관심이 생겨 공부를 하다가, 우연히 바닐라 자바스크립트만으로 기술 스택을 제한하는 개인 프로젝트 컨테스트가 열리게 되어서 이 프로젝트를 시작하게 되었습니다.&lt;/p&gt;
+&lt;p&gt;프로젝트를 시작하게 되면 보통 기획을 먼저 하는데, 이번 프로젝트는 제가 컴포넌트 기반 설계와 SPA를 구현할 수 있는지 없는지가 중요하기 때문에 먼저 작은 &lt;strong&gt;프로토타입&lt;/strong&gt;을 만들어보기로 했습니다. 프로토타입에 대한 내용은 &lt;a href=&quot;https://ha-il.github.io/side-project/project-pixel/2-prototype&quot;&gt;다음 포스팅&lt;/a&gt;에서 이어가겠습니다.&lt;/p&gt;
+&lt;h2&gt;당시 참고했던 자료&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Component/&quot;&gt;Vanilla Javascript로 웹 컴포넌트 만들기 by 황준일&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://zuminternet.github.io/zum-front-recurit-review/&quot;&gt;주니어 프론트엔드 개발자의 채용 프로세스 참여 후기 by 황준일&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.udemy.com/course/vanilla-js-lv1/&quot;&gt;☕ 블랙커피 Vanilla JS Lv1. 문벅스 카페 메뉴 앱 만들기 by Maker Jun&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;모던 자바스크립트 Deep Dive: 자바스크립트의 기본 개념과 동작 원리 by 이웅모 &lt;a href=&quot;https://product.kyobobook.co.kr/detail/S000001766445&quot;&gt;도서 구매 링크&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;실용주의 프로그래머: Pragmatic Programmer by David Thomas, Andrew Hunt &lt;a href=&quot;https://product.kyobobook.co.kr/detail/S000001033128&quot;&gt;도서 구매 링크&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[정규 표현식 배워서 프로젝트에 적용하기]]></title><description><![CDATA[정규 표현식 왜 배웁니까? 노마드코더라는 사이트에서 진행하는 콘테스트에 제출할 목적으로 당신의 작업실이라는 웹 뮤직 플레이어를 개인 프로젝트로 제작한 적이 있습니다. 유저가 유튜브 URL을 입력하면 해당 URL의 영상 정보를 유튜브 API…]]></description><link>https://ha-il.github.io/regexp/</link><guid isPermaLink="false">https://ha-il.github.io/regexp/</guid><pubDate>Wed, 07 Jun 2023 14:13:00 GMT</pubDate><content:encoded>&lt;h2&gt;정규 표현식 왜 배웁니까?&lt;/h2&gt;
 &lt;p&gt;노마드코더라는 사이트에서 진행하는 콘테스트에 제출할 목적으로 &lt;a href=&quot;https://pixel-workroom.herokuapp.com/&quot;&gt;당신의 작업실&lt;/a&gt;이라는 웹 뮤직 플레이어를 개인 프로젝트로 제작한 적이 있습니다.&lt;/p&gt;
 &lt;p&gt;유저가 유튜브 URL을 입력하면 해당 URL의 영상 정보를 유튜브 API를 통해 받아와서 그 정보를 유저에게 보여주고,&lt;/p&gt;
 &lt;p&gt;유저가 원한다면 제목을 수정해서 데이터베이스에 음악을 등록할 수 있는 기능이 있습니다.&lt;/p&gt;
