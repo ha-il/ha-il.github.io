@@ -102,6 +102,12 @@ const BlogIndex = ({ data, location }) => {
                   alt="category-image"
                 />
               ) : null}
+              {category === "Project" ? (
+                <StaticImage
+                  src="../images/category/Project.png"
+                  alt="category-image"
+                />
+              ) : null}
               <span>{category}</span>
             </li>
           )
