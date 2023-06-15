@@ -1,4 +1,96 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[하일의 작업실]]></description><link>https://ha-il.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 14 Jun 2023 13:45:24 GMT</lastBuildDate><item><title><![CDATA[[당신의 작업실] 3. 개발 환경 구축하기]]></title><description><![CDATA[당신의 작업실 프로젝트 링크: https://pixel-workroom.herokuapp.com/ 프로젝트 깃허브 저장소 링크 : https://github.com/ha-il/project-pixel…]]></description><link>https://ha-il.github.io/side-project/project-pixel/3-boiler-plate/</link><guid isPermaLink="false">https://ha-il.github.io/side-project/project-pixel/3-boiler-plate/</guid><pubDate>Tue, 13 Jun 2023 12:20:03 GMT</pubDate><content:encoded>&lt;ul&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[하일의 작업실]]></description><link>https://ha-il.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 15 Jun 2023 09:01:40 GMT</lastBuildDate><item><title><![CDATA[[당신의 작업실] 4. 데이터베이스 연결]]></title><description><![CDATA[당신의 작업실 프로젝트 링크: https://pixel-workroom.herokuapp.com/ 프로젝트 깃허브 저장소 링크 : https://github.com/ha-il/project-pixel…]]></description><link>https://ha-il.github.io/side-project/project-pixel/4-dataBase/</link><guid isPermaLink="false">https://ha-il.github.io/side-project/project-pixel/4-dataBase/</guid><pubDate>Tue, 13 Jun 2023 12:20:04 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;li&gt;당신의 작업실 프로젝트 링크: &lt;a href=&quot;https://pixel-workroom.herokuapp.com/&quot;&gt;https://pixel-workroom.herokuapp.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;프로젝트 깃허브 저장소 링크 : &lt;a href=&quot;https://github.com/ha-il/project-pixel&quot;&gt;https://github.com/ha-il/project-pixel&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;들어가기 전에&lt;/h2&gt;
+&lt;p&gt;이번 글은 &lt;a href=&quot;https://ha-il.github.io/side-project/project-pixel/3-boiler-plate/&quot;&gt;이전 글&lt;/a&gt;에서 다뤘던 개발 환경(Webpack, Babel) 설정 이후, 데이터베이스 연결에 대한 내용을 다룹니다.&lt;/p&gt;
+&lt;h2&gt;1. MongoDB 선택 이유&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.mongodb.com/&quot;&gt;MongoDB&lt;/a&gt;는 &lt;strong&gt;문서 기반&lt;/strong&gt;(document-based) 데이터베이스여서, 관계형 데이터베이스와는 다르게 구조화된 테이블이나 스키마를 사용하지 않고 &lt;strong&gt;JSON 형식&lt;/strong&gt;의 문서를 저장하고 쿼리 작업을 할 수 있습니다. 아직 SQL은 다뤄본적이 없지만, JSON 형식에는 익숙한 상태였기 때문에 MongoDB를 데이터베이스로 선택했습니다.&lt;/p&gt;
+&lt;h2&gt;2. MongoDB 설치&lt;/h2&gt;
+&lt;p&gt;MongoDB 설치는 MongoDB 사이트 공식문서의 &lt;a href=&quot;https://www.mongodb.com/docs/manual/installation/&quot;&gt;Install MongoDB&lt;/a&gt;을 참고해서 진행했습니다. 저는 맥OS에서 설치하는 방법을 따랐고 사전에 &lt;a href=&quot;https://brew.sh/index_ko&quot;&gt;Homebrew&lt;/a&gt;가 설치되어 있었습니다. 설치 과정은 아래와 같습니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Xcode 커맨드라인 도구를 설치하기 위해 맥OS 터미널에 아래 명령어를 입력합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;xcode-select --install&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;MongoDB Homebrew 탭을 추가합니다. (탭은 패키지 저장소의 위치를 지정하는 역할을 합니다.)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;brew tap mongodb/brew&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Homebrew와 기존 패키지를 업데이트합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;brew update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;MongoDB Community Edition을 설치합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;brew install mongodb-community@6.0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;5&quot;&gt;
+&lt;li&gt;맥OS 터미널에서 아래 명령어를 입력하고 설치를 확인합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;mongosh&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이때 등장하는 &lt;code class=&quot;language-text&quot;&gt;Connecting to:		mongodb://127.0.0.1:27017/&lt;/code&gt;는 개발환경에서 사용될 &lt;code class=&quot;language-text&quot;&gt;DB_URL&lt;/code&gt;이 됩니다.&lt;/p&gt;
+&lt;h2&gt;3. Mongoose 설치&lt;/h2&gt;
+&lt;p&gt;백엔드로 Node.js를 사용하고, 데이터베이스로 MongoDB를 사용하고 있으므로, &lt;a href=&quot;https://nomadcoders.co/wetube/lectures/2671&quot;&gt;Mongoose&lt;/a&gt;를 사용하는 것이 좋다고 생각했습니다. Mongoose는 &lt;strong&gt;Node.js에서 MongoDB와 상호작용하기 위한&lt;/strong&gt; 객체 모델링 도구입니다. Mongoose를 사용하면 Node.js에서 MongoDB를 조작하기 위한 쿼리 작성과 스키마 기반의 데이터 모델링을 할 수 있습니다. Mongoose 설치 방법은 Mongoose 사이트의 &lt;a href=&quot;https://mongoosejs.com/docs/index.html&quot;&gt;Getting Started&lt;/a&gt;를 참고했으며, 순서는 아래와 같습니다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;mongoose&lt;/code&gt;를 설치합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm install mongoose --save&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;.env&lt;/code&gt; 파일을 생성하고 &lt;code class=&quot;language-text&quot;&gt;DB_URL&lt;/code&gt;을 작성합니다. (my-project 부분은 재량)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;DB_URL=mongodb://127.0.0.1:27017/my-project&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;src&lt;/code&gt; 폴더에 &lt;code class=&quot;language-text&quot;&gt;db.js&lt;/code&gt; 파일을 생성하고 아래와 같이 입력합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// db.js&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; mongoose &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;mongoose&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+mongoose&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;connect&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;process&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;env&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;DB_URL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; db &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; mongoose&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;connection&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+
+db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;error&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;❌ DB Error&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;once&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;open&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;✅ Connected to DB&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;server.js&lt;/code&gt; 파일에 &lt;code class=&quot;language-text&quot;&gt;db.js&lt;/code&gt;을 임포트합니다.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// server.js&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./db.js&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; express &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;express&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;npm run dev:server&lt;/code&gt; 명령어를 실행하면 데이터베이스가 연결됩니다.&lt;/p&gt;
+&lt;h2&gt;4. 데이터베이스 연결 후 폴더 경로의 변화&lt;/h2&gt;
+&lt;p&gt;데이터베이스 연결을 마지막으로 프로젝트의 초기 보일러 플레이트 세팅을 완료했습니다. &lt;a href=&quot;https://github.com/ha-il/project-pixel/tree/09dd9640ad96b99e9ef52168313972a8676c9e52&quot;&gt;(당시 커밋)&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;├─ src
+│  ├─ client
+│  │  ├─ js
+│  │  │   ├── components 
+│  │  │   ├── core 
+│  │  │   │    └─ Component.js 
+│  │  │   ├── utils 
+│  │  │   └── main.js
+│  │  └─ scss
+│  │     ├─ _variables.scss
+│  │     └─ styles.scss
+│  ├─ db.js # MongoDB 연결 파일
+│  ├─ server.js
+│  └─ views
+│     └─ layout.pug
+├─ node_modules
+├─ .gitignore
+├─ README.md
+├─ babel.config.json 
+├─ nodemon.json 
+├─ package-lock.json
+├─ package.json
+└─ webpack.config.js 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 데이터베이스 연결까지 예광탄을 쏴보니, 정말 마치 예광탄의 궤적이 보이는 것처럼 프로젝트의 전반적인 구조가 눈에 보이기 시작했고, 아래와 같이 다음에 해야 할 일들이 자연스럽게 떠올랐습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;`SPA 구현은 확인되었으니, 이제 홈 페이지를 구성하는 주요 컴포넌트들을 작성하면 되겠다.`
+
+`각 컴포넌트에서 서버로 데이터를 요청하려면 서버에서 api router를 설정해야겠다.`
+
+`클라이언트의 요청에 응답하려면 api 경로별로 요청을 처리할 컨트롤러를 만들어야겠다.`&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 예광탄을 하나씩 쏴보면서 프로젝트를 개발할 수 있는 초기 보일러 플레이팅 세팅을 마치고 나니까, 프로젝트 구현에 있어서 &lt;strong&gt;기술적 제약&lt;/strong&gt;이 많이 감소했습니다. &lt;strong&gt;기능을 구현하지 못 할 것을 걱정할 필요 없이&lt;/strong&gt;, 기획과 디자인을 진행할 수 있게 되었습니다. 따라서 &lt;a href=&quot;https://ha-il.github.io/side-project/project-pixel/5-plan-and-design&quot;&gt;다음 글&lt;/a&gt;에서는 이번 프로젝트가 왜 &quot;당신의 작업실&quot;이 되었는지, 그 기획과 디자인에 대해서 이야기해보겠습니다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[당신의 작업실] 3. 개발 환경 구축하기]]></title><description><![CDATA[당신의 작업실 프로젝트 링크: https://pixel-workroom.herokuapp.com/ 프로젝트 깃허브 저장소 링크 : https://github.com/ha-il/project-pixel…]]></description><link>https://ha-il.github.io/side-project/project-pixel/3-boiler-plate/</link><guid isPermaLink="false">https://ha-il.github.io/side-project/project-pixel/3-boiler-plate/</guid><pubDate>Tue, 13 Jun 2023 12:20:03 GMT</pubDate><content:encoded>&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;당신의 작업실 프로젝트 링크&lt;/strong&gt;: &lt;a href=&quot;https://pixel-workroom.herokuapp.com/&quot;&gt;https://pixel-workroom.herokuapp.com/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;프로젝트 깃허브 저장소 링크&lt;/strong&gt; : &lt;a href=&quot;https://github.com/ha-il/project-pixel&quot;&gt;https://github.com/ha-il/project-pixel&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -241,14 +333,15 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 │  └─ views
 │     └─ layout.pug
 ├─ node_modules
+├─ .gitignore
+├─ README.md
 ├─ babel.config.json # 바벨 설정 파일
 ├─ nodemon.json # 노드몬 설정 파일
 ├─ package-lock.json
 ├─ package.json
-├─ webpack.config.js # 웹팩 설정 파일
-├─ README.md
-└─ .gitignore&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;이렇게 개발 환경 설정까지 예광탄을 던져봤습니다. 그 다음으로 걱정되는 부분은 &lt;strong&gt;DB 연결&lt;/strong&gt;이었기에 그 부분으로 또다시 예광탄을 던졌습니다. DB 연결에 대한 내용은 &lt;a href=&quot;https://ha-il.github.io/side-project/project-pixel/3-boiler-plate&quot;&gt;다음 포스팅&lt;/a&gt;에서 이어가겠습니다.&lt;/p&gt;
+└─ webpack.config.js # 웹팩 설정 파일
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 개발 환경 설정까지 예광탄을 쏴봤습니다. 그 다음으로 걱정되는 부분은 &lt;strong&gt;DB 연결&lt;/strong&gt;이었기에 그 부분으로 또다시 예광탄을 쏴봤습니다. DB 연결에 대한 내용은 &lt;a href=&quot;https://ha-il.github.io/side-project/project-pixel/3-boiler-plate&quot;&gt;다음 글&lt;/a&gt;에서 이어가겠습니다.&lt;/p&gt;
 &lt;h2&gt;참고자료&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Babel Setup: &lt;a href=&quot;https://babeljs.io/setup#installation&quot;&gt;https://babeljs.io/setup#installation&lt;/a&gt;&lt;/li&gt;
@@ -273,7 +366,7 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 &lt;p&gt;시스템을 정의하는 &lt;strong&gt;중요한 요구 사항&lt;/strong&gt;을 찾아라. 의문이 드는 부분이나 &lt;strong&gt;가장 위험이 커 보이는 곳&lt;/strong&gt;을 찾아라. &lt;strong&gt;이런 부분의 코드를 가장 먼저 작성하도록 개발 우선순위를 정하라.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&amp;#x3C;실용주의 프로그래머 72p-73p&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;책에서 언급하는 &apos;&lt;strong&gt;전형적인 반응&lt;/strong&gt;&apos;을 저도 보일 뻔 했습니다. 일단 기획을 하고, 요구사항을 최대한 자세히 명세한 다음, 명세에 맞게 순서대로 작업을 하면 될 것이라는 낙관적인 생각을 했었습니다. 하지만 실용주의 프로그래머를 읽고 저도 저만의 &lt;strong&gt;예광탄&lt;/strong&gt;을 던져보기로 했습니다.&lt;/p&gt;
+&lt;p&gt;책에서 언급하는 &apos;&lt;strong&gt;전형적인 반응&lt;/strong&gt;&apos;을 저도 보일 뻔 했습니다. 일단 기획을 하고, 요구사항을 최대한 자세히 명세한 다음, 명세에 맞게 순서대로 작업을 하면 될 것이라는 낙관적인 생각을 했었습니다. 하지만 실용주의 프로그래머를 읽고 저도 저만의 &lt;strong&gt;예광탄&lt;/strong&gt;을 쏴보기로 했습니다.&lt;/p&gt;
 &lt;p&gt;이 프로젝트에 가장 중요한 요구사항은 당연히 &lt;strong&gt;뮤직 플레이어&lt;/strong&gt;고, 사용자가 웹 사이트 내에서 &lt;strong&gt;페이지를 전환하더라도 음악이 끊기지 않는 것&lt;/strong&gt;이 가장 중요했습니다. 그것을 위해서는 페이지 전환 간의 새로고침이 발생하지 않는 &lt;strong&gt;SPA 구현&lt;/strong&gt;이 너무나 중요했습니다. 바닐라 자바스크립트로 SPA를 구현하는 것은 개인 능력 향상의 주요 목표이기도 했지만, 프로젝트의 중요 요구사항이기도 했습니다.&lt;/p&gt;
 &lt;p&gt;다른 기능은 다 제쳐두고 일단 작은 프로토타입을 만들어서 페이지 이동 간에 새로고침이 발생하지 않도록 구현할 수 있는지 확인해보고, 프로토타입을 성공적으로 만들었다면 프로토타입의 코드를 저만의 예광탄으로 만들어서 제 프로젝트에 던져보기로 했습니다.&lt;/p&gt;
 &lt;h2&gt;1. 바닐라 자바스크립트로 SPA를 구현하기 위한 프로토타입 제작&lt;/h2&gt;
@@ -459,7 +552,7 @@ module&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;exports &lt;
 ├─ README.md
 └─ .gitignore
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;프로토타입을 통해 프로젝트의 초기 보일러 플레이트 세팅을 시작할 수 있었고, 이것은 이 프로젝트에 &lt;strong&gt;예광탄&lt;/strong&gt;을 일단 던졌다는 의미였습니다. SPA구현 다음으로 걱정했던 부분은 Babel이나 Webpack과 같은 &lt;strong&gt;개발 환경&lt;/strong&gt; 설정이었습니다. 그래서 다음으로는 개발 환경 설정 과정으로 예광탄을 던져봤습니다. 이에 대해서는 &lt;a href=&quot;https://ha-il.github.io/side-project/project-pixel/3-boiler-plate&quot;&gt;다음 포스팅&lt;/a&gt;에서 이어가겠습니다.&lt;/p&gt;
+&lt;p&gt;프로토타입을 통해 프로젝트의 초기 보일러 플레이트 세팅을 시작할 수 있었고, 이것은 이 프로젝트에 &lt;strong&gt;예광탄&lt;/strong&gt;을 일단 쐈다는 의미였습니다. SPA구현 다음으로 걱정했던 부분은 Babel이나 Webpack과 같은 &lt;strong&gt;개발 환경&lt;/strong&gt; 설정이었습니다. 그래서 다음으로는 개발 환경 설정 과정으로 예광탄을 쏴봤습니다. 이에 대해서는 &lt;a href=&quot;https://ha-il.github.io/side-project/project-pixel/3-boiler-plate&quot;&gt;다음 포스팅&lt;/a&gt;에서 이어가겠습니다.&lt;/p&gt;
 &lt;h2&gt;참고 자료&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Vanilla Javascript로 웹 컴포넌트 만들기 by 황준일 Last Updated: 2023. 2. 14.
