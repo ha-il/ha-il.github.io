@@ -290,7 +290,7 @@ module.exports = {
 
 ```
 
-이렇게 개발 환경 설정까지 예광탄을 쏴봤습니다. 그 다음으로 걱정되는 부분은 **DB 연결**이었기에 그 부분으로 또다시 예광탄을 쏴봤습니다. DB 연결에 대한 내용은 [다음 글](https://ha-il.github.io/side-project/project-pixel/3-boiler-plate)에서 이어가겠습니다.
+이렇게 개발 환경 설정까지 예광탄을 쏴봤습니다. 그 다음으로 걱정되는 부분은 **DB 연결**이었기에 그 부분으로 또다시 예광탄을 쏴봤습니다. DB 연결에 대한 내용은 [다음 글](https://ha-il.github.io/side-project/project-pixel/4-dataBase)에서 이어가겠습니다.
 
 ## 참고자료
 - Babel Setup: [https://babeljs.io/setup#installation](https://babeljs.io/setup#installation)
