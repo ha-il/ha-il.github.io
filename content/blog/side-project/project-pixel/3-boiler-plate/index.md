@@ -1,7 +1,7 @@
 ---
 title: "[당신의 작업실] 3. 개발 환경 구축하기"
 date: "2023-06-13T12:20:03.000Z"
-description: "바벨(Babel), 노드몬(Nodemon), 웹팩(Webpack), SCSS 환경을 구축했습니다."
+description: "바벨(Babel), 노드몬(Nodemon), 웹팩(Webpack), SCSS 환경 구축"
 category: "Project"
 featuredImage: "../../../../../src/images/sideProject-256x256.png"
 mobileImage: "../../../../../src/images/sideProject-512x256x2.png"
@@ -280,16 +280,17 @@ module.exports = {
 │  └─ views
 │     └─ layout.pug
 ├─ node_modules
+├─ .gitignore
+├─ README.md
 ├─ babel.config.json # 바벨 설정 파일
 ├─ nodemon.json # 노드몬 설정 파일
 ├─ package-lock.json
 ├─ package.json
-├─ webpack.config.js # 웹팩 설정 파일
-├─ README.md
-└─ .gitignore
+└─ webpack.config.js # 웹팩 설정 파일
+
 ```
 
-이렇게 개발 환경 설정까지 예광탄을 던져봤습니다. 그 다음으로 걱정되는 부분은 **DB 연결**이었기에 그 부분으로 또다시 예광탄을 던졌습니다. DB 연결에 대한 내용은 [다음 포스팅](https://ha-il.github.io/side-project/project-pixel/3-boiler-plate)에서 이어가겠습니다.
+이렇게 개발 환경 설정까지 예광탄을 쏴봤습니다. 그 다음으로 걱정되는 부분은 **DB 연결**이었기에 그 부분으로 또다시 예광탄을 쏴봤습니다. DB 연결에 대한 내용은 [다음 글](https://ha-il.github.io/side-project/project-pixel/3-boiler-plate)에서 이어가겠습니다.
 
 ## 참고자료
 - Babel Setup: [https://babeljs.io/setup#installation](https://babeljs.io/setup#installation)
