@@ -230,7 +230,7 @@ export default Component;
 └─ .gitignore
 
 ```
-프로토타입을 통해 프로젝트의 초기 보일러 플레이트 세팅을 시작할 수 있었고, 이것은 이 프로젝트에 **예광탄**을 일단 쐈다는 의미였습니다. SPA구현 다음으로 걱정했던 부분은 Babel이나 Webpack과 같은 **개발 환경** 설정이었습니다. 그래서 다음으로는 개발 환경 설정 과정으로 예광탄을 쏴봤습니다. 이에 대해서는 [다음 포스팅](https://ha-il.github.io/side-project/project-pixel/3-boiler-plate)에서 이어가겠습니다.
+프로토타입을 통해 프로젝트의 초기 보일러 플레이트 세팅을 시작할 수 있었고, 이것은 이 프로젝트에 **예광탄**을 일단 쐈다는 의미였습니다. SPA구현 다음으로 걱정했던 부분은 Babel이나 Webpack과 같은 **개발 환경** 설정이었습니다. 그래서 다음으로는 개발 환경 설정 과정으로 예광탄을 쏴봤습니다. 이에 대해서는 [다음 글](https://ha-il.github.io/side-project/project-pixel/3-boiler-plate)에서 이어가겠습니다.
 
 ## 참고 자료
 - Vanilla Javascript로 웹 컴포넌트 만들기 by 황준일 Last Updated: 2023. 2. 14.
