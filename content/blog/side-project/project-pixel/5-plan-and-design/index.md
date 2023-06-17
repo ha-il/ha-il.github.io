@@ -2,7 +2,7 @@
 title: "[당신의 작업실] 5. 프로젝트 기획과 디자인"
 date: "2023-06-13T12:20:05.000Z"
 description: "왜 당신의 작업실이죠?"
-category: "Project"
+category: "project"
 featuredImage: "../../../../../src/images/sideProject-256x256.png"
 mobileImage: "../../../../../src/images/sideProject-512x256x2.png"
 ---

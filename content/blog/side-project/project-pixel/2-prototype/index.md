@@ -2,7 +2,7 @@
 title: "[당신의 작업실] 2. SPA 프로토타입 제작과 프로젝트로의 적용"
 date: "2023-06-13T12:20:02.000Z"
 description: "예광탄 장전 완료"
-category: "Project"
+category: "project"
 featuredImage: "../../../../../src/images/sideProject-256x256.png"
 mobileImage: "../../../../../src/images/sideProject-512x256x2.png"
 ---

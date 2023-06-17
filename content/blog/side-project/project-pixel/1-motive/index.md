@@ -2,7 +2,7 @@
 title: "[당신의 작업실] 1. 프로젝트를 시작하게 된 이유"
 date: "2023-06-13T12:20:01.000Z"
 description: "프로젝트를 제작하게 된 이유"
-category: "Project"
+category: "project"
 featuredImage: "../../../../../src/images/sideProject-256x256.png"
 mobileImage: "../../../../../src/images/sideProject-512x256x2.png"
 ---

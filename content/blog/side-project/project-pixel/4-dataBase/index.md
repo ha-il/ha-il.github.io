@@ -2,7 +2,7 @@
 title: "[당신의 작업실] 4. 데이터베이스 연결"
 date: "2023-06-13T12:20:04.000Z"
 description: "MongoDB 연결과 예광탄의 궤적"
-category: "Project"
+category: "project"
 featuredImage: "../../../../../src/images/sideProject-256x256.png"
 mobileImage: "../../../../../src/images/sideProject-512x256x2.png"
 ---

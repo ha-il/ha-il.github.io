@@ -2,7 +2,7 @@
 title: 정규 표현식 배워서 프로젝트에 적용하기
 date: "2023-06-07T14:13:00.000Z"
 description: "정규 표현식 그거 그냥 검색해서 쓰면 되는 거 아닙니까?"
-category: "JavaScript"
+category: "javascript"
 featuredImage: "../../../src/images/js-256x256.png"
 mobileImage: "../../../src/images/js-512x256x2.png"
 ---

@@ -2,7 +2,7 @@
 title: "This 바인딩은 함수 호출 방식에 따라 결정된다"
 date: "2023-03-28T20:47:00.000Z"
 description: "Uncaught TypeError: this.render is not a function 해결 과정"
-category: "JavaScript"
+category: "javascript"
 featuredImage: "../../../../src/images/js-256x256.png"
 mobileImage: "../../../../src/images/js-512x256x2.png"
 ---

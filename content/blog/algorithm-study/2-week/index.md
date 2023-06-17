@@ -2,7 +2,7 @@
 title: "문제 해결 접근법"
 date: "2023-04-12T17:20:00.000Z"
 description: "문제 해결 접근법 5단계를 문제 풀이에 적용해봤습니다."
-category: "Algorithm"
+category: "algorithm"
 featuredImage: "../../../../src/images/algorithm-256x256.png"
 mobileImage: "../../../../src/images/algorithm-512x256x2.png"
 ---

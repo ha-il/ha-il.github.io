@@ -2,7 +2,7 @@
 title: "[당신의 작업실] 3. 개발 환경 구축하기"
 date: "2023-06-13T12:20:03.000Z"
 description: "바벨(Babel), 노드몬(Nodemon), 웹팩(Webpack), SCSS 환경 구축"
-category: "Project"
+category: "project"
 featuredImage: "../../../../../src/images/sideProject-256x256.png"
 mobileImage: "../../../../../src/images/sideProject-512x256x2.png"
 ---
