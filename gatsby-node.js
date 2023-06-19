@@ -29,7 +29,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     }
   `)
-
+  const resultOfcategory = await graphql(`
+    {
+      allMarkdownRemark {
+        distinct(field: { frontmatter: { category: SELECT } })
+      }
+    }
+  `)
   if (result.errors) {
     reporter.panicOnBuild(
       `There was an error loading your blog posts`,
@@ -37,13 +43,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     )
     return
   }
+  if (resultOfcategory.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your blog resultOfcategory`,
+      resultOfcategory.errors
+    )
+    return
+  }
 
   const posts = result.data.allMarkdownRemark.nodes
+  const categories = resultOfcategory.data.allMarkdownRemark.distinct
 
   // Create blog posts pages
   // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
   // `context` is available in the template as a prop and as a variable in GraphQL
-
+  categories.forEach(category => {
+    createPage({
+      path: `/categories/${category}`,
+      component: path.resolve("./src/pages/categories/[category].js"),
+      context: {
+        category: category,
+      },
+    })
+  })
   if (posts.length > 0) {
     posts.forEach((post, index) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
