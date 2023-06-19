@@ -2,7 +2,7 @@
 title: "[당신의 작업실] 6. 요구사항 명세 과정"
 date: "2023-06-13T12:20:06.000Z"
 description: "사용자의 행동 흐름에 따른 요구사항 명세하기"
-category: "Project"
+category: "project"
 featuredImage: "../../../../../src/images/sideProject-256x256.png"
 mobileImage: "../../../../../src/images/sideProject-512x256x2.png"
 ---
