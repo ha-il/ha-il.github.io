@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[하일의 작업실]]></description><link>https://ha-il.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 16 Jun 2023 13:10:31 GMT</lastBuildDate><item><title><![CDATA[[당신의 작업실] 5. 프로젝트 기획과 디자인]]></title><description><![CDATA[당신의 작업실 프로젝트 링크: https://pixel-workroom.herokuapp.com/ 프로젝트 깃허브 저장소 링크 : https://github.com/ha-il/project-pixel…]]></description><link>https://ha-il.github.io/side-project/project-pixel/5-plan-and-design/</link><guid isPermaLink="false">https://ha-il.github.io/side-project/project-pixel/5-plan-and-design/</guid><pubDate>Tue, 13 Jun 2023 12:20:05 GMT</pubDate><content:encoded>&lt;ul&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[하일의 작업실]]></description><link>https://ha-il.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 19 Jun 2023 06:54:58 GMT</lastBuildDate><item><title><![CDATA[[당신의 작업실] 5. 프로젝트 기획과 디자인]]></title><description><![CDATA[당신의 작업실 프로젝트 링크: https://pixel-workroom.herokuapp.com/ 프로젝트 깃허브 저장소 링크 : https://github.com/ha-il/project-pixel…]]></description><link>https://ha-il.github.io/side-project/project-pixel/5-plan-and-design/</link><guid isPermaLink="false">https://ha-il.github.io/side-project/project-pixel/5-plan-and-design/</guid><pubDate>Tue, 13 Jun 2023 12:20:05 GMT</pubDate><content:encoded>&lt;ul&gt;
 &lt;li&gt;당신의 작업실 프로젝트 링크: &lt;a href=&quot;https://pixel-workroom.herokuapp.com/&quot;&gt;https://pixel-workroom.herokuapp.com/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;프로젝트 깃허브 저장소 링크 : &lt;a href=&quot;https://github.com/ha-il/project-pixel&quot;&gt;https://github.com/ha-il/project-pixel&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -3983,60 +3983,4 @@ Function.prototype.bind
 &lt;ul&gt;
 &lt;li&gt;EventTarget.addEventListener() by MDN Web Docs, accessed March 28, 2023&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;문서 링크: &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#other_notes&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#other_notes&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[마크다운 포스팅 디자인 시스템]]></title><description><![CDATA[이 포스트는 블로그 마크다운 작성과 CSS 작업에 참고하기 위해 작성되었습니다. 1. 헤더 Header 1 제목 Header 2 제목 Header 3 제목 Header 4 제목 Header 5 제목 Header 6 제목 2. 인용문 Lorem…]]></description><link>https://ha-il.github.io/md-style/</link><guid isPermaLink="false">https://ha-il.github.io/md-style/</guid><pubDate>Wed, 15 Mar 2023 08:22:00 GMT</pubDate><content:encoded>&lt;p&gt;이 포스트는 블로그 마크다운 작성과 CSS 작업에 참고하기 위해 작성되었습니다.&lt;/p&gt;
-&lt;h2&gt;1. 헤더&lt;/h2&gt;
-&lt;h1&gt;Header 1 제목&lt;/h1&gt;
-&lt;h2&gt;Header 2 제목&lt;/h2&gt;
-&lt;h3&gt;Header 3 제목&lt;/h3&gt;
-&lt;h4&gt;Header 4 제목&lt;/h4&gt;
-&lt;h5&gt;Header 5 제목&lt;/h5&gt;
-&lt;h6&gt;Header 6 제목&lt;/h6&gt;
-&lt;h2&gt;2. 인용문&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;따뜻한 것은 너의 용감하고 인간에 살 돋고, 있으며, 사막이다. 얼음 사랑의 있는 미묘한 이것이야말로 우리 위하여서, 굳세게 날카로우나 이것이다. 예수는 트고, 청춘의 것은 뛰노는 이것은 듣는다. 이상이 옷을 가치를 이상은 얼마나 피다. 앞이 피고, 황금시대를 모래뿐일 청춘에서만 있을 아니더면, 것이다. 이상 있는 곳이 같이 사는가 굳세게 생의 뜨고, 아름다우냐? 우리 같은 역사를 전인 이상은 청춘이 청춘을 가지에 그림자는 것이다.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;h2&gt;인용문 안에 헤더를 쓸 수 있습니다.&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;목록을 사용하는 것도&lt;/li&gt;
-&lt;li&gt;가능합니다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;이렇게&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;문단을 쓸 수도 있습니다.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;h2&gt;3. 목록(정렬, 비정렬)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Red 빨강&lt;/li&gt;
-&lt;li&gt;Green 초록&lt;/li&gt;
-&lt;li&gt;Blue 파랑&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;코드블록&lt;/code&gt;도 표시할 수 있습니다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;굵은 글씨&lt;/strong&gt;도 표시할 수 있습니다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;1초라도 안 보이면&lt;/li&gt;
-&lt;li&gt;2렇게 초조한데&lt;/li&gt;
-&lt;li&gt;3초는 어떻게 기다려~&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;코드블록&lt;/code&gt;도 표시할 수 있습니다.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;굵은 글씨&lt;/strong&gt;도 표시할 수 있습니다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2&gt;4. 문단&lt;/h2&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;부호 없이 들여쓰면 문단이 됩니다.
-길게 쓸 경우 자동 줄바꿈이 되지 않습니다.
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;5. 링크&lt;/h2&gt;
-&lt;p&gt;이것은 &lt;a href=&quot;https://ha-il.github.io/&quot; title=&quot;설명을 적을 수도 있어요&quot;&gt;예시 링크&lt;/a&gt;입니다.&lt;/p&gt;
-&lt;p&gt;이것은 &lt;a href=&quot;http://example.com&quot; title=&quot;Optional Title&quot;&gt;참조 스타일로 작성된 예시 링크&lt;/a&gt; 입니다.&lt;/p&gt;
-&lt;h2&gt;6. 강조&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;single underscores&lt;/em&gt;
-&lt;em&gt;기울어진 텍스트입니다.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;double asterisks&lt;/strong&gt;
-&lt;strong&gt;강조된 텍스트입니다.&lt;/strong&gt;&lt;/p&gt;
-&lt;h2&gt;7. 코드&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;code&lt;/code&gt; &lt;code class=&quot;language-text&quot;&gt;코드&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Hello, world!&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;8. 이미지&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;https://via.placeholder.com/200x50&quot; alt=&quot;Alt Text&quot; title=&quot;Image Title&quot;&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;p&gt;문서 링크: &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#other_notes&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#other_notes&lt;/a&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
