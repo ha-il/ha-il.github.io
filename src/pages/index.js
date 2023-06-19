@@ -6,29 +6,16 @@ import {
   StaticImage,
   withArtDirection,
 } from "gatsby-plugin-image"
-import { useState } from "react"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
-  const [currentCategory, setCurrentCategory] = useState("전체")
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const categories = data.allMarkdownRemark.distinct
-  const renderPosts = e => {
-    console.log()
-    const list = e.target.closest("li")
-    const category = list.dataset.category
+  const categories = ["project", "javascript", "algorithm"]
 
-    return setCurrentCategory(category)
-  }
-  const posts =
-    currentCategory === "전체"
-      ? data.allMarkdownRemark.nodes
-      : data.allMarkdownRemark.nodes.filter(
-          post => post.frontmatter.category === currentCategory
-        )
+  const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
     return (
@@ -64,51 +51,43 @@ const BlogIndex = ({ data, location }) => {
       </div>
       <h2 className="categories-title">카테고리</h2>
       <ol className="categories-container" style={{ listStyle: `none` }}>
-        <li
-          className="category-container"
-          key="all-posts"
-          onClick={renderPosts}
-          data-category="전체"
-        >
-          <StaticImage
-            src="../images/category/all-post.png"
-            alt="category-image"
-          />
-          <span>all</span>
+        <li className="category-container" key="all-posts" data-category="전체">
+          <Link to={`/`} itemProp="url">
+            <StaticImage
+              src="../images/category/all-post.png"
+              alt="category-image"
+            />
+            <span>all</span>
+          </Link>
         </li>
         {categories.map(category => {
           return (
             <li
               className="category-container"
               key={category}
-              onClick={renderPosts}
               data-category={category}
             >
-              {category === "Algorithm" ? (
-                <StaticImage
-                  src="../images/category/Algorithm.png"
-                  alt="category-image"
-                ></StaticImage>
-              ) : null}
-              {category === "JavaScript" ? (
-                <StaticImage
-                  src="../images/category/JavaScript.png"
-                  alt="category-image"
-                />
-              ) : null}
-              {category === "MarkDown" ? (
-                <StaticImage
-                  src="../images/category/MarkDown.png"
-                  alt="category-image"
-                />
-              ) : null}
-              {category === "Project" ? (
-                <StaticImage
-                  src="../images/category/Project.png"
-                  alt="category-image"
-                />
-              ) : null}
-              <span>{category}</span>
+              <Link to={`/categories/${category}`} itemProp="url">
+                {category === "algorithm" ? (
+                  <StaticImage
+                    src="../images/category/Algorithm.png"
+                    alt="category-image"
+                  ></StaticImage>
+                ) : null}
+                {category === "javascript" ? (
+                  <StaticImage
+                    src="../images/category/JavaScript.png"
+                    alt="category-image"
+                  />
+                ) : null}
+                {category === "project" ? (
+                  <StaticImage
+                    src="../images/category/Project.png"
+                    alt="category-image"
+                  />
+                ) : null}
+                <span>{category}</span>
+              </Link>
             </li>
           )
         })}
