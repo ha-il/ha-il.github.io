@@ -470,6 +470,10 @@ table thead tr th {
   color: var(--code-color-orange);
 }
 
+.gatsby-highlight pre code .literal-property {
+  color: var(--code-color-white);
+}
+
 /* Link */
 
 a {
