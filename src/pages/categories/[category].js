@@ -17,7 +17,6 @@ export default function CategoryPage({ data, location }) {
   const categories = ["project", "javascript", "algorithm"]
   const posts = data.allMarkdownRemark.nodes
 
-  console.log(data.allMarkdownRemark)
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
