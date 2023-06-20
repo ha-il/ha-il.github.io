@@ -366,6 +366,7 @@ table thead tr th {
 .gatsby-highlight .language-javascript,
 .gatsby-highlight .language-js,
 .gatsby-highlight .language-jsx,
+.gatsby-highlight .language-html,
 .gatsby-highlight .language-text {
   text-shadow: none;
   color: var(--code-color-white);
@@ -472,6 +473,18 @@ table thead tr th {
 
 .gatsby-highlight pre code .literal-property {
   color: var(--code-color-white);
+}
+
+.gatsby-highlight pre code .tag {
+  color: var(--code-color-red);
+}
+
+.gatsby-highlight pre code .attr-name {
+  color: var(--code-color-purple);
+}
+
+.gatsby-highlight pre code .attr-value {
+  color: var(--code-color-green);
 }
 
 /* Link */
