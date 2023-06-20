@@ -139,4 +139,4 @@ post /playlists/:playlistId   # 플레이리스트에 음악 추가하기
 
 ## 요구사항 명세를 마치고
 
-요구사항 명세를 마치고나서는 본격적으로 개발 작업에 돌입했습니다. [다음 글](https://ha-il.github.io/side-project/project-pixel/7-develop)에서는 **개발 과정에서 만난 문제와 해결 과정**에 대한 내용을 다루겠습니다.
+요구사항 명세를 마치고나서는 본격적으로 개발 작업에 돌입했습니다. [다음 글](https://ha-il.github.io/side-project/project-pixel/7-dev-cookie)에서는 **개발 과정에서 만난 문제와 해결 과정**에 대한 내용을 다루겠습니다.
