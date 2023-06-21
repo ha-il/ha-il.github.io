@@ -5,10 +5,11 @@
 <li>프로젝트 깃허브 저장소 링크 : <a href="https://github.com/ha-il/project-pixel">https://github.com/ha-il/project-pixel</a></li>
 </ul>
 <h2>들어가기 전에</h2>
-<p>이번 글부터 <a href="https://ha-il.github.io/side-project/project-pixel/8-dev-prop-this">다음 글</a>까지는 개발 과정에서 맞닥뜨렸던 문제들과 그 해결 과정에 대해서 다뤄보겠습니다. 맞닥뜨렸던 문제들이야 어마어마하게 많았지만 그 중에 기억에 남는 것은 <strong>지식 또는 경험의 부족</strong>으로 인해 발생했던 문제들인 것 같습니다. 원인이 오타나 문법 실수가 아니기 때문에 더 답답했던 문제들이 있었는데요. 바로 아래와 같은 문제들이었습니다.</p>
+<p>이번 글부터는 개발 과정에서 맞닥뜨렸던 문제들과 그 해결 과정에 대해서 다뤄보겠습니다. 맞닥뜨렸던 문제들이야 어마어마하게 많았지만 그 중에 기억에 남는 것은 <strong>지식 또는 경험의 부족</strong>으로 인해 발생했던 문제들인 것 같습니다. 원인이 오타나 문법 실수가 아니기 때문에 더 답답했던 문제들이 있었는데요. 바로 아래와 같은 문제들이었습니다.</p>
 <ul>
 <li><strong>쿠키 설정 문제</strong>: express에서 res.local 없이 쿠키 정보를 어떻게 넘기지?</li>
 <li><strong>컴포넌트간 prop(속성) 전달 문제</strong>: 플레이리스트의 곡들을 뮤직플레이어로 어떻게 넘겨서 재생시키지?</li>
+<li><strong>검색 기능의 정규 표현식 사용 문제</strong>: 검색 기능을 더 편리하게 개선할 수는 없을까?</li>
 </ul>
 <p>이번 글에서는 <strong>쿠키 설정 문제</strong>를 어떻게 해결했는지를 중점적으로 다루겠습니다.</p>
 <h2>1. 쿠키 설정 문제</h2>
@@ -214,4 +215,4 @@ isLoggedIn=true; loggedInUser=j:{"_id":"646f1a16e5e2041b6bac11d2","username":"q"
           >
             window.___chunkMapping="{\"app\":[\"/app-2b9b952dc16fb6babe30.js\"],\"component---src-pages-404-js\":[\"/component---src-pages-404-js-6aa41fa1d5bd57cf07bf.js\"],\"component---src-pages-categories-[category]-js\":[\"/component---src-pages-categories-[category]-js-7b200d47266d7f9f3424.js\"],\"component---src-pages-index-js\":[\"/component---src-pages-index-js-fb8964bdfcce398c4ab5.js\"],\"component---src-pages-using-typescript-tsx\":[\"/component---src-pages-using-typescript-tsx-95a43606619aa0ac8ca3.js\"],\"component---src-templates-blog-post-js\":[\"/component---src-templates-blog-post-js-bd564a506eadb221d718.js\"]}";
           </script>
-        <script>window.___webpackCompilationHash="e41787c58d25777a14b4";</script><script src="/webpack-runtime-07eb63b305e1d8f2013c.js" async></script><script src="/framework-0ff3ad83d0d20e5cd061.js" async></script><script src="/app-2b9b952dc16fb6babe30.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
+        <script>window.___webpackCompilationHash="85488d1228638f08fb95";</script><script src="/webpack-runtime-07eb63b305e1d8f2013c.js" async></script><script src="/framework-0ff3ad83d0d20e5cd061.js" async></script><script src="/app-2b9b952dc16fb6babe30.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
