@@ -1,7 +1,7 @@
 ---
 title: "[당신의 작업실] 8. 프로젝트 개발 과정 - prop과 this 바인딩"
 date: "2023-06-20T05:20:08.000Z"
-description: "Express로 쿠키를 설정하고, 클라이언트에 전달했던 경험을 공유합니다."
+description: "컴포넌트간 prop 전달 시 발생하는 this 바인딩 불일치 문제를 해결한 경험을 공유합니다."
 category: "project"
 featuredImage: "../../../../../src/images/sideProject-256x256.png"
 mobileImage: "../../../../../src/images/sideProject-512x256x2.png"
@@ -11,7 +11,7 @@ mobileImage: "../../../../../src/images/sideProject-512x256x2.png"
 
 ## 들어가기 전에 
 
-[이전 글](https://ha-il.github.io/side-project/project-pixel/7-dev-cookie)부터 이번 글까지는 개발 과정에서 맞닥뜨렸던 문제들과 그 해결 과정에 대해서 다루고 있습니다. **쿠키 설정에 대한 문제**는 이전 글에서 다뤘으니, 이번 글에서는 **컴포넌트간 prop(속성) 전달 문제**에 대해서 다루고, 그 문제를 해결하기 위한 **this 바인딩**에 대한 내용도 다루겠습니다.
+[이전 글](https://ha-il.github.io/side-project/project-pixel/7-dev-cookie)부터는 개발 과정에서 맞닥뜨렸던 문제들과 그 해결 과정에 대해서 다루고 있습니다. **쿠키 설정에 대한 문제**는 이전 글에서 다뤘으니, 이번 글에서는 **컴포넌트간 prop(속성) 전달 문제**에 대해서 다루고, 그 문제를 해결하기 위한 **this 바인딩**에 대한 내용도 다루겠습니다.
 
 ## 1. 컴포넌트간 prop(속성) 전달 문제
 
@@ -348,15 +348,7 @@ class MusicPlayer extends Component {
   - accessed June 20
   - [문서 링크](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules)
 
-
 - iframe 삽입에 대한 YouTube Player API 참조 문서
   - by Google Developers
   - accessed June 20
   - [문서 링크](https://developers.google.com/youtube/iframe_api_reference?hl=ko)
-
-
-
-(출처: 모던 자바스크립트 Deep Dive, 357p)
-<모던 자바스크립트 Deep Dive, 480p>
-
-
