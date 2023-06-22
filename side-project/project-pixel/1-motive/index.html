@@ -10,23 +10,47 @@
 <p>프로그래머스라는 사이트에서 실시하는 '<strong>프론트엔드 데브매칭</strong>'이라는 채용 프로그램이 있습니다. 해당 프로그램에는 주어진 과제를 <strong>바닐라 자바스크립트</strong>만으로 구현해서 제출하는 테스트가 포함되어 있습니다. 저는 이 채용 프로그램에 두 번 참여했었는데요. 첫번째 참여가 2022년 하반기 데브매칭이었습니다. 당시 저는 바닐라 자바스크립트로 투두리스트나 <a href="https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=ko">모멘텀</a> 같은 간단한 앱을 만들 수 있는 수준이었고, 리액트도 조금 맛 본 상태였습니다. 그때 저는 첫번째 데브매칭을 준비하기 위해 프로그래머스에서 연습용 과제테스트를 풀어봤는데, 시간은 좀 오래 걸렸지만 문제는 해결할 수 있었습니다.</p>
 <p>하지만 과제테스트의 <a href="https://prgms.tistory.com/139">해설</a>을 보고 적잖은 충격을 받았습니다. index.js에 모든 코드를 욱여넣었던 저와 달리, 해설의 코드는 생성자 함수를 활용해서 <strong>컴포넌트 단위</strong>로 파일을 나눠서 코드를 작성하고 있었고 <strong>상태를 기반으로 렌더링</strong>하고 있었습니다.</p>
 <p>"<strong>이거 완전 리액트같은데? 바닐라 자바스크립트로도 이렇게 작성할 수 있는 거였어?</strong>"</p>
-<p>이런 생각이 들었고, 제가 경험했던 자바스크립트와는 완전히 다른 세계의 자바스크립트 같았습니다. 코드를 따라해보기는 커녕 이해하는 것부터 애를 먹는 상황이었습니다. 그래서, '<strong>모던 자바스크립트 딥 다이브</strong>'라는 책으로 생성자 함수, 클래스, this 부분을 읽으면서 부족한 개념을 공부하고, 바닐라 자바스크립트로 앱을 작성하는 다양한 자료들을 보면서 스스로 공부해나가기 시작했습니다.</p>
+<p>제가 경험했던 자바스크립트와는 완전히 다른 세계의 자바스크립트 같았습니다. 코드를 따라해보기는 커녕 이해하는 것부터 애를 먹는 상황이었습니다. 그래서, '<strong>모던 자바스크립트 딥 다이브</strong>'라는 책으로 생성자 함수, 클래스, this 부분을 읽으면서 부족한 개념을 공부하고, 바닐라 자바스크립트로 앱을 작성하는 다양한 자료들을 보면서 스스로 공부해나가기 시작했습니다.</p>
 <h2>줌인터넷의 기술 블로그</h2>
 <p>그때 발견한 자료 중에서 개발자 황준일님이 블로그에 작성하신 <a href="https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Component/">Vanilla Javascript로 웹 컴포넌트 만들기</a>라는 글이 정말 많이 도움이 되었고, 황준일님이 작성하신 다른 글들을 읽다보니 줌인터넷 기술블로그에 있는 <a href="https://zuminternet.github.io/zum-front-recurit-review/">주니어 프론트엔드 개발자의 채용 프로세스 참여 후기</a>라는 글을 발견하게 됐습니다.</p>
-<p>해당 글의 채용과제와 심사표를 보고 처음 들었던 생각은 "실력있는 개발자는 바닐라 자바스크립트로 이렇게까지 구현할 수 있구나" 였습니다. 그런 생각을 하고나니 "<strong>심사표를 참고해서 나도 바닐라 자바스크립트만으로 프로젝트를 한 번 만들어보고 싶다</strong>"라는 생각이 들면서 도전 의식이 솟아나기 시작했습니다.</p>
+<p>해당 글의 채용과제와 심사표를 보고 "실력있는 개발자는 바닐라 자바스크립트로 이렇게까지 구현할 수 있구나"라는 생각이 들었습니다. 그리고 "<strong>심사표를 참고해서 나도 바닐라 자바스크립트만으로 SPA를 구현해보고 싶다</strong>"라는 생각이 들면서 도전 의식이 솟아나기 시작했습니다.</p>
 <h2>노마드코더의 멜론 클론코딩 컨텐스트</h2>
 <p>그때 마침 노마드코더라는 사이트에서 <strong>바닐라 자바스크립트로만</strong> 앱을 구현해야 하는 <strong><a href="https://nomadcoders.co/melon-contest">멜론 클론코딩 컨테스트 2기</a></strong> 모집이 시작됐습니다. 어차피 바닐라 자바스크립트로 프로젝트를 만들어보려던 참이라, 이 컨테스트에 참가해보자라는 생각이 들었습니다.</p>
-<p>멜론 클론코딩 컨테스트는 멜론 뮤직플레이어를 참고해서 클론 코딩해도 되지만, 필수 구현 기능만 포함된다면 굳이 <strong>멜론 뮤직플레이어를 클론코딩하지 않아도 되는</strong> 컨테스트였습니다. <strong>웹 뮤직 플레이어를 스스로 만들어서 제출</strong>하되, 필수 구현 기능으로 "<strong>뮤직 플레이어</strong>", "<strong>인기곡 차트</strong>", "<strong>플레이리스트</strong>"가 반드시 포함되어야 했습니다. 기술 스택은 프론트엔드의 경우 <strong>HTML</strong>, <strong>CSS</strong>(설정이 가능하다면 <strong>SCSS</strong> 허용), <strong>바닐라 자바스크립트</strong>로 제한하고, 백엔드의 경우 <strong>Express.js</strong>로 제한하는 조건이 있었습니다.</p>
+<p>멜론 클론코딩 컨테스트는 멜론 뮤직플레이어를 참고해서 클론 코딩해도 되지만, 필수 구현 기능만 포함된다면 굳이 <strong>멜론 뮤직플레이어를 클론코딩하지 않아도 되는</strong> 컨테스트였습니다. <strong>웹 뮤직 플레이어를 스스로 만들어서 제출</strong>하되, 필수 구현 기능으로 "<strong>뮤직 플레이어</strong>", "<strong>인기곡 차트</strong>", "<strong>플레이리스트</strong>"가 반드시 포함되어야 했습니다. 기술 스택은 프론트엔드의 경우 <code class="language-text">HTML</code>, <code class="language-text">CSS</code>(설정이 가능하다면 <code class="language-text">SCSS</code> 허용), <code class="language-text">바닐라 자바스크립트</code>로 제한하고, 백엔드의 경우 <code class="language-text">Express.js</code>로 제한하는 조건이 있었습니다.</p>
 <h2>그래서 "당신의 작업실"이라는 프로젝트를 시작하게된 이유는...</h2>
 <p>이렇게 <strong>바닐라 자바스크립트로 컴포넌트 기반 설계</strong>를 하는 것과 <strong>SPA를 구현하는 것</strong>에 관심이 생겨 공부를 하다가, 우연히 바닐라 자바스크립트만으로 기술 스택을 제한하는 개인 프로젝트 컨테스트가 열리게 되어서 이 프로젝트를 시작하게 되었습니다.</p>
 <p>프로젝트를 시작하게 되면 보통 기획을 먼저 하는데, 이번 프로젝트는 제가 컴포넌트 기반 설계와 SPA를 구현할 수 있는지 없는지가 중요하기 때문에 먼저 작은 <strong>프로토타입</strong>을 만들어보기로 했습니다. 프로토타입에 대한 내용은 <a href="https://ha-il.github.io/side-project/project-pixel/2-prototype">다음 글</a>에서 이어가겠습니다.</p>
 <h2>당시 참고했던 자료</h2>
 <ul>
-<li><a href="https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Component/">Vanilla Javascript로 웹 컴포넌트 만들기 by 황준일</a></li>
-<li><a href="https://zuminternet.github.io/zum-front-recurit-review/">주니어 프론트엔드 개발자의 채용 프로세스 참여 후기 by 황준일</a></li>
-<li><a href="https://www.udemy.com/course/vanilla-js-lv1/">☕ 블랙커피 Vanilla JS Lv1. 문벅스 카페 메뉴 앱 만들기 by Maker Jun</a></li>
-<li>모던 자바스크립트 Deep Dive: 자바스크립트의 기본 개념과 동작 원리 by 이웅모 <a href="https://product.kyobobook.co.kr/detail/S000001766445">도서 구매 링크</a></li>
-<li>실용주의 프로그래머: Pragmatic Programmer by David Thomas, Andrew Hunt <a href="https://product.kyobobook.co.kr/detail/S000001033128">도서 구매 링크</a></li>
+<li>
+<p>Vanilla Javascript로 웹 컴포넌트 만들기</p>
+<ul>
+<li>by 황준일</li>
+<li>last updated: February 14, 2023</li>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/trim">문서 링크</a></li>
+</ul>
+</li>
+<li>
+<p>주니어 프론트엔드 개발자의 채용 프로세스 참여 후기</p>
+<ul>
+<li>by 황준일</li>
+<li>last updated: July 1, 2021</li>
+</ul>
+</li>
+<li>
+<p>☕ 블랙커피 Vanilla JS Lv1. 문벅스 카페 메뉴 앱 만들기</p>
+<ul>
+<li>by Maker Jun</li>
+<li>last updated: October, 2021</li>
+</ul>
+</li>
+<li>
+<p>모던 자바스크립트 Deep Dive: 자바스크립트의 기본 개념과 동작 원리</p>
+<ul>
+<li>by 이웅모, 위키북스, 2020</li>
+<li><a href="https://product.kyobobook.co.kr/detail/S000001766445">도서 구매 링크(교보문고)</a></li>
+</ul>
+</li>
 </ul></section><hr/><footer></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/regexp/">← <!-- -->프로젝트에 적용하기 위한 정규 표현식</a></li><li><a rel="next" href="/side-project/project-pixel/2-prototype/">[당신의 작업실] 2. SPA 프로토타입 제작과 프로젝트로의 적용<!-- --> →</a></li></ul></nav></main><footer>© <!-- -->2023<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/side-project/project-pixel/1-motive/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
