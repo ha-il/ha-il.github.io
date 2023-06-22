@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[하일의 작업실]]></description><link>https://ha-il.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 22 Jun 2023 15:26:44 GMT</lastBuildDate><item><title><![CDATA[[당신의 작업실] 번외. 리팩터링과 기능 추가]]></title><description><![CDATA[당신의 작업실 프로젝트 링크: https://pixel-workroom.herokuapp.com/ 프로젝트 깃허브 저장소 링크 : https://github.com/ha-il/project-pixel…]]></description><link>https://ha-il.github.io/side-project/project-pixel/11-refactoring/</link><guid isPermaLink="false">https://ha-il.github.io/side-project/project-pixel/11-refactoring/</guid><pubDate>Thu, 22 Jun 2023 22:50:00 GMT</pubDate><content:encoded>&lt;ul&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[하일의 작업실]]></description><link>https://ha-il.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 22 Jun 2023 15:50:52 GMT</lastBuildDate><item><title><![CDATA[[당신의 작업실] 번외. 리팩터링과 기능 추가]]></title><description><![CDATA[당신의 작업실 프로젝트 링크: https://pixel-workroom.herokuapp.com/ 프로젝트 깃허브 저장소 링크 : https://github.com/ha-il/project-pixel…]]></description><link>https://ha-il.github.io/side-project/project-pixel/11-refactoring/</link><guid isPermaLink="false">https://ha-il.github.io/side-project/project-pixel/11-refactoring/</guid><pubDate>Thu, 22 Jun 2023 22:50:00 GMT</pubDate><content:encoded>&lt;ul&gt;
 &lt;li&gt;당신의 작업실 프로젝트 링크: &lt;a href=&quot;https://pixel-workroom.herokuapp.com/&quot;&gt;https://pixel-workroom.herokuapp.com/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;프로젝트 깃허브 저장소 링크 : &lt;a href=&quot;https://github.com/ha-il/project-pixel&quot;&gt;https://github.com/ha-il/project-pixel&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -318,7 +318,7 @@
 &lt;p&gt;최종적으로 정리된 코드를 보면, 처음에 소개드렸던 아주 긴 코드에 비해서 상당히 간결해진 것을 확인할 수 있습니다.&lt;/p&gt;
 &lt;p&gt;이렇게 작성했을 때의 장점은 코드가 깔끔해진 것도 있지만, 플레이리스트 페이지에서 발생하는 많은 이벤트를 각 컴포넌트에 따로 작성할 수 있어서, 코드를 수정할 때 빠르게 해당 코드를 찾아갈 수 있었습니다.&lt;/p&gt;
 &lt;h2&gt;2. 추가 기능&lt;/h2&gt;
-&lt;p&gt;코드를 정리하는 리팩터링 작업 외에도, 구현하지 못 해서 아쉬웠던 기능들을 추가해봤습니다.&lt;/p&gt;
+&lt;p&gt;코드를 정리하는 리팩터링 작업 외에도, 구현하지 못 해서 아쉬웠던 기능들을 추가해봤습니다. 특히, 음악이나 플레이리스트를 &lt;strong&gt;추가&lt;/strong&gt;하는 것만 생각해서 제대로된 CRUD 기능을 구현하지 못 했던 것이 마음에 많이 걸렸는데 이번 기회에 플레이리스트의 &lt;strong&gt;CRUD&lt;/strong&gt;를 중점적으로 구현해봤습니다.&lt;/p&gt;
 &lt;h3&gt;2.1 플레이리스트 편집&lt;/h3&gt;
 &lt;p&gt;플레이리스트의 제목과 설명을 편집할 수 있습니다. 편집을 완료해도 새로고침은 발생하지 않기 때문에 음악도 끊기지 않습니다.&lt;/p&gt;
 &lt;img src=&quot;https://github.com/ha-il/project-pixel/assets/108077643/71fde65b-21c4-4309-a211-3185ce78ae50&quot; width=&quot;100%&quot; alt=&quot;edit-playlist&quot;&gt;
@@ -1128,7 +1128,7 @@ console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span cl
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;1.1 플레이리스트 곡 목록을 뮤직 플레이어에서 재생하기&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/ha-il/project-pixel/assets/108077643/0969bf6e-0e81-4f96-b016-a3625f761c5b&quot; alt=&quot;props&quot;&gt;&lt;/p&gt;
+&lt;img src=&quot;https://github.com/ha-il/project-pixel/assets/108077643/0969bf6e-0e81-4f96-b016-a3625f761c5b&quot; width=&quot;100%&quot; alt=&quot;props&quot;&gt;
 &lt;p&gt;이미지를 보시면 &apos;재생&apos;이라고 적힌 노란색 버튼이 있는데요. 이 버튼을 누르면 &lt;strong&gt;플레이리스트의 모든 곡들이 뮤직 플레이어의 재생목록에 추가&lt;/strong&gt;되고 &lt;strong&gt;재생목록의 첫 곡부터 재생이 시작&lt;/strong&gt;되도록 구현하고 싶었습니다. 이런 플레이리스트 재생 기능은 어느 뮤직 앱에나 있는 기본적인 기능이기 때문에 반드시 추가하고 싶었습니다. 그러나 여기서 문제가 발생했습니다.&lt;/p&gt;
 &lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;&apos;플레이리스트 컴포넌트에서 뮤직 플레이어 컴포넌트로 어떻게 곡을 보내야하지?&apos;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;상위 컴포넌트에서 하위 컴포넌트로 속성을 전달하는 것은 어려운 일이 아닙니다. &lt;strong&gt;하지만 하위 컴포넌트에서 상위 컴포넌트로 속성을 전달한다니&lt;/strong&gt;, 당시 제 지식으로는 어려운 일이었습니다. 그래서 생각을 바꾸기로 했습니다.&lt;/p&gt;
@@ -1762,7 +1762,7 @@ post /playlists/:playlistId   # 플레이리스트에 음악 추가하기&lt;/co
 &lt;ul&gt;
 &lt;li&gt;헤더와 사이드바가 포함된 초기 디자인&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/ha-il/project-pixel/assets/108077643/d8f8698c-bd2a-4b63-ae62-85a4fb03d940&quot; alt=&quot;haeder&quot;&gt;&lt;/p&gt;
+&lt;img src=&quot;https://github.com/ha-il/project-pixel/assets/108077643/d8f8698c-bd2a-4b63-ae62-85a4fb03d940&quot; width=&quot;100%&quot; alt=&quot;haeder&quot;&gt;
 &lt;p&gt;하지만 그렇게 디자인하니 작업실 공간이 굉장히 답답해보였습니다. 작업실 공간 자체도 오브젝트가 많은데 사이드바와 헤더까지 들어가니 복잡해보였습니다. &quot;&lt;strong&gt;공간이나 이미지 그리고 UI까지 한꺼번에 보여주되 깔끔하게 디자인 하는 방법 뭐 없을까?&lt;/strong&gt;&quot;라는 고민을 하던 도중 &lt;strong&gt;아이패드&lt;/strong&gt;가 떠올랐습니다. 아이패드의 UI를 자세히 살펴보니 하단의 앱 독(dock)으로 UI를 최소화하고, 상단에는 시간이나 베터리 같은 최소한의 정보만 표시하니까 아이패드의 배경화면이 시원하게 보여졌습니다. 보여지는 화면 외의 기능들은 양 옆으로 숨겨두기도 했습니다. 이렇게 아이패드의 화면 디자인은 제가 고민하던 문제를 해결해주기도 했지만, &lt;strong&gt;사람들에게도 이미 익숙한 디자인&lt;/strong&gt;이기 때문에 유저들의 거부감이 적을 것 같았습니다. 그렇게 1차적으로 디자인한 작업물은 아래와 같습니다.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;헤더와 사이드바를 삭제하고, 삭제된 메뉴를 스마트폰 창과 모니터 창에 부여한 디자인&lt;/li&gt;
