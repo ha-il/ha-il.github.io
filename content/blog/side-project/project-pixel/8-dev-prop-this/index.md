@@ -41,7 +41,7 @@ mobileImage: "../../../../../src/images/sideProject-512x256x2.png"
   - 경로가 "**/playlists/chart**"인 경우 chart-container 렌더링 => **인기차트 페이지**
 
 ### 1.1 플레이리스트 곡 목록을 뮤직 플레이어에서 재생하기
-![props](https://github.com/ha-il/project-pixel/assets/108077643/0969bf6e-0e81-4f96-b016-a3625f761c5b)
+<img src="https://github.com/ha-il/project-pixel/assets/108077643/0969bf6e-0e81-4f96-b016-a3625f761c5b" width="100%" alt="props"/>
 
 이미지를 보시면 '재생'이라고 적힌 노란색 버튼이 있는데요. 이 버튼을 누르면 **플레이리스트의 모든 곡들이 뮤직 플레이어의 재생목록에 추가**되고 **재생목록의 첫 곡부터 재생이 시작**되도록 구현하고 싶었습니다. 이런 플레이리스트 재생 기능은 어느 뮤직 앱에나 있는 기본적인 기능이기 때문에 반드시 추가하고 싶었습니다. 그러나 여기서 문제가 발생했습니다. 
 
