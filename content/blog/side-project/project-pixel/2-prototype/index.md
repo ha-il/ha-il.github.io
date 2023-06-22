@@ -13,6 +13,7 @@ mobileImage: "../../../../../src/images/sideProject-512x256x2.png"
 
 일단 기획을 해야겠다는 생각이 들었지만, 제 개발 능력에 대한 걱정이 많이 들었습니다. Express와 Pug를 이용해서 서버 측에서 렌더링되는 웹 사이트를 만들어본 적은 있었지만, 바닐라 자바스크립트만으로 클라이언트 측에서 모두 렌더링되도록, 게다가 SPA 로 구현해본적은 없었기 때문입니다. 이런 **프로젝트 개발 전반에 대한 노하우**는 대체 어디서 얻을 수 있을까 고민하다가 발견한 책이 '**실용주의 프로그래머**'였습니다. 책 내용 중에 "**목표물을 찾기 위해 예광탄을 써라.**"라는 팁이 있습니다. 
 
+<br/>
 
 > 이런 상황에서의 **전형적인 반응**은 **시스템을 극도로 세세히 명세화**하는 것이다. 모든 불확실한 점을 잡아매고, 환경 조건을 제약하고, 모든 요구사항을 일일이 항목으로 만들어서 몇 상자나 되는 명세서를 만든다. 그리고 목표물의 위치를 추측해서 총을 쏜다. 상당한 양의 계산을 우선 하고 나서, 그다음엔 발사하고, 맞기를 바라는 것이다.
 > 
@@ -25,6 +26,9 @@ mobileImage: "../../../../../src/images/sideProject-512x256x2.png"
 > 시스템을 정의하는 **중요한 요구 사항**을 찾아라. 의문이 드는 부분이나 **가장 위험이 커 보이는 곳**을 찾아라. **이런 부분의 코드를 가장 먼저 작성하도록 개발 우선순위를 정하라.**
 >
 > <실용주의 프로그래머 72p-73p>
+
+<br/>
+<br/>
 
 책에서 언급하는 '**전형적인 반응**'을 저도 보일 뻔 했습니다. 일단 기획을 하고, 요구사항을 최대한 자세히 명세한 다음, 명세에 맞게 순서대로 작업을 하면 될 것이라는 낙관적인 생각을 했었습니다. 하지만 실용주의 프로그래머를 읽고 저도 저만의 **예광탄**을 쏴보기로 했습니다.
 
@@ -233,5 +237,12 @@ export default Component;
 프로토타입을 통해 프로젝트의 초기 보일러 플레이트 세팅을 시작할 수 있었고, 이것은 이 프로젝트에 **예광탄**을 일단 쐈다는 의미였습니다. SPA구현 다음으로 걱정했던 부분은 Babel이나 Webpack과 같은 **개발 환경** 설정이었습니다. 그래서 다음으로는 개발 환경 설정 과정으로 예광탄을 쏴봤습니다. 이에 대해서는 [다음 글](https://ha-il.github.io/side-project/project-pixel/3-boiler-plate)에서 이어가겠습니다.
 
 ## 참고 자료
-- Vanilla Javascript로 웹 컴포넌트 만들기 by 황준일 Last Updated: 2023. 2. 14.
-  - 문서 링크: [https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Component/](https://junilhwang.github.io/TIL/Javascript/Design/Vanilla-JS-Component/)
+- Vanilla Javascript로 웹 컴포넌트 만들기
+  - by 황준일
+  - last updated: February 14, 2023
+  - [문서 링크](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/trim)
+
+
+- 실용주의 프로그래머: Pragmatic Programmer 
+  - by David Thomas, Andrew Hunt, 인사이트, 2022
+  - [도서 구매 링크(교보문고)](https://product.kyobobook.co.kr/detail/S000001033128)

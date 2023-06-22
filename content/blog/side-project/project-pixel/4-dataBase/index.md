@@ -124,3 +124,12 @@ import express from "express";
 ```
 
 이렇게 예광탄을 하나씩 쏴보면서 프로젝트를 개발할 수 있는 초기 보일러 플레이팅 세팅을 마치고 나니까, 프로젝트 구현에 있어서 **기술적 제약**이 많이 감소했습니다. **기능을 구현하지 못 할 것을 걱정할 필요 없이**, 기획과 디자인을 진행할 수 있게 되었습니다. 따라서 [다음 글](https://ha-il.github.io/side-project/project-pixel/5-plan-and-design)에서는 이번 프로젝트가 왜 "당신의 작업실"이 되었는지, 그 기획과 디자인에 대해서 이야기해보겠습니다.
+
+## 참고자료
+- MongoDB: [https://www.mongodb.com/](https://www.mongodb.com/)
+
+- Install MongoDB: [https://www.mongodb.com/docs/manual/installation/](https://www.mongodb.com/docs/manual/installation/)
+
+- Homebrew: [https://brew.sh/index_ko](https://brew.sh/index_ko)
+
+- Mongoose Getting Started: [https://mongoosejs.com/docs/index.html](https://mongoosejs.com/docs/index.html)
