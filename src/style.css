@@ -384,7 +384,8 @@ table thead tr th {
 .gatsby-highlight .language-js,
 .gatsby-highlight .language-jsx,
 .gatsby-highlight .language-html,
-.gatsby-highlight .language-text {
+.gatsby-highlight .language-text,
+.gatsby-highlight .language-json {
   text-shadow: none;
   color: var(--code-color-white);
   background-color: var(--code-color-background);
@@ -502,6 +503,14 @@ table thead tr th {
 
 .gatsby-highlight pre code .attr-value {
   color: var(--code-color-green);
+}
+
+.gatsby-highlight pre code .property {
+  color: var(--code-color-purple);
+}
+
+.gatsby-highlight pre code .boolean {
+  color: var(--code-color-orange);
 }
 
 /* Link */
