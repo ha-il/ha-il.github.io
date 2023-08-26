@@ -95,6 +95,12 @@ export default function CategoryPage({ data, location }) {
                     alt="category-image"
                   />
                 ) : null}
+                {category === "design" ? (
+                  <StaticImage
+                    src="../../images/category/Desgin.png"
+                    alt="category-image"
+                  />
+                ) : null}
                 <span>{category}</span>
               </Link>
             </li>

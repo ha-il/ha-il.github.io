@@ -617,6 +617,10 @@ a:focus {
   text-align: center;
 }
 
+.category-container a {
+  text-decoration: none;
+}
+
 .category-container {
   transform: translate3D(0, 0, 0);
   box-shadow: none;
@@ -629,6 +633,7 @@ a:focus {
 
 .category-container span {
   color: var(--color-heading);
+  font-weight: var(--fontWeight-bold);
 }
 .category-container:hover span {
   color: var(--color-primary);
@@ -710,17 +715,6 @@ a:focus {
   max-width: var(--maxWidth-wrapper);
   padding: var(--spacing-10) var(--spacing-5);
   /* font-family: var(--font-body); */
-}
-
-.blog-post,
-.blog-post header h1,
-.blog-post h1,
-.blog-post h2,
-.blog-post h3,
-.blog-post h4,
-.blog-post h5,
-.blog-post h6 {
-  /* font-family: var(--font-heading); */
 }
 
 .blog-post header h1 {

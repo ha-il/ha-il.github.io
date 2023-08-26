@@ -13,7 +13,7 @@ import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const categories = ["project", "javascript", "algorithm"]
+  const categories = ["project", "javascript", "algorithm", "design"]
 
   const posts = data.allMarkdownRemark.nodes
 
@@ -83,6 +83,12 @@ const BlogIndex = ({ data, location }) => {
                 {category === "project" ? (
                   <StaticImage
                     src="../images/category/Project.png"
+                    alt="category-image"
+                  />
+                ) : null}
+                {category === "design" ? (
+                  <StaticImage
+                    src="../images/category/Design.png"
                     alt="category-image"
                   />
                 ) : null}
