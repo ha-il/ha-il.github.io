@@ -1,21 +1,31 @@
 /* Font */
-
-@import url("//cdn.jsdelivr.net/gh/neodgm/neodgm-webfont@1.530/neodgm/style.css");
-.font-neodgm {
-  font-family: "NeoDunggeunmo";
+@font-face {
+  font-family: "LotteMartDream";
+  font-style: normal;
+  font-weight: 300;
+  src: url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff2")
+      format("woff2"),
+    url("//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff")
+      format("woff");
 }
-@import url("//cdn.jsdelivr.net/gh/neodgm/neodgm-pro-webfont@1.020/neodgm_pro/style.css");
-.font-neodgm-pro {
-  font-family: "NeoDunggeunmo Pro";
+
+@font-face {
+  font-family: "EliceDigitalBaeum-Bd";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_elice@1.0/EliceDigitalBaeum-Bd.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Nanum+Gothic:wght@400;700;800&display=swap");
-/*
-font-family: 'Fira Code', monospace;
-font-family: 'Nanum Gothic', sans-serif;
-*/
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-/* CSS Custom Properties Definitions */
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 
 :root {
   /* Basic CSS Custom Properties */
@@ -45,18 +55,24 @@ font-family: 'Nanum Gothic', sans-serif;
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
-  --fontFamily-sans: "NeoDunggeunmo Pro", "MontserratVariable", system-ui,
+
+  --fontFamily-sans: "EliceDigitalBaeum-Bd", "MontserratVariable", system-ui,
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol", "Noto Color Emoji";
-  --fontFamily-serif: "NeoDunggeunmo Pro", "Merriweather", "Georgia", Cambria,
+  --fontFamily-serif: "LotteMartDream", "Merriweather", "Georgia", Cambria,
     "Times New Roman", Times, serif;
+  --fontFamily-code: "JetBrains Mono";
+
   --font-body: var(--fontFamily-serif);
   --font-heading: var(--fontFamily-sans);
+  --font-code: var(fontFamily-code);
+
   --fontWeight-normal: 400;
   --fontWeight-bold: 700;
   --fontWeight-black: 900;
   --fontSize-root: 16px;
+
   --lineHeight-none: 1;
   --lineHeight-tight: 1.1;
   --lineHeight-normal: 1.5;
@@ -70,6 +86,7 @@ font-family: 'Nanum Gothic', sans-serif;
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
+
   --color-primary: #005b99;
   --color-text: #2e353f;
   --color-text-light: #4f5969;
@@ -356,7 +373,7 @@ table thead tr th {
 
 .blog-post section p code,
 .blog-post section li code {
-  font-family: "Fira Code";
+  font-family: var(--fontFamily-code);
   color: var(--code-color-black);
   background-color: var(--code-color-highlight);
   padding: 0px var(--spacing-1);
@@ -374,7 +391,7 @@ table thead tr th {
 }
 
 .gatsby-highlight pre code {
-  font-family: "Fira Code";
+  font-family: var(--fontFamily-code);
   color: var(--color--heading);
 }
 
@@ -525,6 +542,7 @@ a:focus {
 .slider {
   max-width: var(--maxWidth-full);
   background-color: var(--color-background);
+  font-weight: var(--fontWeight-bold);
 }
 
 .slider-content {
@@ -691,7 +709,7 @@ a:focus {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
   padding: var(--spacing-10) var(--spacing-5);
-  font-family: "Nanum Gothic";
+  /* font-family: var(--font-body); */
 }
 
 .blog-post,
@@ -702,7 +720,7 @@ a:focus {
 .blog-post h4,
 .blog-post h5,
 .blog-post h6 {
-  font-family: "Nanum Gothic";
+  /* font-family: var(--font-heading); */
 }
 
 .blog-post header h1 {
