@@ -14,7 +14,7 @@ import Seo from "../../components/seo"
 export default function CategoryPage({ data, location }) {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const category = data.allMarkdownRemark.distinct
-  const categories = ["project", "javascript", "algorithm"]
+  const categories = ["typescript", "javascript", "algorithm", "project"]
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
@@ -71,6 +71,12 @@ export default function CategoryPage({ data, location }) {
               data-category={category}
             >
               <Link to={`/categories/${category.toLowerCase()}`} itemProp="url">
+                {category === "typescript" ? (
+                  <StaticImage
+                    src="../../images/category/TypeScript.png"
+                    alt="category-image"
+                  />
+                ) : null}
                 {category === "algorithm" ? (
                   <StaticImage
                     src="../../images/category/Algorithm.png"
@@ -92,12 +98,6 @@ export default function CategoryPage({ data, location }) {
                 {category === "project" ? (
                   <StaticImage
                     src="../../images/category/Project.png"
-                    alt="category-image"
-                  />
-                ) : null}
-                {category === "design" ? (
-                  <StaticImage
-                    src="../../images/category/Desgin.png"
                     alt="category-image"
                   />
                 ) : null}

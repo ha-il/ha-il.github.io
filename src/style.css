@@ -383,6 +383,8 @@ table thead tr th {
 .gatsby-highlight .language-javascript,
 .gatsby-highlight .language-js,
 .gatsby-highlight .language-jsx,
+.gatsby-highlight .language-ts,
+.gatsby-highlight .language-tsx,
 .gatsby-highlight .language-html,
 .gatsby-highlight .language-text,
 .gatsby-highlight .language-json {

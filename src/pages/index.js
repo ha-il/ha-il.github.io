@@ -13,7 +13,7 @@ import Seo from "../components/seo"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const categories = ["project", "javascript", "algorithm", "design"]
+  const categories = ["typescript", "javascript", "algorithm", "project"]
 
   const posts = data.allMarkdownRemark.nodes
 
@@ -68,11 +68,11 @@ const BlogIndex = ({ data, location }) => {
               data-category={category}
             >
               <Link to={`/categories/${category}`} itemProp="url">
-                {category === "algorithm" ? (
+                {category === "typescript" ? (
                   <StaticImage
-                    src="../images/category/Algorithm.png"
+                    src="../images/category/TypeScript.png"
                     alt="category-image"
-                  ></StaticImage>
+                  />
                 ) : null}
                 {category === "javascript" ? (
                   <StaticImage
@@ -80,15 +80,15 @@ const BlogIndex = ({ data, location }) => {
                     alt="category-image"
                   />
                 ) : null}
+                {category === "algorithm" ? (
+                  <StaticImage
+                    src="../images/category/Algorithm.png"
+                    alt="category-image"
+                  ></StaticImage>
+                ) : null}
                 {category === "project" ? (
                   <StaticImage
                     src="../images/category/Project.png"
-                    alt="category-image"
-                  />
-                ) : null}
-                {category === "design" ? (
-                  <StaticImage
-                    src="../images/category/Design.png"
                     alt="category-image"
                   />
                 ) : null}
