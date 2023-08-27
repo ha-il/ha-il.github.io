@@ -1,120 +1,117 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[하일의 작업실]]></description><link>https://ha-il.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 26 Aug 2023 09:12:41 GMT</lastBuildDate><item><title><![CDATA[프론트엔드 개발자의 디자인 공부]]></title><description><![CDATA[타이포그래피 타이포그래피 용어 정리 서체(typeface): Ariel, Verdana, Times New Roman 등 글씨의 스타일을 말함. 글꼴(font): 서체를 사용할 수 있도록 컴퓨터에 설치하는 소프트웨어. 타이포그래피(typography…]]></description><link>https://ha-il.github.io/design/</link><guid isPermaLink="false">https://ha-il.github.io/design/</guid><pubDate>Sun, 20 Aug 2023 17:17:00 GMT</pubDate><content:encoded>&lt;h2&gt;타이포그래피&lt;/h2&gt;
-&lt;h3&gt;타이포그래피 용어 정리&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;서체(typeface): Ariel, Verdana, Times New Roman 등 글씨의 스타일을 말함.&lt;/li&gt;
-&lt;li&gt;글꼴(font): 서체를 사용할 수 있도록 컴퓨터에 설치하는 소프트웨어.&lt;/li&gt;
-&lt;li&gt;타이포그래피(typography): 서체를 고르는 것과 서체를 사용하는 방법을 말함&lt;/li&gt;
-&lt;li&gt;글리프(glyph): 글꼴 파일의 개별 기호를 말한다. 문자, 숫자, 기호 등이 포함된다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;텍스트 스타일에 대해서 논할 때 체감상 &apos;폰트&apos;라는 단어가 많이 사용되는데, 서체와 폰트는 엄연히 다른 개념이다. 예를 들자면, 서체가 음악이라면 폰트는 mp3이다.&lt;/p&gt;
-&lt;h3&gt;서체 고르기&lt;/h3&gt;
-&lt;p&gt;서체를 고르는 과정은 보통 &apos;브랜드 정의&apos; → &apos;본문 서체 고르기&apos; → &apos;제목 서체 고르기&apos; → &apos;메타 정보 서체 고르기&apos; 순서대로 진행된다.&lt;/p&gt;
-&lt;h4&gt;1. 브랜드 정의&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;서체는 곧 브랜드의 목소리다.&lt;/li&gt;
-&lt;li&gt;브랜드 또는 제작하고자 하는 프로젝트가 어떤 메시지를 어떤 어조로 전달할 것인지를 먼저 설정해야 한다.&lt;/li&gt;
-&lt;li&gt;전달하고자 하는 것을 5개의 형용사로 표현해보자.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;2. 본문 서체 고르기&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;본문은 웹 사이트에서 가장 많은 면적을 차지하기 때문에 가장 먼저 정한다.&lt;/li&gt;
-&lt;li&gt;본문 역시 브랜드의 정의와 개성이 드러나야 하지만, 최소한으로 드러나야 한다.&lt;/li&gt;
-&lt;li&gt;본문을 읽는다는 것은 이미 사용자가 제목을 읽고 해당 브랜드에 관심을 가졌다는 것이다.&lt;/li&gt;
-&lt;li&gt;본문 서체는 브랜드의 개성을 최소한으로 드러내고 가독성에 집중해야 한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;3. 제목 서체 고르기&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;제목은 사용자의 이목을 끄는 것이 주 목적이다.&lt;/li&gt;
-&lt;li&gt;본문에서 표현하지 못한 브랜드의 정의를 제목을 통해 드러내야 한다.&lt;/li&gt;
-&lt;li&gt;제목 서체가 디테일 없이 평범하게 디자인된다면 이목을 끌기가 어렵다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;4. 메타 정보 서체 고르기&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;메타 정보는 제목과 본문 이외의 부가적인 정보를 의미한다.&lt;/li&gt;
-&lt;li&gt;블로그의 글을 예로 들면 포스팅 날짜, 이미지의 캡션, 출처 등이 메타 정보에 해당된다.&lt;/li&gt;
-&lt;li&gt;메타 정보는 사용자가 읽을 필요가 없는 경우가 많기 때문에 따로 서체를 지정하여 제목, 본문과 구분되는 서체를 지정해주면 좋다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;5. 서체 조합 팁&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;본문 서체와 제목 서체는 어느정도 유사점을 띄어야 하지만 대비되는 부분도 반드시 있어야 한다.&lt;/li&gt;
-&lt;li&gt;너무 비슷한 서체를 고를 경우 제목과 본문이 명확히 구별되지 않고 충돌되는 느낌을 준다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3&gt;서체 고르기 실전 적용&lt;/h3&gt;
-&lt;p&gt;개인 블로그를 제작할 예정이라, 블로그에 사용할 서체를 고르는 것으로 연습을 해봤다.&lt;/p&gt;
-&lt;h4&gt;1. 브랜드 정의하기&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;내 블로그는 어땠으면 좋겠는가?
-&lt;ul&gt;
-&lt;li&gt;성실한: 블로그를 성실하게 운영한다는 반듯한 인상을 줬으면 좋겠음.&lt;/li&gt;
-&lt;li&gt;믿음직한: 블로그에 업로드 되는 정보가 독자들에게 신뢰를 얻었으면 좋겠음.&lt;/li&gt;
-&lt;li&gt;깔끔한: 독자들이 정보를 빠르고 편하게 얻을 수 있도록 정보를 가독성 좋게 전달하고 싶음.&lt;/li&gt;
-&lt;li&gt;위트있는: 정보 전달이 주 목적이지만, 프로그래밍에 대한 재미나 즐거움도 전달하고 싶음.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;2. 폰트 사이트 탐색하기&lt;/h4&gt;
-&lt;ul&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[하일의 작업실]]></description><link>https://ha-il.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 27 Aug 2023 08:03:13 GMT</lastBuildDate><item><title><![CDATA[[CRA 환경설정] 타입스크립트 환경 설정]]></title><description><![CDATA[작성 계기 원티드 프리온보딩 프론트엔드 과정에서 ESLint, Prettier, Husky로 프로젝트 환경 설정하는 방법을 배웠다. 해당 과정에서는 JavaScript…]]></description><link>https://ha-il.github.io/configure/cra-configure/tsconfig/</link><guid isPermaLink="false">https://ha-il.github.io/configure/cra-configure/tsconfig/</guid><pubDate>Sat, 26 Aug 2023 16:47:00 GMT</pubDate><content:encoded>&lt;h2&gt;작성 계기&lt;/h2&gt;
+&lt;p&gt;원티드 프리온보딩 프론트엔드 과정에서 ESLint, Prettier, Husky로 프로젝트 환경 설정하는 방법을 배웠다. 해당 과정에서는 JavaScript 기반으로 환경을 설정했지만, 사실 요즘 타입스크립트를 쓰지 않는 경우가 거의 없다. 앞으로의 프로젝트도 타입스크립트로 진행할 확률이 높기 때문에, 우선 타입스크립트 환경 설정을 먼저 하려고 한다.&lt;/p&gt;
+&lt;p&gt;환경 설정 이후에 정적 페이지를 AWS S3에 올리는 연습도 할 예정이라, 빠르게 정적페이지를 빌드할 수 있는 CRA를 선택했고, CRA 초기 환경에서부터 다른 설정들을 조금씩 더해볼 것이다.&lt;/p&gt;
+&lt;h2&gt;1. 타입스크립트 기반의 CRA 프로젝트 생성하기&lt;/h2&gt;
+&lt;p&gt;우선 &lt;a href=&quot;https://create-react-app.dev/docs/adding-typescript&quot;&gt;CRA 공식문서&lt;/a&gt;를 보면 CRA 프로젝트에 타입스크립트를 추가하는 방법을 설명하고 있다. 이번 글에서는 처음부터 타입스크립트 기반으로 CRA를 설치하는 방법으로 진행하지만, 이미 존재하는 CRA 프로젝트에 타입스크립트를 추가하는 방법도 있으니 공식문서를 확인해보기 바란다.&lt;/p&gt;
+&lt;p&gt;일단 아래의 명령어를 실행한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npx create-react-app my-app --template typescript&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;실행하고 CRA 프로젝트를 확인해보면 &lt;code class=&quot;language-text&quot;&gt;tsconfig.json&lt;/code&gt;이라는 파일을 확인할 수 있다. 이 파일은 타입스크립트 프로젝트가 어떻게 컴파일될지 세부적인 옵션을 정의하는 파일이다. (타입스크립트로 컴파일하면 자바스크립트 파일이 생성된다.)&lt;/p&gt;
+&lt;h2&gt;2. tsconfig.json 파일 살펴보기&lt;/h2&gt;
+&lt;p&gt;tsconfig.json 파일은 처음에는 아래와 같이 작성되어있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// tsconfig.json&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// 컴파일러 옵션&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;target&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;es5&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 컴파일 결과물에 적용시킬 자바스크립트 스펙.&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;lib&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;dom&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;dom.iterable&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;esnext&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 브라우저 DOM API, 자바스크립트 내장 API의 타입 선언 파일.&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;allowJs&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 자바스크립트 파일을 함께 사용하는 것을 허용,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;skipLibCheck&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 타입 정의 파일의 타입 체크를 스킵.&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;esModuleInterop&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 컴파일러의 동작을 변경하여 타입스크립트가 CommonJS/AMD/UMD를 ES6 모듈과 유사하게 취급해서 발생하는 문제를 해결.&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;allowSyntheticDefaultImports&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;strict&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 엄격한 체크 여부.&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;forceConsistentCasingInFileNames&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 파일 이름에 일관된 대소문자 사용 강제.&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;noFallthroughCasesInSwitch&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 스위치 문 안에 비어 있지 않은 모든 케이스에 break, return 또는 throw가 포함되어 있는지 확인&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;module&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;esnext&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 프로그램의 모듈 시스템을 설정. 최신 노드 프로젝트에는 &quot;nodeNext&quot;도 고려 가능.&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;moduleResolution&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;node&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 모듈 해석(각 import가 어떤 모듈을 가리키는지 해석하는 과정) 전략 설정.&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;resolveJsonModule&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// JSON을 가져오고 해당 JSON 파일의 유형의 유효성 검사 가능&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;isolatedModules&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 트랜스파일러(ex.바벨)을 사용할 때, 단일 파일 트랜스파일 프로세스에서 올바르게 해석할 수 없는 특정 코드를 작성하는 경우 TypeScript에서 경고하도록 지시.&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;noEmit&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 컴파일러 출력 파일(ex.자바스크립트 파일)을 내보내지 않음.&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;jsx&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react-jsx&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 컴파일 결과물에 적용시킬 jsx 변환 형식.&lt;/span&gt;
+
+    &lt;span class=&quot;token comment&quot;&gt;/* CRA 초기 설정에는 없지만 알아두면 좋은 옵션들
+    &quot;sourceMap&quot;: true, // 컴파일된 자바스크립트 파일의 에러를 타입스크립트 파일에 표시해줌. 디버깅에 도움.
+    &quot;baseUrl&quot;: &quot;src&quot;, //모듈 해석 기준 경로 지정. 다른 폴더의 파일 임포트 시 baseUrl 기준으로 경로 설정. 경로 간결해짐.
+    &quot;paths&quot;: {
+      &quot;api&quot;: [&quot;api/*&quot;] // paths 속성의 경로는 baseUrl로 시작하게 됨. 경로 간결해짐.
+    },
+    &quot;noUnusedParameters&quot;: true // 함수에서 사용하지 않는 매개변수에 대한 오류 표시. */&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token comment&quot;&gt;// 루트 옵션&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;include&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;src&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// 타입스크립트 컴파일 대상 파일의 패턴을 지정하는 속성.&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;별도로 지정하고 싶은 옵션이 없다면, 처음 CRA 생성 시 만들어진 tsconfig.json의 옵션을 그대로 따르면 된다. 하지만 개인적으로 바꾸고 싶은 옵션이나, 팀원 간 상의를 통해 수정하고 싶은 옵션이 있다면 위 예시를 참고하여 tsconfig.json 파일에서 옵션을 수정하면 된다. 위 예시에서는 실전에서 쓸만 할 것이라 판단되는 옵션만 작성했다. 다른 옵션을 알고 싶다면 타입스크립트 &lt;a href=&quot;https://www.typescriptlang.org/tsconfig&quot;&gt;공식 문서&lt;/a&gt;를 확인하기 바란다.&lt;/p&gt;
+&lt;h3&gt;2.1 질문: strict 속성을 true 설정하고 하위 속성 중 하나를 false로 하면 적용될까?&lt;/h3&gt;
+&lt;p&gt;tsconfig.json 파일을 보면, 컴파일러 옵션에 strict 속성이 있다. strict 속성을 true로 설정하면 아래의 속성들도 true로 설정된다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// tsconfig.json&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;strict&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;token comment&quot;&gt;/*
+    &quot;alwaysStrict&quot;: true // use strict 모드로 파일을 컴파일하고, 컴파일한 파일 위에 &apos;use strict&apos; 코드를 추가.
+    &quot;noImplicitAny&quot;: true // 타입 정의가 안 된 코드에서 경고를 표시하는 옵션. any 타입으로라도 명시해야 함.
+    &quot;noImplicitThis&quot;: true // this 타입이 암묵적으로 any 타입을 가리키면 에러를 표시.
+    &quot;strictBindCallApply&quot;: true // 자바스크립트의 call(), bind(), apply() API를 사용할 때 인자 타입이 적절한지 검사하는 옵션.
+    &quot;strictFunctionTypes&quot;: true // 함수의 파라미터 타입을 엄격하게 검사하는 옵션.
+    &quot;strictNullChecks&quot;: true // null과 undefined 값이 모두 타입으로 취급되도록 타입 검사 수준을 높이는 옵션.
+    &quot;strictPropertyInitialization&quot;: true // 클래스 안에서 속성 타입이 정의되고 생성자에서 초기화까지 되어 있는지 검사하는 옵션.
+    &quot;useUnknownInCatchVariables&quot;: true // try catch 구문에서 catch err 파라미터 타입을 unknown으로 변환해주는 옵션.
+    */&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;stirct 속성은 true로 설정하되, noImplicitAny 속성만 false로 설정하는 것이 가능할까?&lt;/p&gt;
+&lt;p&gt;먼저, stirct 속성만 true 설정해보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// tsconfig.json&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;strict&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그러면 아래 코드는 에러가 발생한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; arg &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; arg&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Error: Parameter &apos;arg&apos; implicitly has an &apos;any&apos; type.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이번에는, stirct 속성은 true, noImplicitAny 속성은 false로 해보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// tsconfig.json&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;compilerOptions&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token property&quot;&gt;&quot;strict&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 
+    &lt;span class=&quot;token property&quot;&gt;&quot;noImplicitAny&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그러면 에러 또는 경고가 발생하지 않는다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;ts&quot;&gt;&lt;pre class=&quot;language-ts&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;fn&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; arg &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; arg&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// 에러나 경고는 발생하지 않지만 메시지를 확인할 수 있음&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Parameter &apos;arg&apos; implicitly has an &apos;any&apos; type, but a better type may be inferred from usage.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이렇게 strict 속성의 하위 속성 중에서 원하지 않는 옵션은 개별적으로 끌 수 있다.&lt;/p&gt;
+&lt;h2&gt;3. 타입스크립트 프로젝트에서 외부 라이브러리 사용하기&lt;/h2&gt;
+&lt;p&gt;타입스크립트 프로젝트에서 외부 라이브러리를 사용하려면 해당 라이브러리의 &lt;strong&gt;타입 선언 파일&lt;/strong&gt;이 필요하다. 타입 선언 파일이란 &lt;strong&gt;d.ts&lt;/strong&gt; 확장자를 갖는 타입스크립트 파일을 말한다. 프로젝트에서 자주 사용되는 공통 타입이나 프로젝트 전반에 걸쳐 사용하는 라이브러리 타입을 정의하는 파일이다.&lt;/p&gt;
+&lt;p&gt;외부 라이브러리의 타입 선언 파일에 대해서는 다음과 같은 3가지 경우가 있을 수 있다.&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://fonts.google.com/&quot;&gt;구글 폰트&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;품질 좋은 폰트들을 무료로 사용할 수 있는 최선의 선택지.&lt;/li&gt;
-&lt;li&gt;폰트 검색 시 필터를 다양하게 적용할 수 있어서 원하는 폰트를 빠르게 찾을 수 있음.&lt;/li&gt;
-&lt;li&gt;한글 폰트가 적다는 점이 아쉬움.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;타입 선언 파일이 &lt;strong&gt;DefinitelyTyped&lt;/strong&gt; 깃헙 저장소에 있는 경우.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://noonnu.cc/&quot;&gt;눈누 폰트&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;무료 한글 폰트를 모아놓은 사이트로 많은 양의 한글 폰트를 보유하고 있음.&lt;/li&gt;
-&lt;li&gt;개별 폰트마다 라이센스 표기와, 웹 폰트 사용, 실제 사용 예시 등 다양한 정보를 포함하고 있음.&lt;/li&gt;
-&lt;li&gt;폰트 별로 텍스트가 지정되어 있는데, 그 텍스트 때문에 폰트의 느낌이 달라지는 경우가 있어서 예시문을 입력하여 느낌을 봐가면서 고르는 방법을 추천.&lt;/li&gt;
-&lt;li&gt;구글 폰트에 비해 폰트 필터링은 조금 아쉽다.&lt;/li&gt;
-&lt;li&gt;한글 폰트를 찾는다면 강력 추천.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;타입 선언 파일이 &lt;strong&gt;라이브러리에 내장&lt;/strong&gt;되어 있는 경우.&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;3. 본문 서체 고르기&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;폰트 사이트에서 브랜드를 정의할 수 있는 폰트들을 여러개 뽑고 아래의 기준에 따라 다시 골랐다.
-&lt;ul&gt;
-&lt;li&gt;굵기가 굵은 폰트는 모든 부분이 중요해보이기 때문에 눈에 피로를 일으키는 경우가 많아서 배제했다.&lt;/li&gt;
-&lt;li&gt;폰트가 가로로 넓은 경우 가독성이 떨어지는 경향이 있고 면적을 많이 차지해서 배제하기로 했다.&lt;/li&gt;
-&lt;li&gt;단어 간의 간격이 너무 좁으면 빽빽해져서 읽기가 힘들어져서 배재했다.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;타입 선언 파일을 &lt;strong&gt;직접 작성&lt;/strong&gt;해야 하는 경우.&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;최종적으로 &apos;LotteMartDream&apos;이라는 폰트를 골랐고 예비로 두 개의 폰트를 더 골랐다.
-&lt;ul&gt;
-&lt;li&gt;LotteMartDream&lt;/li&gt;
-&lt;li&gt;S-CoreDream-3Light&lt;/li&gt;
-&lt;li&gt;NanumSquareRound&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;4. 제목 서체 고르기&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;제일 먼저 고려한 점은 목소리 톤이다.&lt;/li&gt;
-&lt;li&gt;성실하고 정직하지만 위트있는 사람의 폰트 톤은 어떨까 고민을 많이 했다.&lt;/li&gt;
-&lt;li&gt;우직한 맛도 있어야 하지만, 파고들 빈틈은 있는, 여유는 있는 톤이어야 했다.&lt;/li&gt;
-&lt;li&gt;발견한 폰트 중에 위의 기준에 가장 적합한 폰트는 &apos;EliceDigitalBaeum-Bd&apos; 였다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;5. 메타 정보 서체 고르기&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;메타의 정보의 경우 튀면 안되고 가능하면 묻히는 편이 좋기 때문에, 가장 무난한 폰트를 골랐다.&lt;/li&gt;
-&lt;li&gt;고른 폰트는 &apos;Pretendard-Thin&apos;이다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4&gt;6. 코드 서체 고르기&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;개발 블로그는 코드를 작성하는 경우가 많기 때문에 코드에 대한 서체도 지정해줘야 했다.&lt;/li&gt;
-&lt;li&gt;브랜드 정의에 맞게 깔끔하지만 너무 딱딱하지 않은 느낌을 주는 서체인 &apos;JetBrains Mono&apos;를 선택했다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;본문, 제목, 메타 정보, 코드에 대한 서체를 고르고 간단히 제작해본 블로그 포스트 프로토타입은 아래와 같이 나왔다.&lt;/p&gt;
-&lt;h4&gt;임시 결과물&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&quot;https://github.com/ha-il/ha-il.github.io/assets/108077643/d47524c6-166c-4d27-8804-effa7ec2b38f&quot; alt=&quot;font-proto&quot;&gt;&lt;/p&gt;
-&lt;p&gt;제목 서체를 보면 깔끔하고 힘있는 느낌이지만, 획이 꺾이는 부분은 둥글게 처리하는 약간의 위트가 돋보여서 사전에 논의한 브랜드 정의와 잘 맞아 떨어지는 느낌이다.&lt;/p&gt;
-&lt;p&gt;본문의 경우에도 굵기가 상대적으로 얇고 장식이 적은 서체를 사용하여 깔끔한 느낌을 주려 했고, 정확한 정보를 전달하지만 정보를 전달할 때의 목소리 톤이 친절하게 전달되었으면 해서 비교적 딱딱하지 않은 둥그런 서체를 선택했다. 너무 둥글면 가독성이 떨어지고 글이 가벼워 보이기 때문에 &apos;적당히 둥그런&apos; 서체를 찾는 것이 꽤 어려웠다.&lt;/p&gt;
-&lt;p&gt;제목과 본문은 유사성과 대비되는 점을 모두 고려했다. 한글 폰트의 경우 특정 자음 또는 모음의 모양이 서로 다른 경우가 있다. 예를 들면 &apos;ㅅ&apos;을 &apos;⌃&apos;과 비슷한 모양으로 표현하는 서체도 있고, &apos;ㅏ&apos;를 &apos;⌈&apos;와 비슷한 모양으로 표현하는 서체도 있다. 제목과 본문의 모양 차이는 최대한 비슷하게 하는 것으로 유사성을 챙겼다. 대비되는 점은 글자의 높이이다. 제목의 경우 받침이 있든 없든 일정한 높이를 가지고 있어서 가독성은 조금 떨어지지만 눈에 띈다. 획이 꺾이는 부분을 둥글게 처리한 것도 본문과 대비되는 제목만의 특징이다. 제목과 본문 모두 브랜드 정의는 드러내면서 나름대로의 유사성과 대비되는 점을 가지고 있어서 적절하게 잘 고른 느낌이다.&lt;/p&gt;
-&lt;p&gt;메타 정보 서체는 확실히 눈에 안 띄는 점은 잘 골랐으나, 제목과 본문 폰트에 비해서 진지한 느낌이 들어서 실전에서 폰트 크기와 행간을 조절해보고 느낌을 다시 한 번 봐야할 것 같다.&lt;/p&gt;
-&lt;p&gt;코드 서체는 제목 서체보다도 브랜드 정의를 더 잘 드러내는 것 같다. 정확하고 깔끔하지만 특유의 위트가 느껴지는 서체라 굉장히 맘에 든다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[당신의 작업실] 번외. 리팩터링과 기능 추가]]></title><description><![CDATA[당신의 작업실 프로젝트 링크: https://pixel-workroom.herokuapp.com/ 프로젝트 깃허브 저장소 링크 : https://github.com/ha-il/project-pixel…]]></description><link>https://ha-il.github.io/side-project/project-pixel/11-refactoring/</link><guid isPermaLink="false">https://ha-il.github.io/side-project/project-pixel/11-refactoring/</guid><pubDate>Thu, 22 Jun 2023 22:50:00 GMT</pubDate><content:encoded>&lt;ul&gt;
+&lt;/ol&gt;
+&lt;h3&gt;3.1 DefinitelyTyped&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/DefinitelyTyped/DefinitelyTyped&quot;&gt;DefinitelyTyped&lt;/a&gt; 깃헙 저장소는, 각종 자바스크립트 라이브러리의 타입 정의 파일을 보관하는 곳이다. 내가 사용하는 라이브러리의 이름을 검색하면 타입 정의 파일 찾을 수 있다.&lt;/p&gt;
+&lt;p&gt;DefinitelyTyped에 내가 원하는 라이브러리의 타입 정의 파일이 있다면, 아래의 명령어를 입력해서 쉽게 설치할 수 있다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;npm install --save-dev @types/라이브러리이름
+
+# ex. npm install --save-dev @types/node
+# ex. npm install --save-dev @types/jquery&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;내가 사용할 라이브러리의 타입 정의 파일이 DefinitelyTyped에 존재하는 지 알 수 있는 더 쉬운 방법은 &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npm&lt;/a&gt;에 라이브러리를 검색해보는 것이다. 만약 DefinitelyTyped에 존재한다면 라이브러리 이름 옆에 &lt;strong&gt;DT&lt;/strong&gt;라는 문자가 표시되어 있다.&lt;/p&gt;
+&lt;h3&gt;3.2 라이브러리에 내장&lt;/h3&gt;
+&lt;p&gt;라이브러리에 따라서 타입 정의 파일이 내장되어 있는 경우도 있다. &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;npm&lt;/a&gt;에 검색했을 때, 라이브러리 이름 옆에 &lt;strong&gt;TS&lt;/strong&gt;라는 문자가 표시되어 있다면 타입 정의 파일이 내장되어 있다는 의미이다.&lt;/p&gt;
+&lt;h3&gt;3.3 직접 작성&lt;/h3&gt;
+&lt;p&gt;DefinitelyTyped에도 없고, 라이브러리에 내장되어 있지 않다면 타입 정의 파일을 직접 입력해야 한다. 만약 규모가 큰 라이브러리를 사용한다면, 타입 정의 파일 전체를 작성하기는 어렵다. 그럴 때는 해당 라이브러리에서 사용할 API나 코드 먼저 타입을 작성하는 방식으로 진행하면 된다. 루트 디렉터리에 &lt;code class=&quot;language-text&quot;&gt;global.d.ts&lt;/code&gt; 파일을 만들어 필요한 부분만 타입을 정의하면 된다. 물론 프로젝트에 따라서 파일명과 위치는 달라질 수 있다.&lt;/p&gt;
+&lt;h2&gt;마치며&lt;/h2&gt;
+&lt;p&gt;이번 글에서는 CRA 프로젝트를 타입스크립트 기반으로 생성하고, tsconfig.json 파일을 통해 컴파일러 옵션을 설정하는 방법을 중점적으로 다뤘다. 다음 글에서는 ESLint와 Prettier, Husky 설정하는 방법을 다뤄보겠다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[[당신의 작업실] 번외. 리팩터링과 기능 추가]]></title><description><![CDATA[당신의 작업실 프로젝트 링크: https://pixel-workroom.herokuapp.com/ 프로젝트 깃허브 저장소 링크 : https://github.com/ha-il/project-pixel…]]></description><link>https://ha-il.github.io/side-project/project-pixel/11-refactoring/</link><guid isPermaLink="false">https://ha-il.github.io/side-project/project-pixel/11-refactoring/</guid><pubDate>Thu, 22 Jun 2023 22:50:00 GMT</pubDate><content:encoded>&lt;ul&gt;
 &lt;li&gt;당신의 작업실 프로젝트 링크: &lt;a href=&quot;https://pixel-workroom.herokuapp.com/&quot;&gt;https://pixel-workroom.herokuapp.com/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;프로젝트 깃허브 저장소 링크 : &lt;a href=&quot;https://github.com/ha-il/project-pixel&quot;&gt;https://github.com/ha-il/project-pixel&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
