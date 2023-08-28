@@ -31,18 +31,20 @@ mobileImage: "../../../../../src/images/ts-512x256x2.png"
 
 설치 과정은 [husky-Getting started](https://typicode.github.io/husky/getting-started.html)를 참고했다.
 
-1. husky를 설치한다.
+**1. husky를 설치한다.**
 
 ```
 npm install husky --save-dev
 ```
+<br/>
 
-2. 아래 명령어를 실행시켜 git hook을 사용할 수 있게 한다.
+**2. 아래 명령어를 실행시켜 git hook을 사용할 수 있게 한다.**
 ```
 npx husky install
 ```
+<br/>
 
-3. npm install 할 때 자동으로 git hook을 설정하기 위해 아래와 같이 스크립트를 작성한다.
+**3. npm install 할 때 자동으로 git hook을 설정하기 위해 아래와 같이 스크립트를 작성한다.**
 
 ```json
 // package.json
@@ -52,6 +54,8 @@ npx husky install
   },
 }
 ```
+
+<br/>
 
 ### 2.2 Husky로 hook 만들기
 
@@ -63,7 +67,7 @@ hook을 만들기 전에 생각해봐야할 부분이 있다. 바로 커밋 전(
 
 훅을 만드는 Husky의 명령어는 `husky add <file> [cmd]`의 형식을 가진다. 이 형식으로 hook을 만들어보자.
 
-1. 먼저 커밋 전(pre-commit) 상황에서 사용할 훅을 만든다.
+**1. 먼저 커밋 전(pre-commit) 상황에서 사용할 훅을 만든다.**
 
 ```
 npx husky add .husky/pre-commit "npm run format && npm run lint"
@@ -79,7 +83,9 @@ npm run format && npm run lint  # 여기를 수정하면 된다.
 ```
 git commit을 통해 hook이 잘 적용되었는지 확인해보자. 잘 적용되었다면 터미널에 훅으로 설정한 명령어들(format, lint)이 실행될 것이다.
 
-2. 그 다음으로 푸쉬 전(pre-push) 상황에서 사용할 훅을 만든다.
+<br/>
+
+**2. 그 다음으로 푸쉬 전(pre-push) 상황에서 사용할 훅을 만든다.**
 
 ```
 npx husky add .husky/pre-push "npm run format && npm run lint"
@@ -92,12 +98,13 @@ Husky와 더불어 자주 사용되는 패키지가 있어서 소개한다. 바�
 
 참고로 이번처럼 CRA를 사용하는 경우라면 [lint-staged 깃헙 저장소](https://github.com/okonet/lint-staged)보다 CRA 공식 문서에서 [Create React App-Formatting Code Automatically](https://create-react-app.dev/docs/setting-up-your-editor/)를 참고하는 편이 더 이해하기 쉬울 것이다.
 
-1. lint-staged를 설치한다.
+**1. lint-staged를 설치한다.**
 ```
 npm install --save-dev lint-staged
 ```
+<br/>
 
-2. package.json 파일에 "lint-staged"를 추가해준다.
+**2. package.json 파일에 "lint-staged"를 추가해준다.**
 
 주의!: "lint-staged"를 "scripts"에 추가하는 것이 아니다. scripts 밖에 추가한다.
 
@@ -117,8 +124,9 @@ npm install --save-dev lint-staged
   },
 }
 ```
+<br/>
 
-3. .husky/pre-commit 파일을 수정한다.
+**3. .husky/pre-commit 파일을 수정한다.**
 
 ```
 #!/usr/bin/env sh
@@ -126,8 +134,9 @@ npm install --save-dev lint-staged
 
 npx lint-staged 
 ```
+<br/>
 
-4. git commit 명령어로 테스트해보자.
+**4. git commit 명령어로 테스트해보자.**
 
 이 구간에서 많은 오류가 발생했는데 전부 명령어를 잘 못 작성해서 발생했다. 내가 에러를 경험한 상황은 이러했다.
 

@@ -33,17 +33,18 @@ ESLint와 Prettier를 설명하기 전에 린터와 포맷터에 대해서 알�
 
 이제 ESLint를 설치해보자. 참고로 이번 설치 과정은 [typescript-eslint의 getting-started](https://typescript-eslint.io/getting-started)를 참고해서 진행했다.
 
-1. 아래 명령어로 eslint와 타입스크립트, 플러그인 등을 설치한다.
+**1. 아래 명령어로 eslint와 타입스크립트, 플러그인 등을 설치한다.**
 
-    참고로, 타입스크립트 기반으로 CRA 프로젝트를 생성했다면 이미 설치되어 있기 때문에 이 과정은 생략해도 된다.
+참고로, 타입스크립트 기반으로 CRA 프로젝트를 생성했다면 이미 설치되어 있기 때문에 이 과정은 생략해도 된다.
 
 ```
 npm install --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint typescript
 ```
+<br/>
 
-2. 루트 디렉터리에 ESLint 설정 파일인 `.eslintrc.cjs` 파일을 생성하고 아래 코드를 입력한다.
+**2. 루트 디렉터리에 ESLint 설정 파일인 `.eslintrc.cjs` 파일을 생성하고 아래 코드를 입력한다.**
 
-      참고로, ESM(ECMAScript Modules)를 사용하지 않는 경우 .eslintrc 파일의 확장자를 `.eslintrc.js`로 해도 괜찮다. 자세한 내용은 [ESLint - Configuration Files](https://eslint.org/docs/latest/use/configure/configuration-files)을 참조하기 바란다.
+참고로, ESM(ECMAScript Modules)를 사용하지 않는 경우 .eslintrc 파일의 확장자를 `.eslintrc.js`로 해도 괜찮다. 자세한 내용은 [ESLint - Configuration Files](https://eslint.org/docs/latest/use/configure/configuration-files)을 참조하기 바란다.
 
 ```js
 // `.eslintrc.cjs` 
@@ -62,9 +63,9 @@ module.exports = {
   // ESLint가 이 루트 디렉터리 밖에서 구성 파일을 검색하면 안 된다는 것을 명시적으로 표시
 };
 ```
+<br/>
 
-
-3. ESLint를 실행하기 위해 아래 명령어를 입력한다.
+**3. ESLint를 실행하기 위해 아래 명령어를 입력한다.**
 
 ```
 npx eslint .
@@ -89,9 +90,11 @@ var a = 123;
 ```
 이렇게 결과가 나오면 ESLint가 규칙 위반을 잘 잡아내고 있다는 것으로, ESLint가 잘 작동하고 있음을 확인할 수 있다.
 
-#### 팁!: VSCode에서 파일을 저장할 때 ESLint 규칙에 따라 자동 변환 된다면?
+<br/>
 
-혹시 VSCode에서 var로 변수를 선언하고 저장할 때마다 자동으로 const로 바뀐다면, settings.json 파일에서 아래와 같이 옵션의 값을 false로 바꿔주면 된다.
+**팁!: 혹시 VSCode에서 파일을 저장할 때 ESLint 규칙에 따라 자동 변환 된다면?**
+
+VSCode에서 var로 변수를 선언하고 저장할 때마다 자동으로 const로 바뀐다면, settings.json 파일에서 아래와 같이 옵션의 값을 false로 바꿔주면 된다.
 ```json
 // settings.json
 {
@@ -159,16 +162,20 @@ rules에서 설정한대로 var를 사용하면 경고만 뜨고, 참조하지 �
 
 npm으로 eslint-config-airbnb를 설치하면 에어비엔비 스타일 가이드를 설치하여 프로젝트에 적용시킬 수 있다. 이번 프로젝트는 타입스크립트를 적용할 예정이기 때문에, 타입스크립트 가이드까지 같이 설치해보자.
 
-1. 먼저 eslint-config-airbnb를 설치한다.
+**1. 먼저 eslint-config-airbnb를 설치한다.**
 ```
 npx install-peerdeps --dev eslint-config-airbnb
 # -peerdeps는 다른 패키지와 호환 가능한 버전으로 패키지를 설치하는 옵션
 ```
-2. 다음으로 eslint-config-airbnb-typescript를 설치한다.
+<br/>
+
+**2. 다음으로 eslint-config-airbnb-typescript를 설치한다.**
 ```
 npm install eslint-config-airbnb-typescript --save-dev
 ```
-3. .eslintrc.cjs 파일에서 extends에 'airbnb'와 'airbnb-typescript'를 추가한다.
+<br/>
+
+**3. .eslintrc.cjs 파일에서 extends에 'airbnb'와 'airbnb-typescript'를 추가한다.**
 ```js
 // `.eslintrc.cjs` 
 
@@ -188,7 +195,9 @@ module.exports = {
   },
 };
 ```
-4. .eslintrc.cjs 파일에서 아래와 같이 parserOptions을 추가한다.
+<br/>
+
+**4. .eslintrc.cjs 파일에서 아래와 같이 parserOptions을 추가한다.**
 
 ```js
 // `.eslintrc.cjs` 
@@ -218,14 +227,18 @@ module.exports = {
 
 나는 `.eslintignore` 파일을 따로 생성했다. ESLint 파일의 코드가 지금은 얼마 안 되지만, 속성이나 룰을 추가하면 할 수록 양이 많아진다. 린팅하고 싶지 않은 파일을 추가하기 위해서 긴 코드를 뒤적이는 것보다, 다른 파일로 분리할 수 있다면 분리해서 관리하는 것이 더 효율적이라 판단했다. 
 
-5. `.eslintignore` 파일을 생성하고 아래와 같이 작성한다.
+<br/>
+
+**5. `.eslintignore` 파일을 생성하고 아래와 같이 작성한다.**
 ```
 .eslintrc.cjs
 node_modules 
 ```
 node_modules의 경우에도 린팅이 필요없기 때문에 같이 추가해줬다.
 
-6. 아래 명령어를 실행해서 린팅이 잘 되는지 확인하자. 
+<br/>
+
+**6. 아래 명령어를 실행해서 린팅이 잘 되는지 확인하자.**
 ```
 npx eslint . --ext .js,.jsx,.ts,.tsx
 ```
@@ -270,14 +283,16 @@ CRA 초기 설정을 한 상태에서 아무런 수정없이 에어비엔비 스
 
 ### 3.2 Prettier 설치하기
 
-1. `prettier`와 `eslint-config-prettier`를 설치한다.
+**1. `prettier`와 `eslint-config-prettier`를 설치한다.**
 
 ```
 npm install --save-dev prettier eslint-config-prettier
 ```
 eslint-config-prettier는 왜 설치할까? extends에는 많은 eslint 규칙들이 들어가는데, 간혹 eslint 규칙 중에 서식에 대한 규칙이 포함된 경우가 있다. 그 상태에서 Prettier를 같이 사용하면 Prettier의 규칙과 ESLint의 규칙이 충돌할 수 있다. eslint-config-prettier를 설치하고 적용하면 ESLint의 규칙 중에서 서식과 관련된 규칙을 비활성화한다. 따라서 Prettier와 ESLint의 역할을 확실하게 나눌 수 있게 된다.
 
-2. `.eslintrc.cjs` 파일의 extends에 'prettier'를 추가한다.
+<br/>
+
+**2. `.eslintrc.cjs` 파일의 extends에 'prettier'를 추가한다.**
 
 ```js
 // `.eslintrc.cjs` 
@@ -302,8 +317,9 @@ module.exports = {
   },
 };
 ```
+<br/>
 
-3. 루트 디렉터리에 `.prettierrc.cjs` 파일을 생성하고 아래와 같이 코드를 작성한다.
+**3. 루트 디렉터리에 `.prettierrc.cjs` 파일을 생성하고 아래와 같이 코드를 작성한다.**
 
 ```js
 // prettier.config.js, .prettierrc.js, prettier.config.cjs, or .prettierrc.cjs
@@ -319,7 +335,9 @@ module.exports = config;
 ```
 나의 경우 eslint 설정 파일도 확장자를 cjs로 했기 때문에 Prettier 설정 파일도 cjs로 생성했으나, 프로젝트에 따라서 확장자를 달리할 수 있다. 자세한 내용은 [Prettier-Configuration File](https://prettier.io/docs/en/configuration)을 참고하기 바란다.
 
-4. Prettier가 잘 적용되었는지 확인해보자.
+<br/>
+
+**4. Prettier가 잘 적용되었는지 확인해보자.**
 
 확인을 위해 App.tsx 파일의 코드를 아래와 같이 바꿔봤다. return문 끝에 세미콜론을 제거하고 말도 안되는 공백을 넣어봤다.
 
