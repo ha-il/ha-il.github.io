@@ -1,7 +1,7 @@
 ---
 title: "[CRA 환경설정] Husky 환경 설정"
 date: "2023-08-28T15:27:00.000Z"
-description: "git hook 자동화를 위한 Husky 설정"
+description: "git hook 자동화를 위한 Husky 설정하기 🐶"
 category: "typescript"
 featuredImage: "../../../../../src/images/ts-256x256.png"
 mobileImage: "../../../../../src/images/ts-512x256x2.png"

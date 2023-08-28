@@ -1,7 +1,7 @@
 ---
-title: "[CRA 환경설정] AWS 정적 배포 사이트 CI/CD 환경 구축하기"
+title: "[CRA 환경설정] AWS S3로 배포한 사이트의 CI/CD 환경 구축하기 with GitHub Actions"
 date: "2023-08-28T15:46:00.000Z"
-description: "가즈아"
+description: "GitHub Actions로 CI/CD 환경을 구축해보자."
 category: "typescript"
 featuredImage: "../../../../../src/images/ts-256x256.png"
 mobileImage: "../../../../../src/images/ts-512x256x2.png"
