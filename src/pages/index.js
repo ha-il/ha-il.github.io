@@ -45,7 +45,7 @@ const BlogIndex = ({ data, location }) => {
             </p>
           </div>
           <div className="slider-content-img">
-            <StaticImage src="../images/js-256x256.png" alt="Slider picture" />
+            <StaticImage src="../images/ts-256x256.png" alt="Slider picture" />
           </div>
         </div>
       </div>

@@ -387,7 +387,8 @@ table thead tr th {
 .gatsby-highlight .language-tsx,
 .gatsby-highlight .language-html,
 .gatsby-highlight .language-text,
-.gatsby-highlight .language-json {
+.gatsby-highlight .language-json,
+.gatsby-highlight .language-yaml {
   text-shadow: none;
   color: var(--code-color-white);
   background-color: var(--code-color-background);
