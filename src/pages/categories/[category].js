@@ -10,11 +10,11 @@ import {
 import Bio from "../../components/bio"
 import Layout from "../../components/layout"
 import Seo from "../../components/seo"
+import { CATEGORIES } from "../../constants"
 
 export default function CategoryPage({ data, location }) {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const category = data.allMarkdownRemark.distinct
-  const categories = ["typescript", "javascript", "algorithm", "project"]
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
@@ -63,7 +63,7 @@ export default function CategoryPage({ data, location }) {
             <span>all</span>
           </Link>
         </li>
-        {categories.map(category => {
+        {CATEGORIES.map(category => {
           return (
             <li
               className="category-container"
@@ -77,11 +77,11 @@ export default function CategoryPage({ data, location }) {
                     alt="category-image"
                   />
                 ) : null}
-                {category === "algorithm" ? (
+                {category === "react" ? (
                   <StaticImage
-                    src="../../images/category/Algorithm.png"
+                    src="../../images/category/React.png"
                     alt="category-image"
-                  ></StaticImage>
+                  />
                 ) : null}
                 {category === "javascript" ? (
                   <StaticImage
@@ -89,11 +89,11 @@ export default function CategoryPage({ data, location }) {
                     alt="category-image"
                   />
                 ) : null}
-                {category === "markdown" ? (
+                {category === "algorithm" ? (
                   <StaticImage
-                    src="../../images/category/MarkDown.png"
+                    src="../../images/category/Algorithm.png"
                     alt="category-image"
-                  />
+                  ></StaticImage>
                 ) : null}
                 {category === "project" ? (
                   <StaticImage

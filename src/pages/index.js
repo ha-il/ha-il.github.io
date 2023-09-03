@@ -10,11 +10,10 @@ import {
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { CATEGORIES } from "../constants"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const categories = ["typescript", "javascript", "algorithm", "project"]
-
   const posts = data.allMarkdownRemark.nodes
 
   if (posts.length === 0) {
@@ -60,7 +59,7 @@ const BlogIndex = ({ data, location }) => {
             <span>all</span>
           </Link>
         </li>
-        {categories.map(category => {
+        {CATEGORIES.map(category => {
           return (
             <li
               className="category-container"
@@ -77,6 +76,12 @@ const BlogIndex = ({ data, location }) => {
                 {category === "javascript" ? (
                   <StaticImage
                     src="../images/category/JavaScript.png"
+                    alt="category-image"
+                  />
+                ) : null}
+                {category === "react" ? (
+                  <StaticImage
+                    src="../images/category/React.png"
                     alt="category-image"
                   />
                 ) : null}
