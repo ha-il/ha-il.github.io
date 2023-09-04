@@ -3,8 +3,8 @@ title: "[리액트 렌더링] 브라우저의 렌더링 이해하기"
 date: "2023-09-03T15:31:00.000Z"
 description: "주소창에 google.com을 치면 일어나는 일을 설명해주세요!"
 category: "react"
-featuredImage: "../../../../src/images/react-256x256.png"
-mobileImage: "../../../../src/images/react-512x256x2.png"
+featuredImage: "../../../../../src/images/react-256x256.png"
+mobileImage: "../../../../../src/images/react-512x256x2.png"
 ---
 
 ## 렌더링 과정을 공부하게 된 계기
