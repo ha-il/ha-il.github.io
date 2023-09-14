@@ -94,7 +94,7 @@ class LocalTokenRepository {
 
 이렇게 위의 예시에서는 LocalTokenRepository라는 클래스가 TokenRepositoryInterface에 의존하고 있다고 볼 수 있다. 즉, 추상에 의존하고 있는 것이다.
 
-3. **인터페이스를 기준으로 메서를 호출한다.**
+3. **인터페이스를 기준으로 메서드를 호출한다.**
 ```js
 /*
 	TokenRepositoryInterface {
@@ -250,6 +250,73 @@ HttpClient 클래스에서 필요한 스토리지 관련 의존성을 내부에 
 이렇게 특정한 모듈에 필요한 의존성을 내부에서 가지고 있는 것이 아니라 해당 모듈을 사용하는 입장에서 주입해주는 형태로 설계하는 것을 '의존성 주입'이라고 한다. 예시를 통해 봤듯이 클래스의 경우에는 constructor를 통해서 의존성을 주입한다. 함수의 경우에는 인자를 통해서 의존성을 주입하면 된다. 그런데 만약 리액트 컴포넌트에서 의존성을 주입하려면 어떻게 해야 할까? 당연히 props를 사용하게 되겠지만, props는 데이터 전달이 단방향으로만 이뤄지기 때문에 의존성을 주입하는 것이 어렵다. 그 문제를 해결하기 위해서는 Context API를 사용하면 된다.
 ## 6. Context API
 
-리액트의 Context API를 이용하면 컴포넌트 단계마다 일일이 props를 넘겨주지 않고도 컴포넌트 트리 전체에 데이터를 전달할 수 있다. 이 설명은 [리액트 공식문서-Context](https://ko.legacy.reactjs.org/docs/context.html#when-to-use-context)에서도 나오는 설명인데, 바로 이 지점에서 Context API를 전역 상태관리 기술로 착각하는 경우가 있다. Context API로 전역에서 데이터를 제공하여 상태 관리를 할 수 있는 것은 사실이지만, 제공 범위는 Context Providr 컴포넌트의 위치에 따라서 달라질 수 있다. 즉, 전역 상태관리를 할 수 있는 것은 사실이지만, 그것만을 위한 기술은 아니라는 의미이다. ContextAPI는 그저 props를 좀 더 쉽게 전달하기 위한 기술이다. 
+리액트의 Context API를 이용하면 컴포넌트 단계마다 일일이 props를 넘겨주지 않고도 컴포넌트 트리 전체에 데이터를 전달할 수 있다. 이 설명은 [리액트 공식문서-Context](https://ko.legacy.reactjs.org/docs/context.html#when-to-use-context)에서도 나오는 설명인데, 바로 이 지점에서 Context API를 전역 상태 관리 기술로 착각하는 경우가 있다. Context API로 전역에서 데이터를 제공하여 상태 관리를 할 수 있는 것은 사실이지만, 제공 범위는 Context Providr 컴포넌트의 위치에 따라서 달라질 수 있다. 즉, 전역 상태관리를 할 수 있는 것은 사실이지만, 그것만을 위한 기술은 아니라는 의미이다. ContextAPI는 그저 props를 좀 더 쉽게 전달하기 위한 기술이다. 
 
-Context API를 통해 props를 쉽게 전달할 수 있기 때문에 리액트 컴포넌트에서도 의존성 주입을 할 수 있다. 아래 예시를 통해서 확인해보자.
+Context API를 통해 props를 쉽게 전달할 수 있기 때문에 리액트 컴포넌트에서도 의존성 주입을 할 수 있다. 아래 예시는 유저의 로그인 관련 함수를 props로 전달할 때 좀 더 쉽게 전달하기 위해서 Context API를 사용하는 예시이다. 
+
+```tsx
+import React, { ReactNode, createContext, useContext, useMemo } from 'react';
+import AuthServiceImplement from 'services/AuthSerivce';
+
+type AuthMethods = {
+  signin: (email: string, password: string) => void;
+  signup: (email: string, password: string) => void;
+  logout: () => void;
+};
+
+type AuthContextType = AuthMethods | null;
+
+type AuthProviderProps = {
+  children: ReactNode;
+  authService: AuthServiceImplement;
+};
+
+const AuthContext = createContext<AuthContextType>(null);
+
+export const useAuth = (): AuthMethods => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
+};
+
+// AuthProvider는 authService라는 인증 관련 메서드를 모아둔 클래스의 인스턴스를 주입받는다.
+function AuthProvider({ children, authService }: AuthProviderProps) {
+  const signin = authService.signin.bind(authService);
+  const signup = authService.signup.bind(authService);
+  const logout = authService.logout.bind(authService);
+
+  const contextValue = useMemo(
+    () => ({ signin, signup, logout }),
+    [signin, signup, logout],
+  );
+
+  return (
+    <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
+  );
+}
+export default AuthProvider;
+```
+
+```tsx
+const BASE_URL = 'http://localhost:8000/';
+// LocalStorage의 인스턴스 storage를 만든다.
+const storage = new LocalStorage();
+// HttpClient에 storage를 주입하고 인스턴스인 httpClient를 만든다.
+const httpClient = new HttpClient(BASE_URL, storage);
+// AuthServiceImplement에 httpClient와 storage를 주입하고 인스턴스인 authService를 만든다.
+const authService = new AuthServiceImplement(httpClient, storage);
+
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement,
+);
+
+root.render(
+	// AuthProvider에 authService를 주입한다.
+  <AuthProvider authService={authService}>
+    <App />
+  </AuthProvider>,
+);
+```
+이런 식으로 클래스를 작성하고 인스턴스를 만들어서 주입하는 방식으로 프로그래밍을 하면, 코드를 수정할 때도 매우 유연하게 대처할 수 있다. 만약 로컬 스토리지가 아니라 세션 스토리지를 사용게 되었다면, SessionStorage 클래스를 작성한 다음, `const storage = new LocalStorage()`를 `const storage = new SessionStorage()`로만 바꾸면 된다. 스토리지의 종류를 바꾸었어도 httpClient나 authService는 그대로 `storage`를 받고 있기 때문에 변경해줄 사항이 따로 없다. 이렇게 추상에 의존하도록 코드를 작성하면 코드의 유지보수가 쉬워진다.
