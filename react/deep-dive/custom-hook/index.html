@@ -18,7 +18,7 @@
 </code></pre></div>
 <p>이처럼 리액트는 컴포넌트의 <strong>로직</strong>과 <strong>UI</strong>에 관심을 가지고 있다. 만일 위와 같이 작성한다면 로직과 UI라는 두 가지 관심사를 하나의 컴포넌트에서 처리하게 되므로 로직과 UI를 각각 분리하여 관리하는 것이 좋다. 리액트에서 로직을 분리할 수 있는 방법이 바로 <strong>커스텀 훅</strong>이다.</p>
 <h2>3. 커스텀 훅으로 로직을 분리하자</h2>
-<p>커스텀 훅은 리액트가 리액트가 기본적으로 제공해주는 훅을 이용해서 만드는 함수다. 커스텀 훅의 조건은 아래와 같다.</p>
+<p>커스텀 훅은 리액트가 기본적으로 제공해주는 훅을 이용해서 만드는 함수다. 커스텀 훅의 조건은 아래와 같다.</p>
 <ol>
 <li>
 <p><strong>React의 Hook(useState, useEffect 등)을 호출하는 함수여야 한다.</strong></p>
@@ -132,7 +132,7 @@
 <span class="token punctuation">}</span></code></pre></div>
 <p>로직이 분리되니까 컴포넌트가 정말 깔끔해졌다. App 컴포넌트는 posts를 어디서 어떻게 가져오는지 관심을 가지지 않아도 된다. 그저 usePosts 훅을 통해서 posts를 받아오고, 그것으로 렌더링하는 것에만 집중하면 된다.</p>
 <h2>마치며</h2>
-<p>사실 위에서 만든 커스텀 훅은 아쉬운 부분이 많다. posts 목록이 필요한 곳에서 계속 사용할 수 있지만, 오로지 그 일밖에 할 수 없다. 'usePosts는 posts를 가져오는 것만 잘 하면 되지 않나?'라는 생각도 들지만, API를 요청하고 데이터를 받아오는 로직은 상당히 많이 쓰이는 로직이므로, usePosts 훅은 더 추상화될 수 있다. 추상화에 대한 내용은 다음 포스팅에서 더 자세하게 다루도록 하겠다.</p></section><hr/><footer></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/react/rendering/use-effect/">← <!-- -->[리액트 렌더링] 리액트의 useEffect 이해하기</a></li><li></li></ul></nav></main><footer>© <!-- -->2023<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/react/deep-dive/custom-hook/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>사실 위에서 만든 커스텀 훅은 아쉬운 부분이 많다. posts 목록이 필요한 곳에서 계속 사용할 수 있지만, 오로지 그 일밖에 할 수 없다. 'usePosts는 posts를 가져오는 것만 잘 하면 되지 않나?'라는 생각도 들지만, API를 요청하고 데이터를 받아오는 로직은 상당히 많이 쓰이는 로직이므로, usePosts 훅은 더 추상화될 수 있다. 추상화에 대한 내용은 추후 다른 포스팅에서 더 자세하게 다루도록 하겠다.</p></section><hr/><footer></footer></article><nav class="blog-post-nav"><ul style="display:flex;flex-wrap:wrap;justify-content:space-between;list-style:none;padding:0"><li><a rel="prev" href="/react/rendering/use-effect/">← <!-- -->[리액트 렌더링] 리액트의 useEffect 이해하기</a></li><li><a rel="next" href="/react/deep-dive/context-api/">[리액트 딥 다이브] ContextAPI로 컴포넌트에 의존성 주입하기<!-- --> →</a></li></ul></nav></main><footer>© <!-- -->2023<!-- -->, Built with<!-- --> <a href="https://www.gatsbyjs.com">Gatsby</a></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/react/deep-dive/custom-hook/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
