@@ -350,3 +350,109 @@ const hail: BaseballPlayer = {
 - 유틸리티 타입, 맵드 타입
 
 백엔드와 인터페이스를 정의할 때는 인터페이스를 사용한다. 서비스의 요구 사항이 변경되어 인터페이스를 확장시켜야 하는 경우가 있다. 타입의 확장 측면에서는 상속이나 선언 병합 등을 활용해 유연하게 확장할 수 있는 인터페이스가 더 적합하다.
+
+## 6. 이넘(enum)
+이넘은 특정 값의 집합을 의미하는 데이터 타입이다. 상수 집합이라고도 표현한다. 상수는 변하지 않는 고정 값을 의미한다. 자바스크립트에서는 const를 사용하여 상수를 표현한다. 상수는 이 값이 어떤 의미를 갖는지 알려 줌으로써 가독성을 높이는 장점이 있다.
+
+여러개의 상수를 하나의 단위로 묶으면 이넘이 된다. 비슷한 성격이나 같은 범주에 있는 상수를 하나로 묶어 더 큰 단위의 상수로 만드는 것이 이넘의 역할이다. enum 문법은 아래와 같이 사용한다.
+```ts
+enum Coffee {
+  Americano,
+  Latte,
+  Cappuccino
+}
+
+const myFavorite = Coffee.Americano
+console.log(myFavorite); // 0
+const yourFavorite = Coffee[0]
+console.log(yourFavorite); // Americano
+```
+
+
+## 6.1 숫자형 이넘
+이넘에 선언된 속성은 기본적으로 숫자 값을 가진다. 그래서 위에서 Coffee.Americano를 콘솔에 찍었을 때 0이라는 값이 출력되는 것이다. 첫 번째 속성에는 0이 할당 되고, 그 다음부터는 순서대로 1씩 증가한 값이 할당된다. 
+
+`Coffee[0]`를 콘솔에 찍어보면 'Americano'라는 결과가 나오는데, 값으로 속성을 찾고 있는 상황이다. 이는 타입스크립트의 내부 규칙 때문에 그렇다. enum을 자바스크립트로 컴파일하면 아래와 같은 결과가 나온다.
+
+```js
+var Coffee;
+(function (Coffee) {
+    Coffee[Coffee["Americano"] = 0] = "Americano";
+    Coffee[Coffee["Latte"] = 1] = "Latte";
+    Coffee[Coffee["Cappuccino"] = 2] = "Cappuccino";
+})(Coffee || (Coffee = {}));
+```
+위와 같이 속성과 값이 거꾸로 연결괴어 할당되는 것을 리버스 매핑(reverse mapping)이라고 한다.
+
+속성의 초깃 값은 변경이 가능하다. 첫 번째 속성의 시작 값을 변경하더라도 순서대로 선언된 이넘 속성의 값은 1씩 증가한다.
+```ts
+enum Coffee {
+  Americano = 11,
+  Latte,
+  Cappuccino,
+}
+
+console.log(Coffee.Americano); // 11
+console.log(Coffee.Latte); // 12
+console.log(Coffee.Cappuccino); // 13
+console.log(Coffee[13]); // Cappuccino
+```
+
+실제로 숫자형 이넘을 작성할 때는 명시적으로 값을 설정하는 것이 값을 더 빠르게 파악할 수 있어서 좋다.
+
+## 6.2 문자형 이넘
+
+이넘의 속성 값에 문자열을 연결한 이넘을 의미한다. 모든 속성 값을 지정해줘야 하고, 속성 순서대로 값이 증가하는 규칙도 없다.
+
+```ts
+enum Coffee {
+  Americano = 'Americano',
+  Latte = 'Latte',
+  Cappuccino = 'Cappuccino',
+}
+
+console.log(Coffee.Americano); // "Americano"
+console.log(Coffee.Latte); // "Latte"
+console.log(Coffee.Cappuccino); // "Cappuccino"
+```
+
+
+이넘 속성 이름과 값을 동일한 문자열로 관리하는 것이 일반적인 코딩 컨벤션이라고 한다. 실전에서는 숫자형 이넘보다 문자형 이넘 방식을 더 많이 사용한다고 한다. 
+
+## 6.3 const 이넘
+const 이란 이넘을 선언할 때 앞에 const를 붙인 이넘을 의미한다. const를 이넘 앞에 붙이면 컴파일 결과물의 코드양이 줄어든다.
+
+먼저, const를 사용하지 않은 일반적인 문자형 이넘의 컴파일 결과를 보자.
+
+```ts
+// 문자형 이넘
+enum Coffee {
+  Americano = 'Americano',
+  Latte = 'Latte',
+  Cappuccino = 'Cappuccino',
+}
+```
+```js
+// 믄자형 이넘 컴파일 결과
+"use strict";
+var Coffee;
+(function (Coffee) {
+    Coffee["Americano"] = "Americano";
+    Coffee["Latte"] = "Latte";
+    Coffee["Cappuccino"] = "Cappuccino";
+})(Coffee || (Coffee = {}));
+```
+다음으로, const 이넘의 컴파일 결과를 보자.
+```ts
+const enum Coffee {
+  Americano = 'Americano',
+  Latte = 'Latte',
+  Cappuccino = 'Cappuccino'
+}
+```
+```js
+// const 이넘 컴파일 결과
+"use strict";
+```
+
+이렇게 코드 양을 줄여준다는 장점이 있지만, const 이넘을 사용할 경우 항상 속성에 고정 값만 넣어 주어야 한다는 제약이 있다. 
