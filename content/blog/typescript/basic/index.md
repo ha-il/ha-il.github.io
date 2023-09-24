@@ -456,3 +456,99 @@ const enum Coffee {
 ```
 
 이렇게 코드 양을 줄여준다는 장점이 있지만, const 이넘을 사용할 경우 항상 속성에 고정 값만 넣어 주어야 한다는 제약이 있다. 
+
+## 7. 클래스
+
+타입스크립트로 클래스를 작성할 때는 생성자 메서드에서 사용될 클래스 속성들을 미리 정의해 주어야 한다.
+
+```ts
+class HttpClient {
+  // 자바스크립트에서는 constructor에서 사용될 속성을 미리 정의해주지 않아도 에러가 발생하지 않았다.
+  baseUrl: string;
+
+  constructor(baseUrl: string) {
+    this.baseUrl = baseUrl;
+  }
+
+  fetch(url: string = this.baseUrl): void {
+    window.fetch(url);
+  }
+}
+
+const httpClient = new HttpClient('https://ha-il.github.io/');
+```
+### 7.1 클래스 접근 제어자
+
+위 예시에서 httpClient의 baseUrl 속성은 마음대로 접근하고 수정할 수 있는 상황이다.
+```ts
+console.log(httpClient.baseUrl); // https://ha-il.github.io/
+
+httpClient.baseUrl = 'https://이상한사이트.com/';
+
+console.log(httpClient.baseUrl); // https://이상한사이트.com/
+```
+
+클래스의 속성에 마음대로 접근할 수 있는 상황은 에러를 일으킬 확률이 높다. 클래스 접근 제어자를 사용하면 이 문제를 해결할 수 있다.
+
+- **public**
+클래스 안에 선언된 속성과 메서드를 어디서든 접근할 수 있게 한다. 클래스 안에서 속성과 메서드를 선언할 때 접근 제어자를 별도로 붙이지 않았다면 기본적으로 public으로 간주된다.
+
+- **private**
+클래스 코드 외부에서 클래스의 속성과 메서드에 접근할 수 없다. 클래스의 속성과 메서드는 클래스 내부에서만 접근할 수 있다. 외부에서 접근을 시도하면 에러가 발생한다. 상속받은 클래스라고 해도 접근할 수 없다.
+
+```ts
+class HttpClient {
+  // private로 선언
+  private baseUrl: string;
+
+  constructor(baseUrl: string) {
+    this.baseUrl = baseUrl;
+  }
+  // private로 정의
+  private fetch(url: string = this.baseUrl): void {
+    window.fetch(url);
+  }
+}
+
+const httpClient = new HttpClient('https://ha-il.github.io/');
+
+
+console.log(httpClient.baseUrl); // 에러 발생
+// Property 'baseUrl' is private and only accessible within class 'HttpClient'.
+
+httpClient.fetch() // 에러 발생
+// Property 'fetch' is private and only accessible within class 'HttpClient'.
+```
+- **protected**
+클래스 코드 외부에서 클래스의 속성과 메서드에 접근할 수 없다. 다만, 상속받은 클래스에서는 사용할 수 있다.
+
+```ts
+class HttpClient {
+
+  protected baseUrl: string;
+
+  constructor(baseUrl: string) {
+    this.baseUrl = baseUrl;
+  }
+
+  public fetch(url: string = this.baseUrl): void {
+    window.fetch(url);
+  }
+}
+
+class SonHttpClient extends HttpClient {
+
+  constructor(baseUrl: string) {
+    super(baseUrl)
+    // fetch가 HttpClient에서 protected로 정의되어 있어서 접근이 가능하다.
+    // private로 정의되어 있었다면 접근할 수 없기 때문에 에러가 발생한다. 
+    this.fetch(baseUrl)
+  }
+}
+
+const httpClient = new SonHttpClient('https://ha-il.github.io/');
+
+
+httpClient.fetch() // 에러 발생: 여전히 외부에서 접근은 불가능하다.
+// Property 'fetch' is protected and only accessible within class 'HttpClient' and its subclasses.
+```
