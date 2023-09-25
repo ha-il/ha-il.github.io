@@ -2,9 +2,9 @@
 title: "[CRA 환경설정] ESLint와 Prettier 환경 설정"
 date: "2023-08-27T17:22:00.000Z"
 description: "TypeScript 기반의 CRA에 ESLint와 Prettier를 적용해보자"
-category: "typescript"
-featuredImage: "../../../../../src/images/ts-256x256.png"
-mobileImage: "../../../../../src/images/ts-512x256x2.png"
+category: "cra"
+featuredImage: "../../../../../src/images/cra-es-pre-256x256.png"
+mobileImage: "../../../../../src/images/cra-512x256x2.png"
 ---
 
 이전 글 ["[CRA 환경설정] 타입스크립트 환경 설정

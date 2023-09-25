@@ -2,9 +2,9 @@
 title: "[CRA 환경설정] 타입스크립트 환경 설정"
 date: "2023-08-26T16:47:00.000Z"
 description: "TypeScript 기반의 CRA 프로젝트를 만들어보자"
-category: "typescript"
-featuredImage: "../../../../../src/images/ts-256x256.png"
-mobileImage: "../../../../../src/images/ts-512x256x2.png"
+category: "cra"
+featuredImage: "../../../../../src/images/cra-ts-256x256.png"
+mobileImage: "../../../../../src/images/cra-512x256x2.png"
 ---
 
 ## 작성 계기

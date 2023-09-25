@@ -46,7 +46,7 @@ export default function CategoryPage({ data, location }) {
           </div>
           <div className="slider-content-img">
             <StaticImage
-              src="../../images/js-256x256.png"
+              src="../../images/ts-256x256.png"
               alt="Slider picture"
             />
           </div>
@@ -80,6 +80,12 @@ export default function CategoryPage({ data, location }) {
                 {category === "react" ? (
                   <StaticImage
                     src="../../images/category/React.png"
+                    alt="category-image"
+                  />
+                ) : null}
+                {category === "cra" ? (
+                  <StaticImage
+                    src="../../images/category/cra.png"
                     alt="category-image"
                   />
                 ) : null}

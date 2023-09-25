@@ -2,9 +2,9 @@
 title: "[CRA 환경설정] AWS S3로 배포한 사이트의 CI/CD 환경 구축"
 date: "2023-08-28T15:46:00.000Z"
 description: "GitHub Actions로 CI/CD 환경을 구축해보자."
-category: "typescript"
-featuredImage: "../../../../../src/images/ts-256x256.png"
-mobileImage: "../../../../../src/images/ts-512x256x2.png"
+category: "cra"
+featuredImage: "../../../../../src/images/cra-256x256.png"
+mobileImage: "../../../../../src/images/cra-512x256x2.png"
 ---
 
 이전 글 ["[CRA 환경설정] Husky 환경 설정"](https://ha-il.github.io/configure/cra-configure/husky-config/)에서 이어지는 글입니다.

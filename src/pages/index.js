@@ -85,6 +85,12 @@ const BlogIndex = ({ data, location }) => {
                     alt="category-image"
                   />
                 ) : null}
+                {category === "cra" ? (
+                  <StaticImage
+                    src="../images/category/cra.png"
+                    alt="category-image"
+                  />
+                ) : null}
                 {category === "algorithm" ? (
                   <StaticImage
                     src="../images/category/Algorithm.png"
