@@ -417,9 +417,12 @@ console.log(Coffee.Cappuccino); // "Cappuccino"
 ```
 
 
-이넘 속성 이름과 값을 동일한 문자열로 관리하는 것이 일반적인 코딩 컨벤션이라고 한다. 실전에서는 숫자형 이넘보다 문자형 이넘 방식을 더 많이 사용한다고 한다. 
+이넘 속성 이름과 값을 동일한 문자열로 관리하는 것이 일반적인 코딩 컨벤션이라고 한다. 실전에서는 숫자형 이넘보다 문자형 이넘 방식을 더 많이 사용한다고 한다.
+
+문자형 이넘의 경우 넘겨 받을 문자열을 제한해야 할 때 사용하면 좋다. 문자열은 오타가 발생하기 쉽기 때문에 오류를 자주 발생시킨다. 문자열 이넘으로 넘겨 받을 문자열을 제한해주면 오타가 발생할 확률이 줄어든다.
 
 ## 6.3 const 이넘
+
 const 이란 이넘을 선언할 때 앞에 const를 붙인 이넘을 의미한다. const를 이넘 앞에 붙이면 컴파일 결과물의 코드양이 줄어든다.
 
 먼저, const를 사용하지 않은 일반적인 문자형 이넘의 컴파일 결과를 보자.
@@ -662,3 +665,87 @@ foo('name')
 `<T extends keyof { id: number, name: string }>`를 보면 number 타입인 id와 string 타입인 name을 받는 것이라 생각할 수 있겠지만, keyof는 **키 값**을 추출해서 **문자열 유니언 타입**으로 변환하는 것이기 때문에 속성의 타입과는 관련이 없다. 
 
 `keyof { id: number, name: string }`는 `"id" | "name"`를 의미하고, 여기에 `extends`를 사용하면 'id' 또는 'name'이라는 문자열만 허용한다는 것이다. 그래서 'Hello, world!'와 123은 허용하지 않는 것이다.
+
+## 9. 타입 추론
+
+타입 추론이란 타입스크립트가 코드를 해석하여 적절한 타입을 정의하는 동작을 의미한다. 타입 추론이 가능하기 때문에 타입 지정을 생략할 수 있는 코드에서는 생략이 가능하다. 이는 코드를 간결하게 해주어 코드의 가독성을 높이는 효과가 있다. 
+
+
+### 9.1 변수의 타입 추론
+
+변수 타입은 선언하는 시점에 할당된 값을 기반으로 추론된다. 
+
+```ts
+let stringVar = 'Hello, world!' // let stringVar: string
+let numberVar = 123 // let numberVar: number
+let booleanVar = true // let booleanVar: boolean
+
+let whatAmI // let whatAmI: any
+whatAmI = 123 // let whatAmI: any
+```
+`whatAmI`변수의 경우 선언은 했지만 값은 할당하지 않았다. 따라서 해당 변수의 타입은 any이다. 이후에 값을 할당하더라도 타입은 any이다. 타입스크립트 입장에서는 선언 후에 어떤 값이 할당될 지 알 수 없기 때문이다.
+
+### 9.2 함수의 타입 추론
+
+- **반환 값 타입 추론**
+
+타입스크립트는 함수의 파라미터와 내부 동작에 따라서 함수의 반환값 타입을 추론할 수 있다.
+
+```ts
+// sum 함수의 반환 값 타입을 지정해주지 않았다. 
+function sum(a: number, b: number) {
+  return a + b
+}
+
+// 타입 추론으로 인해 result는 number로 추론된다.
+let result = sum(2, 3) // let result: number
+```
+
+- **파라미터 타입 추론**
+
+파라미터의 경우 타입을 지정하는 경우가 많지만, 기본값을 설정한 경우 기본값에 따라서 파라미터 타입이 추론된다. 
+
+```ts
+function sum(a: number, b = 3) { // (parameter) b: number
+  return a + b
+}
+
+let result = sum(2) // let result: number
+console.log(result) // 5
+```
+
+### 9.3 인터페이스와 제네릭의 추론
+
+인터페이스에 제네릭을 사용할 때도, 제네릭으로 넘겨 받은 타입을 기준으로 타입을 추론할 수 있다.
+
+```ts
+interface Message<T> {
+  text: T
+  isFocused: boolean
+}
+
+// 제네릭으로 string 타입을 넘겼으므로 text 속성의 타입은 string으로 추론된다.
+let message: Message<string> = {
+  // (property) Message<string>.text: string
+  // (property) Message<string>.text: string
+}
+```
+인터페이스의 상속과 제네릭이 얽혀있는 경우에도 타입 추론이 가능하다.
+
+```ts
+interface Message<T> {
+  text: T
+  isFocused: boolean
+}
+
+interface ErrorMessage<K> extends Message<K> {
+  status: number
+}
+
+let errorMessage: ErrorMessage<string> = {
+  // (property) Message<string>.text: string
+  // (property) Message<T>.isFocused: boolean
+  // (property) ErrorMessage<K>.status: number
+}
+```
+위 예시를 보면 `ErrorMessage` 인터페이스에 제네릭으로 string 타입을 넘겨줬지만, 정작 `ErrorMessage`에서는 넘겨 받은 제네릭을 사용하고 있지 않다. 하지만 넘겨 받은 제네릭을 부모 인터페이스인 `Message`로 넘겨 주고 있고, 이로 인해서 `errorMessage`의 `text` 속성은 string 타입으로 추론되고 있다.
