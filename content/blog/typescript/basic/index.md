@@ -552,3 +552,113 @@ const httpClient = new SonHttpClient('https://ha-il.github.io/');
 httpClient.fetch() // 에러 발생: 여전히 외부에서 접근은 불가능하다.
 // Property 'fetch' is protected and only accessible within class 'HttpClient' and its subclasses.
 ```
+## 8. 제네릭
+
+제네릭은 타입을 미리 정의하지 않고 사용하는 시점에 원하는 타입을 정의해서 쓸 수 있는 문법이다. 쉽게 말하면 '타입을 넘기고 그 타입을 그대로 받는다'는 것이다. 제네릭은 `<>`로 표기하며 기본 문법은 아래와 같다.
+
+```ts
+function foo<T>(x: T):T {
+  return x
+}
+
+// 제네릭으로 기본 타입을 넘겨서 사용할 수 있다.
+foo<string>('Hello, world!')
+
+// 제네릭으로 넘겨준 기본 타입에 위배되는 타입의 값을 넘겨주면 에러가 발생한다.
+foo<string>(123) // 에러 발생
+
+// 타입 추론 덕분에 제네릭으로 타입을 넘겨주지 않아도 함수를 사용할 수 있다.
+foo(123)
+```
+
+### 8.1 제네릭을 사용하는 이유
+
+타입 코드의 중복을 최소화할 수 있기 때문이다. 위에서 예시로 들었던 `foo`함수는 받은 인자를 반환하는 단순한 함수기 때문에 어떤 타입이든 받을 수 있다. 하지만 타입스크립트를 사용하기 때문에 받는 타입에 따라서 다른 함수를 작성해줘야 한다. 그럴 경우 코드의 중복이 발생한다. 제네릭을 사용하면 함수를 사용 할 때마다 타입을 넘겨주면 되기 때문에 타입 정의 코드의 중복을 최소화할 수 있다.
+
+any타입을 써도 중복은 해결할 수 있지만, 에러의 사전 방지나 코드 에디터의 자동완성 기능을 사용할 수 없기 때문에 추천하지 않는다. 
+
+### 8.2 인터페이스와 제네릭
+
+제네릭을 사용하면 인터페이스의 중복도 줄일 수 있다. 아래와 같이 인터페이스가 있는 경우를 생각해보자.
+```ts
+interface StringMessage {
+  text: string
+  isFocused: boolean
+}
+
+interface NumberMessage {
+  text: number
+  isFocused: boolean
+}
+
+const helloWorld: StringMessage = { text: 'Hello, world!', isFocused: true }
+const oneTwoThree: NumberMessage = { text: 123, isFocused: false }
+```
+두 개의 인터페이스는 text 속성의 타입을 제외하고 동일한 구조를 가지고 있다. 아래 예시처럼 제네릭을 사용하면 중복을 해소할 수 있다.
+
+```ts
+interface Message<T> {
+  text: T
+  isFocused: boolean
+}
+
+const helloWorld: Message<string> = { text: 'Hello, world!', isFocused: true }
+const oneTwoThree: Message<number> = { text: 123, isFocused: false }
+```
+
+### 8.3 제네릭의 타입 제약
+
+제네릭은 타입을 미리 정의하지 않고 호출하는 시점에 타입을 정의하기 때문에 타입을 별도로 제약하지 않을 경우 아무 타입이나 받을 수 있게 된다. 아무 타입이 아니라 몇 개의 타입만 제네릭으로 받을 수 있게 제약을 건다면 제네릭을 더욱 안전하게 사용할 수 있을 것이다.
+
+- **extends를 사용한 타입 제약**
+
+```ts
+// 기본 타입으로 제약
+function foo<T extends string>(x: T): T {
+  return x
+}
+
+foo<string>('Hello, world!') // 문제 없음
+foo<number>('Hello, world!') // 오류 발생
+```
+위의 예시는 기본 타입으로 제약을 했지만, extends를 사용하면 타입의 속성으로도 제약을 할 수 있다. 아래 예시를 보자.
+
+```ts
+// 타입의 속성으로 제약
+function foo<T extends { length: number }>(x: T) {
+  return x.length
+}
+
+foo('Hello, world!') // string은 length 속성을 가진다.
+foo([1, 2, 3]) // Array는 length 속성을 가진다.
+foo({ length: 1004 }) // length 속성을 가진 객체이다.
+foo(123) // 에러 발생: number는 length 속성을 가지지 않는다. 
+```
+
+- **keyof**
+
+`keyof`는 특정 타입의 키 값을 추출해서 문자열 유니언 타입으로 변환해준다.
+
+```ts
+type Player = keyof { id: number, name: string, loggedIn: boolean };
+// type Player = "id" | "name" | "loggedIn" 와 동일하다.
+```
+
+keyof는 extends와 함께 사용할 수도 있다.
+
+```ts
+function foo<T extends keyof { id: number, name: string }>(x: T): T {
+  return x
+}
+
+// keyof { id: number, name: string }는 
+// "id" | "name"과 같다.
+
+foo('Hello, world!') // type "id" | "name"
+foo(123) // type "id" | "name"
+foo('id')
+foo('name')
+```
+`<T extends keyof { id: number, name: string }>`를 보면 number 타입인 id와 string 타입인 name을 받는 것이라 생각할 수 있겠지만, keyof는 **키 값**을 추출해서 **문자열 유니언 타입**으로 변환하는 것이기 때문에 속성의 타입과는 관련이 없다. 
+
+`keyof { id: number, name: string }`는 `"id" | "name"`를 의미하고, 여기에 `extends`를 사용하면 'id' 또는 'name'이라는 문자열만 허용한다는 것이다. 그래서 'Hello, world!'와 123은 허용하지 않는 것이다.
