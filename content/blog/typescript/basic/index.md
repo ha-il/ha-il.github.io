@@ -1065,3 +1065,104 @@ function isPitcher(person: Staff | Player | Pitcher): person is Pitcher {
 }
 // `person is Pitcher`의 의미는 반환 겂이 true라면 person이라는 파라미터의 타입은 Pitcher로 간주한다는 의미이다.
 ```
+
+## 15 타입 호환(type compatibility)
+
+타입 호환이란 서로 다른 타입이 2개 있을 때 특정 타입이 다른 타입에 포함되는지를 의미한다.
+
+```ts
+
+let stringVar:string = 'Hello, world!'
+let helloVar:'Hello, world!' = 'Hello, world!'
+
+// 타입이 호환되는 경우
+stringVar = helloVar // 에러 없음: string 타입이 'Hello, world!' 타입을 포함하기 때문
+
+// 타입이 호환되지 않는 경우
+helloVar = stringVar // 에러 발생: 'Hello, world!'이 string 타입을 포함하지 않기 때문
+```
+
+### 15.1 구조적 타이핑(structural typing)
+
+구조적 타이핑이란 타입 유형보다는 타입 구조로 호환 여부를 판별하는 언어적 특성을 의미한다. 타입스크립트의 타입 호환은 구조적 타이핑을 따른다.
+
+```ts
+type Pitcher = {
+    name: string;
+    backNumber: number;
+}
+
+interface Batter {
+    name: string;
+    backNumber: number;
+}
+
+let a:Pitcher = {
+    name: '정현수',
+    backNumber: 57
+}
+
+let b:Batter = {
+    name: '원성준',
+    backNumber: 7
+}
+
+a = b // 에러 없음: Pitcher와 Batter가 동일한 구조를 가지고 있기 때문
+b = a // 에러 없음
+```
+
+### 15.2 객체 타입의 호환
+
+구조적 타이핑에서 봤던 예시는 타입 별칭인 Pitcher와 인터페이스인 Batter가 완전히 동일한 구조를 가지고 있다. 하지만 완전히 동일한 구조를 가지고 있어야 호환이 되는 것은 아니다.
+```ts
+interface Player {
+    name: string;
+    backNumber: number;
+}
+
+type Pitcher = {
+    name: string;
+    backNumber: number;
+    arsenal: string[]
+}
+
+let player: Player = {
+    name: '원성준',
+    backNumber: 7
+}
+
+let pitcher: Pitcher = {
+    name: '정현수',
+    backNumber: 7,
+    arsenal: ['커브', '패스트볼', '슬라이더', '체인지업']
+}
+
+player = pitcher // 호환 가능: pitcher 객체에 Player 인터페이스의 필수 속성인 name과 backNumber가 정의되어 있기 때문
+pitcher = player // 호환 불가능: player 객체에 Pitcher 타입 별칭의 필수 속성인 arsenal이 정의되어 있지 않기 때문
+```
+
+### 15.3 함수 타입의 호환
+
+함수 타입도 구조가 유사하면 호환된다.
+
+```ts
+let printMessage = (message: string) => console.log(message)
+let printText = (text: string) => console.log(text)
+
+printMessage = printText // 호환 가능
+printText = printMessage // 호환 가능
+```
+아래와 같이 구조가 다른 경우에는 호환이 불가능할 수도 있다.
+
+```ts
+let printText = (text: string) => console.log(text)
+let printMessage = (message: string, status: number) => console.log(message, status)
+
+printMessage = printText // 호환 가능
+printText = printMessage // 호환 불가 
+```
+위 예시에서 `printText = printMessage`가 호환 불가인 이유를 좀 더 자세히 설명하겠다. 변수 `printText`에는 인자를 한 개 받는 함수가 할당되어 있다. 그런 변수에 인자를 두 개 받아야 동작하는 `printMessage`라는 함수를 할당한 상황이다. 그러면 `printText`가 인자를 두 개 받을 수 있을 것 같지만 `printText`는 함수 표현식에 정의된대로 여전히 1개의 인자만 받는다. 따라서 첫 번째 인자는 전달이 가능하지만 두 번째 인자는 전달이 불가능하기 때문에 두 번째 인자는 `undefined`가 되고 예상한 것과 다른 결과 값이 나오게 된다. 이러한 이유로 `printText = printMessage`는 호환되지 않는 것이다.
+
+반면 `printMessage = printText`는 인자의 개수가 다르지만 호환이 가능하다. 변수 `printMessage`에는 인자를 두 개 받는 함수가 할당되어 있다. 그런 변수에 인자를 한 개 받아야 동작하는 `printText`라는 함수를 할당한 상황이다. 인자를 한 개만 받는 함수가 할당되어 있지만 `printMessage`는 함수 표현식에 정의된대로 여전히 인자를 두 개 받아야 한다. 따라서 첫 번째 인자만 사용되고 두 번째 인자는 버려진다. 두 번째 인자를 사용하지 않았지만 함수의 동작은 깨지지 않고 동작하기 때문에 `printMessage = printText`는 호환이 가능하다.
+
+이처럼 함수 타입의 호환은 '기존 함수 코드의 동작을 보장해 줄 수 있는가?'라는 관점에서 이해하면 된다.
