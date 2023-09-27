@@ -749,3 +749,107 @@ let errorMessage: ErrorMessage<string> = {
 }
 ```
 위 예시를 보면 `ErrorMessage` 인터페이스에 제네릭으로 string 타입을 넘겨줬지만, 정작 `ErrorMessage`에서는 넘겨 받은 제네릭을 사용하고 있지 않다. 하지만 넘겨 받은 제네릭을 부모 인터페이스인 `Message`로 넘겨 주고 있고, 이로 인해서 `errorMessage`의 `text` 속성은 string 타입으로 추론되고 있다.
+
+## 10. 타입 단언(type assertion)
+
+타입 단언은 타입스크립트의 타입 추론에 기대지 않고 개발자가 직접 타입을 명시하여 해당 타입으로 강제하는 것을 의미한다. 이미 운영되고 있는 자바스크립트 애플리케이션에 타입스크립트를 적용할 때 사용할 수 있다. 아래 예시의 `oldObj`를 기존에 존재하던 자바스크립트 객체라고 생각하면서 예시를 보자.
+
+```ts
+const oldObj = {
+  id: 1,
+}
+
+oldObj.value = '업데이트' // 에러 발생: Property 'value' does not exist on type '{ id: number; }'
+```
+타입스크립트 입장에서 `value`라는 속성은 `oldObj`에 존재하지 않기 때문에 함부로 추가할 수 없어서 에러가 발생한다. 하지만 반드시 `value`를 추가해야 한다면 `as`라는 키워드를 사용하여 타입 단언을 하면 된다.
+
+```ts
+interface MyObject {
+  id: number
+  value: string
+}
+
+const oldObj = {
+  id: 1,
+} as MyObject
+
+oldObj.value = '업데이트' // 에러가 발생하지 않는다.
+```
+
+### 10.1 as를 사용할 수 있는 대상
+```ts
+// 원시값
+let me = 'hail' as string
+
+// 객체
+let obj = {} as { id: number }
+
+// 함수의 호출 결과
+function justReturn(x: any) {
+  return x
+}
+let value = justReturn(123) as number
+```
+### 10.2 타입 단언 사용 시 주의 사항
+
+- **호환되지 않는 데이터 타입으로는 단언할 수 없다.**
+
+예를 들자면, string 값을 number로 단언할 수는 없다.
+
+```ts
+let value = "1004" as number // 에러 발생
+/*
+Conversion of type 'string' to type 'number' may be a mistake because neither type sufficiently overlaps with the other. 
+If this was intentional, convert the expression to 'unknown' first.
+*/
+```
+
+- **타입 단언으로 타입 에러를 해결할 수 있지만, 실행 에러는 방지하지 못 한다.**
+
+```ts
+interface User {
+    id: number
+    name: string
+}
+
+function getUser() {
+    return { name: '하일' }
+}
+
+// getUser가 반환하는 값이 User 인터페이스와 일치한다고 단언했다.
+let hail = getUser() as User
+
+// 하지만 단언과 달리 hail이라는 객체에 id라는 속성은 없다.
+console.log(hail.id) // undefined
+```
+위 예시의 `getUser` 함수의 반환 값은 `User` 인터페이스와 일치하지 않는다. 하지만 `as`를 사용해서 `User` 인터페이스와 일치한다고 단언했다. 이렇게 작성하면 VSCode 상에서는 에러가 발생하지 않는다. 하지만 단언과 달리 `hail.id`는 존재하지 않기 때문에, `hail.id`를 함수의 인자로 사용할 경우 실행 에러가 발생할 확률이 높다.
+
+타입 단언은 타입 에러 해결을 간편하게 해주지만 실행 에러를 방지하지 못 하기 때문에 남용해서는 안 된다. 타입 단언보다 타입 추론에 의존하는 것이 더 안전하다.
+
+### 10.3 null 아님 보장 연산자(non null assertion)
+
+null 아님 보장 연산자는 null 타입을 체크할 때 유용하게 쓰는 연산자다. 프론트엔드 프로그래밍을 하다보면, 함수에 특정한 값을 인자로 전달하려고 했지만 어떠한 이유로 null 값이 전달되는 경우가 종종 있다. 따라서 함수에 null 값이 들어왔을 때 대처하는 코드를 작성해야 하는 경우가 있다. 아래 예시를 보자.
+
+```ts
+interface BaseballPlayer {
+    backNumber: number
+    name: string
+}
+
+// null 값이 들어올 수 있는 함수라 가정하고 파라미터의 타입을 유니언 타입으로 지정했다.
+function IntroducePlayer(player: BaseballPlayer | null){
+    // 에러 발생: 'player' is possibly 'null'
+    return `${player.backNumber}번 ${player.name} 선수를 소개합니다!`
+}
+```
+타입스크립트 입장에서는 `player`가 null이라면 `backNumber`와 `name`이라는 속성은 존재하지 않기 때문에 에러를 발생시킨 것이다. if문을 사용해서 null을 체크하는 로직을 넣어도 되지만, 파라미터가 null이 아니라는 확신이 있다면 null 아님 보장 연산자인 `!`를 사용할 수 있다.
+
+```ts
+function IntroducePlayer(player: BaseballPlayer | null){
+    // 에러가 발생하지 않는다.
+    return `${player!.backNumber}번 ${player!.name} 선수를 소개합니다!`
+}
+```
+
+as와 마찬가지로 null 아님 보장 연산자 또한 실행 에러까지 막아주지는 않는다. 타입스크립트에게 이 값이 null이 아니라고 단언해줄 뿐, 코드가 실행될 때 null 값이 들어온다면 실행 에러를 발생시킨다.
+
