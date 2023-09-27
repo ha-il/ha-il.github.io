@@ -215,8 +215,8 @@ interface Staff {
   role: string;
 }
 
-function printPersonInfo(pserson: Player | Staff) {
-  console.log(pserson.id);
+function printPersonInfo(person: Player | Staff) {
+  console.log(person.id);
 }
 
 printPersonInfo({ id: 1, name: '하일' }); // 1
@@ -225,10 +225,10 @@ printPersonInfo({ id: 1, name: '하일' }); // 1
 유니언 타입 사용 시 주의사항이 있다. 함수의 파라미터에 유니언 타입을 선언하면 함수 안에서는 두 타입의 공통 속성과 메서드만 자동 완성된다. 함수 파라미터에 유니언 타입을 사용하면 함수에 어떤 값이 들어올지 알 수 없기 때문에 가장 안전한 방식으로 타입의 속성과 API를 자동 완성 해주기 때문이다.
 
 ```ts
-function printPersonInfo(pserson: Player | Staff) {
-  console.log(pserson.name); // 타입 에러
-  console.log(pserson.role); // 타입 에러
-  console.log(pserson.id); // 통과
+function printPersonInfo(person: Player | Staff) {
+  console.log(person.name); // 타입 에러
+  console.log(person.role); // 타입 에러
+  console.log(person.id); // 통과
 }
 ```
 
@@ -808,12 +808,12 @@ If this was intentional, convert the expression to 'unknown' first.
 
 ```ts
 interface User {
-    id: number
-    name: string
+  id: number
+  name: string
 }
 
 function getUser() {
-    return { name: '하일' }
+  return { name: '하일' }
 }
 
 // getUser가 반환하는 값이 User 인터페이스와 일치한다고 단언했다.
@@ -838,18 +838,230 @@ interface BaseballPlayer {
 
 // null 값이 들어올 수 있는 함수라 가정하고 파라미터의 타입을 유니언 타입으로 지정했다.
 function IntroducePlayer(player: BaseballPlayer | null){
-    // 에러 발생: 'player' is possibly 'null'
-    return `${player.backNumber}번 ${player.name} 선수를 소개합니다!`
+  // 에러 발생: 'player' is possibly 'null'
+  return `${player.backNumber}번 ${player.name} 선수를 소개합니다!`
 }
 ```
 타입스크립트 입장에서는 `player`가 null이라면 `backNumber`와 `name`이라는 속성은 존재하지 않기 때문에 에러를 발생시킨 것이다. if문을 사용해서 null을 체크하는 로직을 넣어도 되지만, 파라미터가 null이 아니라는 확신이 있다면 null 아님 보장 연산자인 `!`를 사용할 수 있다.
 
 ```ts
 function IntroducePlayer(player: BaseballPlayer | null){
-    // 에러가 발생하지 않는다.
-    return `${player!.backNumber}번 ${player!.name} 선수를 소개합니다!`
+  // 에러가 발생하지 않는다.
+  return `${player!.backNumber}번 ${player!.name} 선수를 소개합니다!`
 }
 ```
 
 as와 마찬가지로 null 아님 보장 연산자 또한 실행 에러까지 막아주지는 않는다. 타입스크립트에게 이 값이 null이 아니라고 단언해줄 뿐, 코드가 실행될 때 null 값이 들어온다면 실행 에러를 발생시킨다.
 
+## 11. 타입 가드(type guard)
+
+타입 가드란 여러 개의 타입으로 지정된 값을 특정 위치에서 원하는 타입으로 구분하는 것을 의미한다. 함수 파라미터 타입을 유니언 타입으로 지정한 경우 유용하게 사용할 수 있다. 아래 예시를 보자.
+
+```ts
+function foo(x: number | string) {
+  // 에러 발생: Property 'toUpperCase' does not exist on type 'string | number'.
+  //          Property 'toUpperCase' does not exist on type 'number'.
+  console.log(x.toUpperCase())
+}
+```
+
+함수 `foo`의 파라미터 `x`는 number 또는 string 타입이다. 함수 `foo`는 `x` 에 `toUpperCase()`라는 string 메서드를 사용하고 있다. 하지만 타입스크립트 입장에서 `x`는 string이 아닐 수도 있다. 따라서 타입스크립트가 에러를 발생시키는 것이다. 타입 가드를 해주면 에러를 해결할 수 있다. 아래 예시를 보자.
+
+```ts
+function foo(x: number | string) {
+  if(typeof x === 'string'){
+      console.log(x.toUpperCase())
+  }
+  if(typeof x === 'number'){
+      console.log(x.toFixed())
+  }
+}
+
+foo('hello, world!') // HELLO, WORLD!
+foo(123.45) // 123
+```
+
+이 에러는 타입 단언으로 해결할 수도 있다. 하지만 타입 단언은 실행 시점의 에러를 방지하지 못 한다. 
+
+### 11.1 타입 가드 연산자
+
+타입 가드에 사용 되는 주요 연산자 아래와 같다. 참고로 아래 연산자들은 타입스크립트가 아닌 자바스크립트 연산자이다.
+
+- typeof
+- instanceof
+- in
+
+참고로, 위의 주요 연산자 외에도 단순한 논리/비교 연산자(`===`, `>=` 등)로도 타입 가드를 적용할 수 있다.
+
+- **typeof**
+
+`typeof`는 특정 코드의 타입을 문자열 값으로 반환해준다.
+
+```ts
+function typeOf<T>(x: T) {
+  console.log(typeof x)
+}
+
+typeOf('Hello, world!') // "string" 
+typeOf(123) // "number" 
+typeOf(true) // "boolean" 
+typeOf(function () { }) // "function" 
+typeOf(['정현수', '원성준', '고영우']) // "object" 
+typeOf({ id: 1, name: 'hail' }) // "object" 
+```
+아래 코드는 `typeof`를 활용한 타입 가드 예시이다.
+
+```ts
+function foo(x: number | string) {
+  if(typeof x === 'string'){
+      console.log(x.toUpperCase())
+  }
+  if(typeof x === 'number'){
+      console.log(x.toFixed())
+  }
+}
+
+foo('hello, world!') // HELLO, WORLD!
+foo(123.45) // 123
+```
+
+- **instanceof**
+
+`instanceof`는 변수가 대상 객체의 프로토타입 체인에 포함되는지 확인하여 true/false를 반환해준다. `instanceof` 연산자는 주로 클래스 타입이 유니언 타입으로 묶여 있을 때 타입을 구분하기 위해 사용한다. 아래 예시를 확인해보자.
+
+```ts
+class User {
+    id: number;
+    name: string;
+
+    constructor(id: number, name: string) {
+        this.id = id
+        this.name = name
+    }
+}
+
+function getUserName(user: User | string) {
+    if (user instanceof User) {
+        console.log(user.name)
+    } else {
+        console.log(`해당 인자는 User의 프로토타입 체인에 포함되지 않습니다.`)
+    }
+}
+
+const hail = new User(1, '하일')
+
+getUserName(hail) // 하일 
+
+getUserName({ id: 1, name: '하일' }) // 해당 인자는 User의 프로토타입 체인에 포함되지 않습니다. 
+```
+
+- **in**
+
+`in` 연산자는 객체에 속성이 있는지 판별하여 true/false를 반환해준다.
+
+```ts
+const user = {
+    id: 1,
+    name: '하일'
+}
+
+console.log('id' in user) // true
+console.log('loggedIn' in user) // false
+```
+아래 코드는 `in`을 활용한 타입 가드 예시이다.
+
+```ts
+interface Player {
+    id: number;
+    position: string;
+}
+
+interface Staff {
+    id: number;
+    role: string;
+}
+
+function printPersonInfo(person: Player | Staff) {
+    if ('position' in person) {
+        console.log(person.position)
+    }
+    if ('role' in person) {
+        console.log(person.role)
+    }
+}
+
+printPersonInfo({ id: 2, position: '투수' }) // 투수
+printPersonInfo({ id: 1, role: '감독' }) // 감독
+```
+
+### 11.2 타입 가드 함수
+
+타입 가드 함수는 주로 객체 유니언 타입 중 하나를 구분하는 데 사용하며, `in` 연산자과 역할은 같지만 좀 더 복잡한 경우에도 사용할 수 있다. 복잡한 상황이란, 여러 인터페이스에 공통된 속성이 많아서 `in` 연산자만으로 타입 가드를 하기가 어려운 상황을 말한다. 아래의 예시를 확인해보자.
+
+```ts
+interface Staff {
+    name: string
+    role: string
+}
+
+interface Player {
+    name: string
+    backNumber: number
+}
+
+interface Pitcher {
+    name: string
+    backNumber: number
+    arsenal: string[]
+}
+
+function printPersonInfo(person: Staff | Player | Pitcher){
+    if('backNumber' in person) {
+        console.log(person.backNumber) // 이때 person의 타입: '(parameter) person: Player | Pitcher'
+    }
+}
+```
+`printPersonInfo`함수의 파라미터 `person`이 `Pitcher`타입일 때만 `backNumber`를 출력하기 위해 `in`으로 타입 가드를 했다. 하지만 if문 안의 `person`의 타입을 확인해보면 `Player | Pitcher` 타입인 것을 확인할 수 있다. 타입 가드가 제대로 이뤄지지 않은 것이다. 이럴 때 타입 가드 함수를 사용하면 문제를 해결할 수 있다.
+
+
+```ts
+interface Staff {
+  name: string
+  role: string
+}
+
+interface Player {
+  name: string
+  backNumber: number
+}
+
+interface Pitcher {
+  name: string
+  backNumber: number
+  arsenal: string[]
+}
+
+// 타입 가드 함수
+function isPitcher(person: Staff | Player | Pitcher): person is Pitcher {
+  return (person as Pitcher).arsenal !== undefined
+}
+
+function printPersonInfo(person: Staff | Player | Pitcher) {
+  // 타입 가드 함수 사용
+  if (isPitcher(person)) {
+    console.log(person.backNumber) // 이때 person의 타입: '(parameter) person: Player | Pitcher'
+  }
+}
+```
+타입 가드 함수의 로직을 좀 더 자세히 살펴보자.
+
+```ts
+// isPitcher 함수의 파라미터는 Staff | Player | Pitcher라는 유니언 타입으로 정의되었다.
+function isPitcher(person: Staff | Player | Pitcher): person is Pitcher {
+  // 파라미터가 유니언 타입이라서 공통 속성에만 접근할 수 있으므로 as를 사용하여 Pitcher 타입으로 강제한다.
+  // arsenal 속성이 undefined가 아니라는 것은, person이 arsenal 속성을 가진다는 뜻이다.
+  // 유니언 타입 중에서 arsenal 속성을 가진 타입은 Pitcher 뿐이다.
+  return (person as Pitcher).arsenal !== undefined
+}
+// `person is Pitcher`의 의미는 반환 겂이 true라면 person이라는 파라미터의 타입은 Pitcher로 간주한다는 의미이다.
+```
