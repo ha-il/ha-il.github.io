@@ -278,6 +278,11 @@ function getPlayer(player: Player): Player {
 ### 4.4 인터페이스 상속
 
 ```ts
+interface Player {
+  id: number;
+  name: string;
+  age?: number;
+}
 interface BaseballPlayer extends Player {
   position: string;
 }
@@ -286,6 +291,30 @@ const hyeonsu: BaseballPlayer = {
   id: 57,
   name: '정현수',
   position: '투수',
+};
+```
+한 번에 여러개의 타입을 상속할 수도 있다.
+
+```ts
+interface Player {
+  id: number;
+  name: string;
+  age?: number;
+}
+
+interface Student {
+  grade: string
+}
+
+interface BaseballPlayer extends Player, Student {
+  position: string;
+}
+
+const hyeonsu: BaseballPlayer = {
+  id: 57,
+  name: '정현수',
+  position: '투수',
+  grade: '4학년'
 };
 ```
 
@@ -303,7 +332,7 @@ const myTeam: StringArray = ['정현수', '원성준', '고영우'];
 
 이렇게 배열을 인덱싱 타입으로 정의할 수 있지만, 위의 경우 string[] 형식으로 정의하는 것이 더 편하다.
 
-### 4.6 인터페이스로 객체 인덱싱 타입 정의
+### 4.6 인터페이스에서 인덱스 시그니처로 객체 인덱싱 타입 정의
 
 ```ts
 interface TeamMember {
@@ -333,6 +362,37 @@ interface someObj {
   created_at: string;
 }
 ```
+다만 인덱스 시그니처와 특정 속성을 섞어서 정의할 때, 특정 속성의 타입이 인덱스 시그니처의 타입과 일치하지 않으면 에러가 발생한다.
+```ts
+interface someObj {
+  [property: string]: string;
+  id: string;
+  created_at: string;
+  status: number; // 에러 발생: Property 'status' of type 'number' is not assignable to 'string' index type 'string'.
+}
+```
+다른 타입의 속성을 섞어서 써야 한다면 아래 예시처럼 유니언 타입을 사용하여 문제를 해결할 수 있다.
+
+```ts
+interface someObj {
+  [property: string]: string | number;
+  id: string;
+  created_at: string;
+  status: number;
+}
+```
+
+참고로 인덱스 시그니처도 `readonly`로 설정할 수 있다.
+
+```ts
+interface ReadonlyStringArray {
+  readonly [index: number]: string;
+}
+ 
+let myArray: ReadonlyStringArray = ['a', 'b', 'c']
+console.log(myArray[2]) // "c"
+myArray[2] = "Mallory"; // 에러 발생: Index signature in type 'ReadonlyStringArray' only permits reading.
+```
 
 ### 4.7 인터페이스의 선언 병합
 
@@ -356,6 +416,165 @@ const favoritePlayer: MyFavorite = {
 ```
 (🤔: 개인적인 생각으로는, 선언 병합 방식으로 인터페이스를 사용하면 추후 유지보수할 때 혼란이 생길 것 같다. 선언 병합에 대한 베스트 프렉티스를 발견한다면 추후에 추가하겠다.)
 
+### 4.8 인터페이스의 readonly 속성
+
+인터페이스의 속성 앞에 `readonly` 키워드를 추가하면 타입스크립트에서 읽기 전용으로 표시할 수 있다. 읽기 전용으로 표시된 속성을 수정하려고 할 경우 타입 검사에 걸린다.
+
+```ts
+interface User {
+  // id 속성을 읽기 전용으로 표시했다. 
+  readonly id: number
+}
+
+const hail:User = {id: 1}
+
+// 읽기 전용인 id 속성을 읽는 것은 가능하다.
+console.log(`ID: ${hail.id}`) // "ID: 1"
+// 읽기 전용인 id 속성을 수정하는 것은 에러를 발생시킨다.
+hail.id = 2 // Cannot assign to 'id' because it is a read-only property.
+```
+수정이 불가능하지만, 값이 절대로 수정이 불가능하다는 것은 아니다. 읽기 전용으로 표시한 속성이 객체라면 내부 내용을 변경할 수 있다. 속성 자체를 수정하는 것은 여전히 불가능하다.
+
+```ts
+interface User {
+  // loginMetod 속성을 읽기 전용으로 표시했다.
+  readonly loginMetod: {email: string, name: string}
+}
+
+function updateLoginMethod(user:User){
+  // loginMetod 속성은 읽기 전용이지만 내부 속성은 수정이 가능하다.
+  user.loginMetod.email = '유저가 원하는 이메일 주소'
+  user.loginMetod.name = '유저가 원하는 이름'
+}
+
+function deleteLoginMetod(user:User){
+  // loginMetod 속성은 읽기 전용이라 속성 자체를 수정하는 것은 불가능하다.
+  user.loginMetod = null // Cannot assign to 'loginMetod' because it is a read-only property.
+}
+```
+
+## 4.9 초과된 속성 검사(Excess Property Checks)
+
+타입스크립트에서 객체 리터럴은 다른 변수에 할당하거나 인수로 전달할 때 초과된 속성 검사를 거치게 된다. 초과된 속성 검사는 객체 리터럴의 타입에 없는 속성이 있으면 오류를 발생시킨다.
+
+```ts
+interface User {
+  id?: string
+  name?: string
+}
+
+function createUser(user: User): User {
+  return { id: user.id, name: user.name }
+}
+
+// name 속성은 옵셔널이니까 아래처럼 namee으로 잘 못 입력해도 에러가 없지 않을까?
+const me = createUser({ id:1, namee: '하일' }) // 에러 발생...
+/* 에러 메시지
+  Argument of type '{ id: string; namee: string; }' is not assignable to parameter of type 'User'.
+  
+  Object literal may only specify known properties, but 'namee' does not exist in type 'User'. Did you mean to write 'name'?
+*/
+```
+물론 이 예시에서 이 에러를 굳이 해결하지 않는 것이 더 좋을지도 모르겠다. name의 오타를 수용하지 않는 것이 더 좋기 때문이다. 하지만 기존의 인터페이스를 수정하기 어려운 상태에서 새로운 속성을 추가해야 하는 상황이라고 가정해본다면, 새로운 속성을 추가할 때 에러가 발생하지 않도록 초과된 속성 검사를 우회해야 할지도 모른다.
+
+초과된 속성 검사를 우회할 수 있는 방법은 세 가지가 있다. 
+
+- **1. 타입 단언을 사용한다.**
+
+```ts
+interface User {
+  id?: string
+  name?: string
+}
+
+function createUser(user: User): User {
+  return { id: user.id, name: user.name }
+}
+
+// 에러가 발생하지 않는다. 
+const me = createUser({ id: "1", namee: '하일' } as User)
+
+console.log(me) // { "id": "1", "name": undefined } 
+```
+당장 타입 검사는 통과하지만 가장 코드 실행시 발생할 수 있는 문제를 방지하지는 못하기 때문에 가장 좋은 해결책은 아니다.
+
+- **2. 인덱스 시그니처를 추가한다.**
+
+인터페이스가 이미 지정된 속성 외의 다른 속성도 얼마든지 가질 수 있다면 인덱스 시그니처를 추가하는 것이 좋은 방법이 될 수 있다.
+
+```ts
+interface User {
+  id?: string
+  name?: string
+  // 인덱스 시그니처를 추가한다.
+  [propName: string]: string | undefined;
+}
+
+function createUser(user: User): User {
+  return { id: user.id, name: user.name }
+}
+
+// 에러가 발생하지 않는다. 
+const me = createUser({ id: "1", namee: '하일' })
+
+console.log(me) // { "id": "1", "name": undefined } 
+```
+
+- **3. 객체를 다른 변수에 할당하고 인수로 전달한다.**
+
+```ts
+interface User {
+  id?: string
+  name?: string
+}
+
+function createUser(user: User): User {
+  return { id: user.id, name: user.name }
+}
+
+// 함수의 인자로 전달할 객체를 다른 변수에 할당한다.
+const hail = { id: "1", namee: '하일' }
+
+// 그 변수를 인자로 전달한다.
+const me = createUser(hail) // 에러가 발생하지 않는다.
+
+console.log(me) // { "id": "1", "name": undefined } 
+```
+
+위 코드에서 에러가 발생하지 않는 이유는 무엇일까? 초과된 속성 검사는 객체 리터럴을 다른 변수에 할당하거나 인수로 전달할 때 수행된다. `hail`이라는 변수를 `createUser`라는 함수에 인자로 전달할 때는 초과된 속성 검사가 수행되지 않는다.
+
+```ts
+// 여기서는 객체 리터럴을 다른 변수에 할당하고 있으므로 초과된 속성 검사가 수행된다.
+// hail이라는 변수는 따로 타입이 지정되어있지 않기 때문에 아래 코드는 검사가 수행되어도 에러가 발생하지 않는다.
+const hail = { id: "1", namee: '하일' }
+
+// 함수에 인자를 전달하는 것뿐이므로 초과된 속성 검사가 수행되지 않는다. 
+const me = createUser(hail) // 에러가 발생하지 않는다. 
+```
+다만, 함수의 인자 타입과 인자로 전달할 변수의 타입에서 공통된 속성이 없을 경우 에러가 발생한다.
+
+```ts
+interface User {
+  id?: string
+  name?: string
+}
+
+function createUser(user: User): User {
+  return { id: user.id, name: user.name }
+}
+
+// 변수 hail의 속성은 User 타입과 일치하는 부분이 전혀 없다.
+const hail = { idd: "1", namee: '하일' }
+
+// createUser의 파라미터는 User타입이다.
+// User 타입과 일치하는 부분이 전혀 없는 hail 변수는 타입 검사를 통과할 수 없다.
+const me = createUser(hail) // 에러 발생
+/* 에러 메시지
+  Type '{ idd: string; namee: string; }' has no properties in common with type 'User'.
+*/
+```
+
+초과된 속성 검사를 우회하는 방법을 살펴봤지만, 복잡한 객체 리터럴이 아닐 경우에는 우회하지 않는 편이 바람직하다. 초과된 속성 검사가 발생시키는 에러를 우회하면 그것이 버그로 이어질 가능성이 높기 때문이다. 당장 위의 세 가지 방법에서 보여준 예시만 봐도, console.log에 찍힌 name 속성이 전부 undefined인 것을 확인할 수 있다. undefined 값은 예상치 못한 버그로 이어지는 경우가 많다. 
 ## 5. 연산자를 사용한 타입 정의
 
 ### 5.1 유니언 타입
@@ -1500,6 +1719,33 @@ let pitcher: Pitcher = {
 
 player = pitcher // 호환 가능: pitcher 객체에 Player 인터페이스의 필수 속성인 name과 backNumber가 정의되어 있기 때문
 pitcher = player // 호환 불가능: player 객체에 Pitcher 타입 별칭의 필수 속성인 arsenal이 정의되어 있지 않기 때문
+```
+
+객체 타입 호환에서 주의할 점이 하나 있는데, 타입스크립트에서 객체의 각 속성의 호환 여부를 판단할 때 해당 속성이 읽기 전용인지는 고려하지 않는다는 것이다.
+
+```ts
+interface Person {
+  name: string;
+  age: number;
+}
+ 
+interface ReadonlyPerson {
+  readonly name: string;
+  readonly age: number;
+}
+ 
+let writablePerson: Person = {
+  name: "하일",
+  age: 100,
+};
+ 
+// 각 객체의 속성의 읽기 전용 여부가 다르지만 호환된다.
+let readonlyPerson: ReadonlyPerson = writablePerson;
+ 
+// 아래와 같이 예상치 못한 동작이 발생한다.
+console.log(readonlyPerson.age); // prints '42'
+writablePerson.age++;
+console.log(readonlyPerson.age); // prints '43'
 ```
 
 ### 13.3 함수 타입의 호환
