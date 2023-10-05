@@ -71,6 +71,12 @@ export default function CategoryPage({ data, location }) {
               data-category={category}
             >
               <Link to={`/categories/${category.toLowerCase()}`} itemProp="url">
+                {category === "functional" ? (
+                  <StaticImage
+                    src="../../images/category/Functional.png"
+                    alt="category-image"
+                  />
+                ) : null}
                 {category === "typescript" ? (
                   <StaticImage
                     src="../../images/category/TypeScript.png"
